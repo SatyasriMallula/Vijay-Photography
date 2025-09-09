@@ -1,0 +1,41 @@
+:root {
+  --background: #f0f4f8; /* soft light blue */
+  --foreground: #202b3f; /* charcoal gray */
+  --accent: #d4af37; /* rich gold */
+
+  /* Font variables injected by next/font */
+  --heading-font: var(--font-inter);
+  --body-font: var(--font-roboto-mono);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --font-heading: var(--heading-font);
+  --font-sans: var(--body-font);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a192f; /* deep navy blue */
+    --foreground: #e2e8f0; /* light gray */
+    --accent: #ffd700; /* gold */
+  }
+}
+
+body {
+  background: var(--background) url("/screenshot.png") no-repeat center/cover;
+  color: var(--foreground);
+  font-family: var(--body-font);
+  transition: all 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+}
