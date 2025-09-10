@@ -15,7 +15,6 @@ const robotoMono = Roboto_Mono({
   subsets: ["latin"],
   display: "swap",
 });
-
 export const metadata: Metadata = {
   title: "Vijay Photography | Capture Your Moments",
   description:
@@ -61,15 +60,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${robotoMono.variable}`}
-    >
-      <body>
-        <Header />
+    <html lang="en" className={`${inter.variable} ${robotoMono.variable}`}>
+      <body
+        className={`${inter.variable} ${robotoMono.variable} antialiased`}
+      >
+        <Header></Header>
         <SocialLinks />
-        <main className="max-w-7xl mx-auto p-4">{children}</main>
+        {children}
       </body>
-    </html>
+    </html >
   );
 }

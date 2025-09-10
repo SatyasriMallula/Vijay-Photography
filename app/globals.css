@@ -1,9 +1,26 @@
+@import "tailwindcss";
+/*#331c08    664c36*/
+/* Light Mode */
+/* :root {
+    --background: #422701; 
+    --foreground: #705e46; 
+    --accent: #c6c0b9; 
+  } */
+
+/* :root {
+    --background: #0b2e33; 
+    --foreground: #4f7c82;
+    --accent: #4f7c82; 
+  } */
+/* :root {
+    --background: #292966; 
+    --foreground: #5c5c99; 
+    --accent: #ccccff; 
+  } */
 :root {
   --background: #f0f4f8; /* soft light blue */
   --foreground: #202b3f; /* charcoal gray */
   --accent: #d4af37; /* rich gold */
-
-  /* Font variables injected by next/font */
   --heading-font: var(--font-inter);
   --body-font: var(--font-roboto-mono);
 }
@@ -16,6 +33,7 @@
   --font-sans: var(--body-font);
 }
 
+/* Dark Mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a192f; /* deep navy blue */
