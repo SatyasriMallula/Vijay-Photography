@@ -16,35 +16,35 @@ const robotoMono = Roboto_Mono({
   display: "swap",
 });
 export const metadata: Metadata = {
-  title: "Vijay Photography | Capture Your Moments",
+  title: "Blueye | Capture Your Moments",
   description:
-    "Vijay Photography — professional photography portfolio showcasing portraits, weddings, landscapes, and creative shots. Capturing memories with creativity and precision.",
+    "Blueye Photography — professional photography portfolio showcasing portraits, weddings, landscapes, and creative shots. Capturing memories with creativity and precision.",
   keywords: [
-    "Vijay Photography",
+    "Blueye Photography",
     "photographer portfolio",
     "wedding photography",
     "portrait photography",
     "landscape photography",
   ],
   openGraph: {
-    title: "Vijay Photography | Capture Your Moments",
+    title: "Blueye Photography | Capture Your Moments",
     description:
-      "Explore Vijay Photography's portfolio: weddings, portraits, and creative photography projects.",
+      "Explore Blueye Photography's portfolio: weddings, portraits, and creative photography projects.",
     url: "https://your-domain.com",
-    siteName: "Vijay Photography",
+    siteName: "Blueye Photography",
     images: [
       {
         url: "https://your-domain.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Vijay Photography Portfolio",
+        alt: "Blueye Photography Portfolio",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vijay Photography",
+    title: "Blueye Photography",
     description:
       "Professional photography portfolio — weddings, portraits, and more.",
     images: ["https://your-domain.com/og-image.jpg"],
