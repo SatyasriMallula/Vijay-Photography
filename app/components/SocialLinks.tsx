@@ -5,7 +5,7 @@ function SocialLinks() {
         <div className="
       fixed top-1/2 right-0 z-50
       -translate-y-1/2 flex flex-col gap-4 items-center
-      bg-[#0a192f]/70 backdrop-blur-lg  py-4 px-2
+      bg-[#0a192f]/50 backdrop-blur-2xl  py-4 px-2
       shadow-xl 
     ">
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"

@@ -42,12 +42,32 @@
   }
 }
 
-body {
+/* body {
   background: var(--background) url("/IMG_8403.JPG") no-repeat center/cover;
   color: var(--foreground);
   font-family: var(--body-font);
   transition: all 0.3s ease;
+} */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
+
+.scroll-animation {
+  display: flex;
+  width: max-content; 
+  animation: scroll 40s linear infinite;
+}
+
+
+body {
+  cursor: url('/logo1.png') 0 0, auto;
+}
+
 
 h1,
 h2,
