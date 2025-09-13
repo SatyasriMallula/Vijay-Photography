@@ -85,7 +85,7 @@ export default function Header() {
                                     {/* Dropdown */}
                                     {servicesOpen && (
                                         <ul
-                                            className="drop-down"
+                                            className="drop-down animate-fade-in"
                                         >
                                             {item.dropdown.map((sub) => (
                                                 <li key={sub.href}>
