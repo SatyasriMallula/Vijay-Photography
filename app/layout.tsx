@@ -7,7 +7,7 @@ import SocialLinks from "./components/SocialLinks";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: "swap",
+  display: "swap", 
 });
 
 const robotoMono = Roboto_Mono({
