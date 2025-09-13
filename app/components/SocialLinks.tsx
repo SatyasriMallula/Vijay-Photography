@@ -8,7 +8,7 @@ const links = [
 
 function SocialLinks() {
   return (
-    <div className="fixed top-1/2 right-0 z-50 -translate-y-1/2 flex flex-col gap-4 items-center py-4 px-2 shadow-xl">
+    <div className="fixed top-1/2 right-0 z-50 -translate-y-1/2 flex flex-col gap-4 items-center justify-between py-4 px-2 ">
       {links.map(({ href, icon }, i) => (
         <a
           key={i}
@@ -20,6 +20,11 @@ function SocialLinks() {
           {icon}
         </a>
       ))}
+      <div className="pt-30">
+        <button className="px-4 py-2 text-lg text-white bg-yellow-500 rounded-lg hover:bg-yellow-600 transition">
+          Book Now
+        </button>
+      </div>
     </div>
   );
 }

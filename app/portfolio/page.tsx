@@ -7,8 +7,8 @@ import Link from "next/link";
 const categories = ["All", "Portraits", "Weddings"];
 
 const photos = [
-    { src: "/selected blueye/selected blueye/DSC03543.jpg", category: "Portraits", href: "/portraits" },
-    { src: "/selected blueye/selected blueye/DSC03543.jpg", category: "Weddings", href: "/services/weddings" },
+    { src: "/potraits/cover-image.jpg", category: "Portraits", href: "/portraits" },
+    { src: "/weddings/cover-image.jpg", category: "Weddings", href: "/services/weddings" },
     { src: "/selected blueye/selected blueye/DSC03543.jpg", category: "Branding", href: "services/branding" },
 
 ];

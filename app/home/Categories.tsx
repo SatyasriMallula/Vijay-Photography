@@ -7,12 +7,12 @@ const categories = [
     {
         title: "Portraits",
         description: "Capturing expressions, emotions, and timeless moments.",
-        img: "/selected blueye/selected blueye/as.jpg",
+        img: "/potraits/cover-image.jpg",
     },
     {
         title: "Weddings",
         description: "Telling love stories with elegance and warmth.",
-        img: "/selected blueye/selected blueye/as.jpg",
+        img: "/weddings/cover-image.jpg",
     },
     {
         title: "Branding",

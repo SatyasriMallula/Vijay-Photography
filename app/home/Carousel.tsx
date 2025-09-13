@@ -2,10 +2,11 @@
 import Image from "next/image";
 
 const images = [
-    "/selected blueye/selected blueye/DSC03543.jpg",
-    "/selected blueye/selected blueye/DSC03595.jpg",
-    "/selected blueye/selected blueye/DSC05839.jpg",
-    "/selected blueye/selected blueye/DSC05840.jpg",
+    "/home/featured-shot/_DCS0275.JPG",
+    "/home/featured-shot/_DCS0430.JPG",
+    "/home/featured-shot/DSC05890.jpg",
+    "/home/featured-shot/DSC08778.jpg",
+    "/home/featured-shot/DSC06939.jpg",
 ];
 
 export default function Carousel() {
@@ -23,7 +24,7 @@ export default function Carousel() {
                     {doubledImages.map((src, index) => (
                         <div
                             key={index}
-                            className="flex-shrink-0 w-[300px] h-[200px] rounded-2xl overflow-hidden shadow-lg"
+                            className="flex-shrink-0 w-[500px] h-[320px] rounded-2xl overflow-hidden shadow-lg"
                         >
                             <Image
                                 src={src}
