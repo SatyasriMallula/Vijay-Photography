@@ -34,7 +34,7 @@ export default function Header() {
                 className={`
           flex items-center justify-between  top-0 inset-x-0 z-50 
           px-6 mt-2 
-          transition-all pointer-events-auto
+          transition-all pointer-events-auto animate-fade-in
         `}
             >
                 <div className="max-w-8xl mx-auto w-full flex items-center justify-between px-6 py-3">
