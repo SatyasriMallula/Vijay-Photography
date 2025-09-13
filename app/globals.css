@@ -1,9 +1,27 @@
-:root {
-  --background: #f0f4f8; /* soft light blue */
-  --foreground: #202b3f; /* charcoal gray */
-  --accent: #d4af37; /* rich gold */
+@import "tailwindcss";
 
-  /* Font variables injected by next/font */
+/*#331c08    664c36*/
+/* Light Mode */
+/* :root {
+    --background: #422701; 
+    --foreground: #705e46; 
+    --accent: #c6c0b9; 
+  } */
+
+/* :root {
+    --background: #0b2e33; 
+    --foreground: #4f7c82;
+    --accent: #4f7c82; 
+  } */
+/* :root {
+    --background: #292966; 
+    --foreground: #5c5c99; 
+    --accent: #ccccff; 
+  } */
+:root {
+  --background:black; /* soft light blue */
+  --foreground: #202b3f; /* charcoal gray */
+  --accent: #1E90FF; /* rich gold */
   --heading-font: var(--font-inter);
   --body-font: var(--font-roboto-mono);
 }
@@ -16,16 +34,20 @@
   --font-sans: var(--body-font);
 }
 
+
+/* Dark Mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a192f; /* deep navy blue */
     --foreground: #e2e8f0; /* light gray */
-    --accent: #ffd700; /* gold */
+    /* --accent: #ffd700; gold */
+    --accent:#111184;
   }
 }
 
 body {
-  background: var(--background) url("/coverImg.jpg") no-repeat center/cover;
+  /* background: var(--background) ; */
+  /* url("/coverImg3.jpg") no-repeat center/cover; */
   color: var(--foreground);
   font-family: var(--body-font);
   transition: all 0.3s ease;
@@ -38,4 +60,52 @@ h4,
 h5,
 h6 {
   font-family: var(--heading-font);
+}
+.dancing-text {
+  font-family: var(--font-dancing-script);
+  font-size: 2rem;
+  font-weight: 600;
+}
+/* Smooth focus-in for heading */
+@keyframes focus-in {
+  0% {
+    letter-spacing: -0.5em;
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+/* Main heading */
+.animate-focus-in {
+  animation: focus-in 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Delayed second line */
+.animate-focus-in-delay {
+  animation: focus-in 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 1s; /* delay 1 second */
+}
+
+/* Fade-in for subheading */
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 2s ease forwards;
+}
+
+/* Slow bounce for logo */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s infinite;
 }

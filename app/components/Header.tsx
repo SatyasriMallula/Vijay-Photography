@@ -90,21 +90,22 @@
 "use client";
 import React, { useState } from "react";
 import { Home, Camera, User, Mail, Instagram, Facebook, Youtube, Menu } from "lucide-react";
+import Image from "next/image";
 
 // Animated logo SVG (replace with your brand mark if needed)
-const LogoSvg = () => (
-    <svg width="42" height="42" viewBox="0 0 100 100" fill="none">
-        <circle cx="50" cy="50" r="48" fill="url(#g)" opacity="0.95" />
-        <circle cx="50" cy="50" r="24" fill="white" />
-        <circle cx="50" cy="50" r="12" fill="#E1B382" />
-        <defs>
-            <radialGradient id="g" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#e1b382" />
-                <stop offset="100%" stopColor="#141e30" />
-            </radialGradient>
-        </defs>
-    </svg>
-);
+// const LogoSvg = () => (
+//     <svg width="42" height="42" viewBox="0 0 100 100" fill="none">
+//         <circle cx="50" cy="50" r="48" fill="url(#g)" opacity="0.95" />
+//         <circle cx="50" cy="50" r="24" fill="white" />
+//         <circle cx="50" cy="50" r="12" fill="#E1B382" />
+//         <defs>
+//             <radialGradient id="g" cx="50%" cy="50%" r="50%">
+//                 <stop offset="0%" stopColor="#e1b382" />
+//                 <stop offset="100%" stopColor="#141e30" />
+//             </radialGradient>
+//         </defs>
+//     </svg>
+// );
 
 const navItems = [
     { href: "#home", label: "Home" },
@@ -125,24 +126,27 @@ export default function UniqueTopHeader() {
     return (
         <>
             <header className="
-        fixed top-0 inset-x-0 z-50 flex flex-col
-        bg-[#0a192f]/50 backdrop-blur-2xl border-b border-yellow-300/20
+        fixed top-0 inset-x-0 flex flex-col
+      z-50 bg-black
         shadow-xl animate-fadeIn
+        border-b-2
       ">
-                <div className="max-w-8xl mx-auto w-full flex items-center justify-between px-6 py-3 md:py-5">
+                <div className="max-w-8xl mx-auto w-full flex items-center justify-between px-8 py-3 md:py-4">
                     {/* Logo */}
                     <a
                         href="#home"
                         className="
               flex items-center gap-3 group cursor-pointer
-              scale-110 hover:rotate-[8deg] hover:scale-[1.12]
+              scale-110 !hover:rotate-[8deg] !hover:scale-[1.12]
               transition-transform duration-500
             "
                     >
-                        <LogoSvg />
-                        <span className="text-2xl font-extrabold italic tracking-wider text-accent uppercase drop-shadow-sm select-none">
-                            Vijay <span className="text-white/70 font-bold">Photography</span>
+                 
+                        
+                        <span className="text-2xl flex items-center bg-gradient-to-r bg-clip-text text-transparent from-blue-300 via-blue-500 to-blue-400 font-extrabold dancing-text   tracking-wider  drop-shadow-sm select-none">
+                          <Image src="/logo.png" width={100} height={100} alt="logo" className="w-10 "/>  Blue Eye
                         </span>
+                       
                     </a>
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center space-x-10 text-base font-semibold tracking-widest ">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Roboto_Mono } from "next/font/google";
+import { Inter, Roboto_Mono, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import SocialLinks from "./components/SocialLinks";
@@ -15,7 +15,11 @@ const robotoMono = Roboto_Mono({
   subsets: ["latin"],
   display: "swap",
 });
-
+const dancingScript = Dancing_Script({
+  variable: "--font-dancing-script",
+  subsets: ["latin"],
+  display: "swap",
+});
 export const metadata: Metadata = {
   title: "Vijay Photography | Capture Your Moments",
   description:
@@ -61,15 +65,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${robotoMono.variable}`}
-    >
-      <body>
-        <Header />
-        <SocialLinks />
-        <main className="max-w-7xl mx-auto p-4">{children}</main>
-      </body>
-    </html>
+    <html lang="en" className={`${inter.variable} ${robotoMono.variable} ${dancingScript.variable}`}>
+      <body className="relative min-h-screen bg-black antialiased overflow-x-hidden">
+  {/* Global background gradients (visible on every page) */}
+  <div className="fixed inset-0 -z-10">
+    <div
+      className="absolute top-10 left-0 w-[350px] h-[350px] rounded-full 
+                 bg-[radial-gradient(circle_at_center,theme(colors.blue.900),transparent_90%)] 
+                 blur-3xl opacity-70"
+    />
+    <div
+      className="absolute right-0 bottom-10 w-[350px] h-[350px] rounded-full 
+                 bg-[radial-gradient(circle_at_center,theme(colors.blue.900),transparent_90%)] 
+                 blur-3xl opacity-70"
+    />
+  </div>
+
+  {/* Always visible */}
+  <Header />
+  <SocialLinks />
+
+  {/* Page-specific content */}
+  <main className="relative z-10">{children}</main>
+</body>
+
+    </html >
   );
 }
