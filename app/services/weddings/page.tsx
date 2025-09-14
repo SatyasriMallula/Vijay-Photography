@@ -4,10 +4,12 @@ import Image from "next/image";
 
 export default function WeddingsPage() {
     const weddingPhotos = [
-        { src: "/selected blueye/selected blueye/DSC03543.jpg", alt: "Wedding Couple" },
-        { src: "/selected blueye/selected blueye/DSC03543.jpg", alt: "Bride Portrait" },
-        { src: "/selected blueye/selected blueye/DSC03543.jpg", alt: "Reception" },
-        { src: "/selected blueye/selected blueye/DSC03543.jpg", alt: "Ring Ceremony" },
+        { src: "/weddings/_DCS1392.jpg", alt: "Wedding Couple" },
+        { src: "/weddings/_DCS1646.jpg", alt: "Bride Portrait" },
+        { src: "/weddings/1L4A1579.jpg", alt: "Reception" },
+        { src: "/weddings/DSC00356 2.jpg", alt: "Ring Ceremony" },
+        { src: "/weddings/DSC06116.jpg", alt: "Wedding Dance" },
+        { src: "/weddings/DSC03243.jpg", alt: "Wedding Ceremony" },
     ];
 
     return (
@@ -33,7 +35,7 @@ export default function WeddingsPage() {
                             <Image
                                 src={photo.src}
                                 alt={photo.alt}
-                                width={600}
+                                width={300}
                                 height={400}
                                 className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
                             />
