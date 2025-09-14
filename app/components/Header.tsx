@@ -31,6 +31,7 @@ export default function Header() {
     return (
         <>
             <header
+                id="header"
                 className={`
           absolute top-0 left-0 w-full z-50 
     flex items-center justify-between 
@@ -86,7 +87,7 @@ export default function Header() {
                                     {/* Dropdown */}
                                     {servicesOpen && (
                                         <ul
-                                            className="drop-down animate-fade-in mt-1"
+                                            className="drop-down animate-fade-in"
                                         >
                                             {item.dropdown.map((sub) => (
                                                 <li key={sub.href}>
