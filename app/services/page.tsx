@@ -9,7 +9,7 @@ const services = [
         title: "Weddings",
         description: "Elegant and timeless wedding photography capturing your special day.",
         href: "/services/weddings",
-        image: "/selected blueye/selected blueye/DSC03543.jpg",
+        image: "/weddings/cover-image.jpg",
     },
     {
         title: "Branding",
@@ -27,7 +27,7 @@ const services = [
         title: "Portraits",
         description: "Artistic portraits that highlight personality and style.",
         href: "/services/portraits",
-        image: "/selected blueye/selected blueye/DSC03543.jpg",
+        image: "/potraits/cover-image.jpg",
     },
 ];
 
@@ -35,17 +35,19 @@ export default function ServicesPage() {
     return (
         <main className="min-h-screen bg-gradient-to-b from-[#0a192f] to-[#1e3a8a] text-gray-100">
             {/* Hero */}
-            <section className="relative h-[60vh] flex items-center justify-center text-center">
+            <section className="relative h-screen flex items-end pb-18 justify-center text-center">
                 <div className="absolute inset-0">
                     <Image
-                        src="/selected blueye/selected blueye/DSC03543.jpg"
+                        src="/cover-image-service.jpg"
                         alt="Services Hero"
-                        height={100}
-                        width={100}
+                        fill
                         className="w-full h-full object-cover opacity-60"
+                        priority
+                        quality={100}
+
                     />
                 </div>
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col items-center px-6 space-y-4">
                     <motion.h1
                         initial={{ opacity: 0, y: -30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -54,9 +56,19 @@ export default function ServicesPage() {
                     >
                         Our Services
                     </motion.h1>
-                    <p className="mt-6 max-w-2xl mx-auto text-lg text-blue-100/90">
+                    <p className=" max-w-2xl mx-auto text-lg text-blue-100/90">
                         Explore the range of photography services we offer to create lasting memories.
                     </p>
+                      <a
+      href="/about"
+      className="px-8 py-3 text-lg font-semibold 
+                 rounded-full bg-blue-600 hover:bg-blue-700 
+                 text-white shadow-lg shadow-blue-500/50 
+                 transition-transform transform hover:scale-105 
+                 hover:shadow-blue-400/70 duration-300"
+    >
+      Learn More
+    </a>
                 </div>
             </section>
 
@@ -70,14 +82,14 @@ export default function ServicesPage() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.2 }}
                             viewport={{ once: true }}
-                            className="group relative rounded-2xl overflow-hidden shadow-lg"
+                            className="group relative rounded-2xl overflow-hidden shadow-lg h-80"
                         >
                             {/* Background image */}
                             <Image
                                 src={service.image}
                                 alt={service.title}
-                                height={100}
-                                width={100}
+                                
+                                fill
                                 className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
                             />
 
