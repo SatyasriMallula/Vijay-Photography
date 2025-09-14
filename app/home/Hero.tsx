@@ -21,7 +21,7 @@ export default function Hero() {
   }, [currentIndex, images.length]);
 
   return (
-    <section className="relative h-screen flex items-center justify-center text-center">
+    <section  id = "hero" className="relative h-screen flex items-center justify-center text-center">
       <img
         src={images[currentIndex]}
         alt="carousel"

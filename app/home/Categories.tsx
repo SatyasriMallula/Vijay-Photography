@@ -16,9 +16,25 @@ const categories = [
     },
     {
         title: "Branding",
-        description: "Exploring cultures, landscapes, and adventures.",
-        img: "/selected blueye/selected blueye/as.jpg",
+        description:"Your brand deserves visuals that speak louder than words",
+        img: "/branding/DSC06914.jpg",
     },
+    {
+        title: "Baby Shoots",
+        description: "Capture the innocence, laughter of your little one with our baby photoshoots.",
+        img:"/babyshoot/DSC07897.jpg"
+    }
+    ,
+    {
+        title: "travel",
+        description: "Exploring cultures, landscapes, and adventures.",
+        img:"/travel/travelshot.png"
+    },
+    {
+        title: "Drone Shots",
+        description: "Elevate your story with stunning aerial shots",
+        img:"/droneshot/droneshot.jpg"
+    }
 
 ];
 
@@ -49,7 +65,7 @@ export default function Categories() {
                         />
 
                         {/* Text (always visible) */}
-                        <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-black/20 p-4">
+                        <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-black/10 px-4 py-3">
                             <h3 className="text-xl font-bold text-yellow-400">{cat.title}</h3>
                             <p className="text-sm text-gray-200">{cat.description}</p>
                         </div>
