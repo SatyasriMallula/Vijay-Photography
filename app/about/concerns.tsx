@@ -30,8 +30,8 @@ export default function Features() {
     <section className="pb-25 h-full bg-[#1e3a8a]/20">
       {/* Section Heading */}
       <div className="text-center mb-12 px-4">
-        <h2 className="text-3xl text-white md:text-4xl font-serif font-bold">
-          Your Concerns, My Care
+        <h2 className="text-3xl text-yellow-500 md:text-5xl font-serif font-bold">
+          Your Concerns-My Care
         </h2>
       </div>
 

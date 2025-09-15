@@ -79,11 +79,11 @@ const categories = ["All", "Weddings", "Portraits", "Branding", "Events"];
 const images = [
   { src: "/selected blueye/selected blueye/as.jpg", category: "Weddings" },
   { src: "/selected blueye/selected blueye/DSC03543.jpg", category: "Weddings" },
-  { src: "/selected blueye/selected blueye/DSC08756.jpg", category: "Portraits" },
+  { src: "/selected blueye/selected blueye/_DCS1799.jpg", category: "Portraits" },
   { src: "/selected blueye/selected blueye/DSC06699.jpg", category: "Portraits" },
-  { src: "/selected blueye/selected blueye/DSC05840.jpg", category: "Branding" },
+  { src: "/selected blueye/selected blueye/_DCS0210.jpg", category: "Branding" },
   { src: "/selected blueye/selected blueye/DCS1824.jpg", category: "Branding" },
-  { src: "selected blueye/selected blueye/DSC03595.jpg", category: "Events" },
+  { src: "selected blueye/selected blueye/_DCS1799.jpg", category: "Events" },
   { src: "/selected blueye/selected blueye/DSC05947.jpg", category: "Events" },
   { src: "/selected blueye/selected blueye/DSC06690.jpg", category: "Events" },
 ];
