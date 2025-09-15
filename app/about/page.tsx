@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import ExcellenceSection from "./Excellence";
+import Concerns from "./concerns";
 
 export default function About() {
     return (
@@ -44,7 +45,8 @@ I specialize in portraits, fashion, weddings, and pre-weddings, capturing moment
                         making every shot a piece of art. Let’s create something magical together.
                     </p> */}
                 </motion.div>
-            <ExcellenceSection/>
+            <ExcellenceSection />
+            <Concerns/>
         </section>
     );
 }
