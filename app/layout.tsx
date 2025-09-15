@@ -1,15 +1,20 @@
+
 import type { Metadata } from "next";
-import { Inter, Roboto_Mono } from "next/font/google";
+import { Dancing_Script, Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "./components/Header";
-import SocialLinks from "./components/SocialLinks";
+import ClientLayout from "./clientLayout";
+
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap", 
+});
+const dancingScript = Dancing_Script({
+  variable: "--font-dancing-script",
+  subsets: ["latin"],
   display: "swap",
 });
-
 const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",
   subsets: ["latin"],
@@ -60,13 +65,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${robotoMono.variable}`}>
-      <body
-        className={`${inter.variable} ${robotoMono.variable} antialiased`}
-      >
-        <Header></Header>
-        <SocialLinks />
-        {children}
+    <html lang="en" className={`${inter.variable}  ${dancingScript.variable} ${robotoMono.variable}`}>
+     <body className="antialiased">
+        {/* Client wrapper handles conditional header */}
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html >
   );

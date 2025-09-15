@@ -31,10 +31,12 @@ export default function Header() {
     return (
         <>
             <header
+                id="header"
                 className={`
-          flex items-center justify-between  top-0 inset-x-0 z-50 
-          px-6 mt-2 
-          transition-all pointer-events-auto
+          absolute top-0 left-0 w-full z-50 
+    flex items-center justify-between 
+    px-6 py-3 
+    bg-transparent
         `}
             >
                 <div className="max-w-8xl mx-auto w-full flex items-center justify-between px-6 py-3">
@@ -65,7 +67,7 @@ export default function Header() {
                     </a>
 
                     {/* Desktop Navigation */}
-                    <nav className="hidden md:flex items-center space-x-10 text-base font-semibold tracking-widest">
+                    <nav className="hidden md:flex  items-center space-x-10 text-base font-semibold tracking-widest">
                         {navItems.map((item) =>
                             item.dropdown ? (
                                 <div
@@ -74,7 +76,7 @@ export default function Header() {
                                     onMouseEnter={() => setServicesOpen(true)}
                                     onMouseLeave={() => setServicesOpen(false)}
                                 >
-                                    <Link href={item.href} className="flex items-center gap-1 text-blue-100/80 hover:text-blue-400 transition">
+                                    <Link href={item.href} className="flex items-center gap-1 text-white/90 hover:text-blue-400 transition">
                                         {item.label}
                                         <ChevronDown
                                             size={16}
@@ -91,7 +93,7 @@ export default function Header() {
                                                 <li key={sub.href}>
                                                     <Link
                                                         href={sub.href}
-                                                        className="block px-4 py-2 text-blue-100/90 
+                                                        className="block px-4 py-2 text-white/90
                    hover:bg-blue-400/20 hover:text-blue-300 
                    transition duration-300 rounded-lg"
                                                     >
@@ -107,7 +109,7 @@ export default function Header() {
                                 <Link
                                     key={item.href}
                                     href={item.href}
-                                    className="relative group px-2 py-0.5 text-blue-100/80 hover:text-blue-400 transition"
+                                    className="relative group px-2 py-0.5 text-white/90 hover:text-blue-400 transition"
                                 >
                                     {item.label}
                                     <span className="gradient-line"></span>
@@ -117,11 +119,20 @@ export default function Header() {
                     </nav>
 
                     {/* Desktop Button */}
+
+                    {/* <div className="hidden md:flex items-center space-x-6 ml-4">
+                        <button className="px-6 py-1  bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700
+             hover:from-blue-600 hover:via-blue-700 hover:to-blue-800 text-white rounded-lg hover:opacity-90 transition">
+                            Book now
+                        </button>
+                    </div> */}
+
                     <div className="hidden md:flex items-center space-x-6 ml-4">
                         <Link href="/booknow" className="px-6 py-1 bg-blue-500 text-white rounded-lg hover:opacity-90 transition">
                             Book now
                         </Link>
                     </div>
+
 
                     {/* Mobile Menu Button */}
                     <button
@@ -173,7 +184,7 @@ export default function Header() {
                 )}
             </header>
 
-            {/* Push content down */}
+
         </>
     );
 }
