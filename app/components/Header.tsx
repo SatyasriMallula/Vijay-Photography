@@ -119,12 +119,20 @@ export default function Header() {
                     </nav>
 
                     {/* Desktop Button */}
+
                     {/* <div className="hidden md:flex items-center space-x-6 ml-4">
                         <button className="px-6 py-1  bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700
              hover:from-blue-600 hover:via-blue-700 hover:to-blue-800 text-white rounded-lg hover:opacity-90 transition">
                             Book now
                         </button>
                     </div> */}
+
+                    <div className="hidden md:flex items-center space-x-6 ml-4">
+                        <Link href="/booknow" className="px-6 py-1 bg-blue-500 text-white rounded-lg hover:opacity-90 transition">
+                            Book now
+                        </Link>
+                    </div>
+
 
                     {/* Mobile Menu Button */}
                     <button
@@ -176,8 +184,7 @@ export default function Header() {
                 )}
             </header>
 
-            {/* Push content down */}
-           
+
         </>
     );
 }
