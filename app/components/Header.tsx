@@ -118,9 +118,9 @@ export default function Header() {
 
                     {/* Desktop Button */}
                     <div className="hidden md:flex items-center space-x-6 ml-4">
-                        <button className="px-6 py-1 bg-blue-500 text-white rounded-lg hover:opacity-90 transition">
+                        <Link href="/booknow" className="px-6 py-1 bg-blue-500 text-white rounded-lg hover:opacity-90 transition">
                             Book now
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -174,7 +174,6 @@ export default function Header() {
             </header>
 
             {/* Push content down */}
-            <div className="h-20 md:h-24"></div>
         </>
     );
 }
