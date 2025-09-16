@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, RefreshCw } from "lucide-react";
 
@@ -18,10 +18,32 @@ export default function Lightbox({ images, selectedIndex, setSelectedIndex, onCl
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
-  if (selectedIndex === null) return null;
+// Reset zoom and position whenever user opens a new image
+useEffect(() => {
+  if (selectedIndex !== null) {
+    setScale(1);
+    setPosition({ x: 0, y: 0 });
+  }
+}, [selectedIndex]);
+
+// Lock body scroll when lightbox is open
+useEffect(() => {
+  if (selectedIndex !== null) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  // Cleanup when unmount
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [selectedIndex]);
+
+if (selectedIndex === null) return null;
 
   const zoomIn = () => setScale((s) => Math.min(s + 0.25, 3));
-  const zoomOut = () => setScale((s) => Math.max(s - 0.25, 0.5));
+  const zoomOut = () => setScale((s) => Math.max(s - 0.25, 0.1));
   const resetZoom = () => {
     setScale(1);
     setPosition({ x: 0, y: 0 });
@@ -44,6 +66,23 @@ export default function Lightbox({ images, selectedIndex, setSelectedIndex, onCl
 //     y: pos.y - e.deltaY,
 //   }));
 // };
+const handleWheel = (e: React.WheelEvent) => {
+  if (scale <= 1) return; 
+  e.preventDefault();
+
+  setPosition((pos) => {
+    const newX = pos.x - e.deltaX;
+    const newY = pos.y - e.deltaY;
+
+    // clamp so image doesn't go infinitely
+    const maxOffset = 200 * scale; // tweak this value depending on image size
+    return {
+      x: Math.max(Math.min(newX, maxOffset), -maxOffset),
+      y: Math.max(Math.min(newY, maxOffset), -maxOffset),
+    };
+  });
+};
+
 
   const handleMouseUp = () => setIsDragging(false);
 
@@ -104,7 +143,7 @@ export default function Lightbox({ images, selectedIndex, setSelectedIndex, onCl
               cursor: scale > 1 ? (isDragging ? "grabbing" : "grab") : "default",
             }}
             onMouseDown={handleMouseDown}
-            
+            onWheel={handleWheel}
             draggable={false}
           />
 
