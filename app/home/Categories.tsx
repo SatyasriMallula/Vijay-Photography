@@ -40,11 +40,21 @@ const categories = [
 
 export default function Categories() {
     return (
-        <section className="w-full px-6 py-15">
-            <h2 className="text-3xl md:text-4xl font-medium text-center text-white/90 mb-10">
+        <section className="w-full px-6 py-15 space-y-10">
+            <h2 className="text-3xl md:text-4xl font-medium text-center text-white/90">
                 Explore My Work
             </h2>
-
+  <motion.p
+        className="max-w-2xl mx-auto text-center text-gray-300 text-lg leading-relaxed "
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        Through my lens, I strive to capture the beauty of emotions —
+        love, laughter, innocence, and adventure. Each frame is a
+        reflection of moments that deserve to be remembered forever.
+      </motion.p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {categories.map((cat, index) => (
                     <motion.div
