@@ -4,8 +4,8 @@
   --background: #f0f4f8; /* soft light blue */
   --foreground: #202b3f; /* charcoal gray */
   --accent: #d4af37; /* rich gold */
-  --heading-font: var(--font-inter);
-  --body-font: var(--font-roboto-mono);
+  --heading-font: var(--font-josefin-sans);
+  --body-font: var(--font-moderustic);
 }
 
 @theme inline {
@@ -26,12 +26,19 @@
 }
 
 body {
-  background: linear-gradient(
+  /* background: linear-gradient(
     to bottom right,
     #1e3a8a 20%,
     #0a192f 50%,
     #1e3a8a 90%
-  );
+  ); */
+   /* background: linear-gradient(to right,#0e5cb7 , #e8d0b3 , #b6c498 ); */
+   /* background: linear-gradient(to right, #ffafbd, #ffc3a0); */
+   /* background: linear-gradient(to right, #c4e0e5, #93b7a5); */
+   /* background: #000000; */
+   /* background: #D2B48C;  */
+   /* background: #FAF0E6;
+
   color: var(--foreground);
   font-family: var(--body-font);
   transition: all 0.3s ease;
@@ -44,7 +51,7 @@ body {
     transform: translateX(-50%);
   }
 } */
-
+}
 .scroll-animation {
   display: flex;
   width: max-content; 
@@ -144,8 +151,17 @@ h6 {
 .animate-bounce-slow {
   animation: bounce-slow 2s infinite;
 }
-.dancing-text {
-  font-family: var(--font-dancing-script);
-  font-size: 3rem;
-  font-weight: 800;
+
+@keyframes bannerScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-banner {
+  display: flex;
+  animation: bannerScroll 10s linear infinite;
 }

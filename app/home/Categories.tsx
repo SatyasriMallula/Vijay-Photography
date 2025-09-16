@@ -40,8 +40,8 @@ const categories = [
 
 export default function Categories() {
     return (
-        <section className="w-full px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-10">
+        <section className="w-full px-6 py-15">
+            <h2 className="text-3xl md:text-4xl font-medium text-center text-white/90 mb-10">
                 Explore My Work
             </h2>
 
@@ -61,12 +61,12 @@ export default function Categories() {
                             alt={cat.title}
                             width={600}
                             height={400}
-                            className="w-full h-64 object-cover transform group-hover:scale-110 transition duration-700"
+                            className="w-full h-100 object-cover transform group-hover:scale-110 transition duration-700"
                         />
 
                         {/* Text (always visible) */}
                         <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-black/10 px-4 py-3">
-                            <h3 className="text-xl font-bold text-yellow-400">{cat.title}</h3>
+                            <h3 className="text-xl font-medium text-yellow-400">{cat.title}</h3>
                             <p className="text-sm text-gray-200">{cat.description}</p>
                         </div>
                     </motion.div>

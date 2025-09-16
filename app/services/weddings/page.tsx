@@ -13,7 +13,7 @@ export default function WeddingsPage() {
     ];
 
     return (
-        <main className="min-h-screen bg-gradient-to-b from-[#0a192f] to-[#1e3a8a] text-gray-100">
+        <main className="min-h-screen text-gray-100">
             {/* Hero Section */}
             <section className="relative flex flex-col items-center justify-center text-center py-24 px-6">
                 <h1 className="text-5xl md:text-6xl font-extrabold text-yellow-400 drop-shadow-lg">
