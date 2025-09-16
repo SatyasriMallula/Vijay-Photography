@@ -33,7 +33,7 @@ const services = [
 
 export default function ServicesPage() {
     return (
-        <main className="min-h-screen bg-gradient-to-b from-[#0a192f] to-[#1e3a8a] text-gray-100">
+        <main className="min-h-screen bg-gradient-to-b  text-gray-100">
             {/* Hero */}
             <section className="relative h-screen flex items-end pb-18 justify-center text-center">
                 <div className="absolute inset-0">

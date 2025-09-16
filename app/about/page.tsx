@@ -6,7 +6,7 @@ import Concerns from "./concerns";
 
 export default function About() {
     return (
-        <section className="w-full h-full bg-[#1e3a8a]/20 pt-25 py-5  ">
+        <section className="w-full h-full  pt-25 py-5  ">
          
               
                 <motion.div
@@ -22,7 +22,7 @@ export default function About() {
                 </div>
                 <div className="w-full flex pt-4 px-10">
                     <div className="w-1/2 flex items-center ">
-                        <h2 className="text-5xl leading-16 font-extrabold text-white/70 ">
+                        <h2 className="text-5xl leading-16 font-semibold bg-gradient-to-l bg-clip-text text-transparent from-orange-400 to-orange-600">
                             Capturing Life&apos;s Most Precious Moments
                         </h2>
                     </div>

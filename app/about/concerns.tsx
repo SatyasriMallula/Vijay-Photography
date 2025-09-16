@@ -27,10 +27,10 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="pb-25 h-full bg-[#1e3a8a]/20">
+    <section className="pb-25 h-full">
       {/* Section Heading */}
       <div className="text-center mb-12 px-4">
-        <h2 className="text-3xl text-yellow-500 md:text-5xl font-serif font-bold">
+        <h2 className="text-3xl text-black md:text-4xl  font-medium">
           Your Concerns-My Care
         </h2>
       </div>
@@ -53,12 +53,12 @@ export default function Features() {
             </div>
 
             {/* Text Overlay Card */}
-           <div className="absolute left-1/2 -bottom-35 -translate-x-1/2 
-               bg-black/40 shadow-xl rounded-r-2xl  
-                p-5 w-[90%] h-[230px] ">
-  <h3 className="text-lg font-serif font-semibold mb-3 text-white/90">
+           <div className="absolute left-1/2 -bottom-40 -translate-x-1/2 
+               bg-black/40 shadow-xl rounded-tr-[40px] rounded-bl-[40px]
+                px-3 py-5 w-[90%] h-[230px] ">
+  <p className="text-lg font-serif font-meedium mb-3 text-white/90">
     {f.title}
-  </h3>
+  </p>
   <hr className="w-12 h-1 mb-3 bg-blue-500 rounded border-0" />
   <p className="text-sm text-gray-200 leading-relaxed">{f.text}</p>
 </div>

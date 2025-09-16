@@ -22,7 +22,7 @@ export default function Portfolio() {
             : photos.filter((photo) => photo.category === selected);
 
     return (
-        <section className="w-full py-20 px-6 bg-[#0a192f]">
+        <section className="w-full py-20 px-6">
             <div className="max-w-7xl mx-auto text-center">
                 <h2 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-12">
                     Portfolio
