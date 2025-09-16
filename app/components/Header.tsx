@@ -182,8 +182,7 @@ export default function Header() {
                 )}
             </header>
 
-            {/* Push content down */}
-           
+
         </>
     );
 }

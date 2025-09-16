@@ -10,7 +10,6 @@ const images = [
 ];
 
 export default function Carousel() {
-  // Duplicate array for seamless loop
   const doubledImages = [...images, ...images];
 
   return (

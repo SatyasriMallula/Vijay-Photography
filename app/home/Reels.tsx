@@ -42,7 +42,7 @@ export default function ReelsSection() {
             key={i}
             className="relative group overflow-hidden rounded-xl shadow-md"
           >
-            {/* Cover Image */}
+           
             <Image
               src={reel.image}
               alt={`Reel ${i + 1}`}
@@ -51,7 +51,7 @@ export default function ReelsSection() {
               className="object-cover w-full h-100 group-hover:scale-105 transition-transform duration-500"
             />
 
-            {/* Overlay with button */}
+          
             <div className="absolute inset-0 -bottom-30 bg-black/40 opacity-70 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-500">
               <Link
                 href={reel.url}

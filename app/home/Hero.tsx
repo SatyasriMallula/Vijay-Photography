@@ -14,7 +14,6 @@ export default function Hero() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Auto-change every 4s
   useEffect(() => {
     const timer = setTimeout(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
