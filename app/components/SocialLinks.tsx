@@ -2,7 +2,7 @@ import { Instagram, Facebook, MessageCircle } from "lucide-react";
 
 const links = [
   { href: "https://instagram.com", icon: <Instagram className="w-7 h-7 text-pink-500" /> },
-  { href: "https://facebook.com", icon: <Facebook className="w-7 h-7 text-blue-600" /> },
+  // { href: "https://facebook.com", icon: <Facebook className="w-7 h-7 text-blue-600" /> },
   { href: "https://wa.me/911234567890", icon: <MessageCircle className="w-7 h-7 text-green-500" /> },
 ];
 
@@ -20,11 +20,11 @@ function SocialLinks() {
           {icon}
         </a>
       ))}
-      <div className="pt-30">
+      {/* <div className="pt-30">
         <button className="px-4 py-2 text-lg text-white bg-yellow-500 rounded-lg hover:bg-yellow-600 transition">
           Book Now
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

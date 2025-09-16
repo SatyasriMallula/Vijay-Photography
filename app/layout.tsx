@@ -1,6 +1,6 @@
 
 import type { Metadata } from "next";
-import { Dancing_Script, Inter, Roboto_Mono } from "next/font/google";
+import { Inter, Roboto_Mono,Kalnia,Moderustic, Josefin_Sans } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "./clientLayout";
 
@@ -10,14 +10,27 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap", 
 });
-const dancingScript = Dancing_Script({
-  variable: "--font-dancing-script",
-  subsets: ["latin"],
-  display: "swap",
-});
 const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",
   subsets: ["latin"],
+  display: "swap",
+});
+const kalnia = Kalnia({
+  variable:"--font-kalnia",
+  subsets: ["latin"],
+  
+  display: "swap",
+});
+const josefin = Josefin_Sans({
+  variable: "--font-josefin-sans",
+  subsets: ["latin"],
+  display:"swap"
+})
+// Import ModernAntiqua (closest to Moderustic style)
+const moderustic = Moderustic({
+  variable:"--font-moderustic",
+  subsets: ["latin"],
+   
   display: "swap",
 });
 export const metadata: Metadata = {
@@ -65,8 +78,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable}  ${dancingScript.variable} ${robotoMono.variable}`}>
-     <body className="antialiased">
+    <html lang="en" className={`${inter.variable}  ${josefin.variable} ${kalnia.variable} ${moderustic.variable}  ${robotoMono.variable}`}>
+     <body className="antialiased ">
         {/* Client wrapper handles conditional header */}
         <ClientLayout>{children}</ClientLayout>
       </body>

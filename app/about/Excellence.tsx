@@ -28,7 +28,7 @@ export default function ExcellenceSection() {
   return (
     <section className="py-25">
       <div className="  max-w-8xl   mx-auto px-6 text-center">
-        <h2 className="text-4xl text-yellow-400 font-bold mb-4">Excellence Behind the Lens</h2>
+        <h2 className="text-4xl text-black font-medium mb-4">Excellence Behind the Lens</h2>
         <p className="text-white/90 max-w-2xl mx-auto mb-12">
           My photography is powered by professional-grade equipment and refined
           by years of experience, ensuring every image reflects quality and

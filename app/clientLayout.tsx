@@ -29,7 +29,7 @@ export default function ClientLayout({
           {children}
           
           {!isRoot && (
-              <div className="flex justify-end items-end mr-5 mb-5">
+              <div className="flex justify-end items-end bg-black/90 pr-5 pb-5 ">
               <button onClick={handleClick} className="bg-black/40 border hover:cursor-pointer rounded-lg text-white/70  border-black/70 px-4 flex gap-2 py-2">Back to Top <ArrowUp/></button>
           </div>)}
     </>
