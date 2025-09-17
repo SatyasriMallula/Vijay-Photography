@@ -20,7 +20,7 @@ export default function About() {
                 >
             
                 <div className="flex items-center justify-center">
-                    <img src="/about/photographer.jpg" alt="about" className="w-full h-[500px] object-cover rounded-xl" />
+                    <Image src="/about/photographer.jpg" alt="about" width={100} height={100} className="w-full h-[500px] object-cover rounded-xl" />
                 </div>
                 <div className="w-full flex pt-4 px-10">
                     <div className="w-1/2 flex items-center ">
@@ -29,14 +29,14 @@ export default function About() {
                         </h2>
                     </div>
                     <div className="w-1/2">
-                        <p className="leading-relaxed text-lg text-white/80">
+                        <p className="leading-relaxed text-lg ">
                             I’m Vijay, a passionate photographer and Assistant DOP based in Bangalore. My journey in the Kannada film industry has shaped my eye for cinematic detail and storytelling.
-I specialize in portraits, fashion, weddings, and pre-weddings, capturing moments that reflect both beauty and emotion. For me, photography is not just about pictures, but about preserving memories that last a lifetime.
-                      </p>
+                            I specialize in portraits, fashion, weddings, and pre-weddings, capturing moments that reflect both beauty and emotion. For me, photography is not just about pictures, but about preserving memories that last a lifetime.
+                        </p>
                     </div>
                 </div>
-                
-                    {/* <p className="text-lg text-gray-300 mb-4 leading-relaxed">
+
+                {/* <p className="text-lg text-gray-300 mb-4 leading-relaxed">
                         Hi, I’m <span className="font-semibold text-white">Vijay</span>,
                         a passionate photographer who loves capturing timeless memories and
                         turning moments into stories. From portraits to travel, my lens
@@ -46,7 +46,7 @@ I specialize in portraits, fashion, weddings, and pre-weddings, capturing moment
                         My mission is to create visuals that speak louder than words,
                         making every shot a piece of art. Let’s create something magical together.
                     </p> */}
-                </motion.div>
+            </motion.div>
             <ExcellenceSection />
             <ServicesSection/>
             <ExtrasMarquee/>
