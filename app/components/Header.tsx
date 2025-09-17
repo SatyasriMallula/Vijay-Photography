@@ -7,15 +7,14 @@ import Link from "next/link";
 const navItems = [
     { href: "/home", label: "HOME" },
     { href: "/about", label: "ABOUT" },
-    // { href: "/portfolio", label: "PORTFOLIO" },
     {
         label: "PORTFOLIO",
-        href: "/portfolio",
+        href: "/portfolio/weddings",
         dropdown: [
-            { href: "/services/weddings", label: "WEDDINGS" },
-            { href: "/services/branding", label: "BRANDINGS" },
-            { href: "/services/events", label: "EVENTS" },
-            { href: "/services/portraits", label: "POTRAITS" },
+            { href: "/portfolio/weddings", label: "WEDDINGS" },
+            { href: "/portfolio/travel", label: "TRAVEL" },
+            { href: "/portfolio/babyshoot", label: "BABY SHOOT" },
+            { href: "/portfolio/portraits", label: "PORTRAITS" },
         ],
     },
     { href: "/gallery", label: "GALLERY" },
@@ -36,7 +35,7 @@ export default function Header() {
         w-full z-50 
     flex items-center justify-between 
     py-3 pt-5
-    bg-black/90
+    
    
         `}
             >
@@ -67,69 +66,69 @@ export default function Header() {
                         </span>
                     </a>
                     <div className="flex  gap-3 flex-col">
-                    <div>
-                         <h2 className="text-3xl text-blue-400 text-center ">BLUEYE PHOTO STUDIO</h2>
-                   </div>
-                    {/* Desktop Navigation */}
-                    <nav className="hidden md:flex text-sm  items-center space-x-8 font-semibold  tracking-widest">
-                       
-                        {navItems.map((item) =>
-                            item.dropdown ? (
-                                <div
-                                    key={item.label}
-                                    className="relative group"
-                                    onMouseEnter={() => setServicesOpen(true)}
-                                    onMouseLeave={() => setServicesOpen(false)}
-                                >
-                                    <Link href={item.href} className="flex   items-center gap-1 text-white/90 hover:text-blue-400 transition">
-                                        {item.label}
-                                        <ChevronDown
-                                            size={16}
-                                            className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`}
-                                        />
-                                    </Link>
+                        <div>
+                            <h2 className="text-3xl text-blue-400 text-center ">BLUE EYE PHOTOGRAPHY</h2>
+                        </div>
+                        {/* Desktop Navigation */}
+                        <nav className="hidden md:flex text-sm  items-center space-x-8 font-semibold  tracking-widest">
 
-                                    {/* Dropdown */}
-                                    {servicesOpen && (
-                                        <ul
-                                            className="drop-down z-50 animate-fade-in"
-                                        >
-                                            {item.dropdown.map((sub) => (
-                                                <li key={sub.href}>
-                                                    <Link
-                                                        href={sub.href}
-                                                        className="block px-4 py-2 text-white/90
+                            {navItems.map((item) =>
+                                item.dropdown ? (
+                                    <div
+                                        key={item.label}
+                                        className="relative group"
+                                        onMouseEnter={() => setServicesOpen(true)}
+                                        onMouseLeave={() => setServicesOpen(false)}
+                                    >
+                                        <Link href={item.href} className="flex   items-center gap-1 text-white/90 hover:text-blue-400 transition">
+                                            {item.label}
+                                            <ChevronDown
+                                                size={16}
+                                                className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`}
+                                            />
+                                        </Link>
+
+                                        {/* Dropdown */}
+                                        {servicesOpen && (
+                                            <ul
+                                                className="drop-down z-50 animate-fade-in"
+                                            >
+                                                {item.dropdown.map((sub) => (
+                                                    <li key={sub.href}>
+                                                        <Link
+                                                            href={sub.href}
+                                                            className="block px-4 py-2 text-white/90
                    hover:bg-blue-400/20 hover:text-blue-300 
                    transition duration-300 rounded-lg"
-                                                    >
-                                                        {sub.label}
-                                                    </Link>
-                                                </li>
-                                            ))}
-                                        </ul>
+                                                        >
+                                                            {sub.label}
+                                                        </Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
 
-                                    )}
-                                </div>
-                            ) : (
-                                <Link
-                                    key={item.href}
-                                    href={item.href}
-                                    className="relative group px-2 py-0.5 text-white/90 hover:text-blue-400 transition"
-                                >
+                                        )}
+                                    </div>
+                                ) : (
+                                    <Link
+                                        key={item.href}
+                                        href={item.href}
+                                        className="relative group px-2 py-0.5 text-white/90 hover:text-blue-400 transition"
+                                    >
                                         {item.label}
-                                        
-                                    <span className="gradient-line"></span>
-                                </Link>
-                            )
-                        )}
-                    </nav>
- </div>
+
+                                        <span className="gradient-line"></span>
+                                    </Link>
+                                )
+                            )}
+                        </nav>
+                    </div>
                     {/* Desktop Button */}
                     <div className="hidden md:flex items-center  ml-4">
-                        <button className="px-2 2xl:px-6 py-2  bg-gradient-to-r from-blue-400 via-blue-500 text-sm 2xl:text-base to-blue-700
+                        <Link href="/booknow" className="px-2 2xl:px-6 py-2  bg-gradient-to-r from-blue-400 via-blue-500 text-sm 2xl:text-base to-blue-700
              hover:from-blue-600 hover:via-blue-700 hover:to-blue-800 text-white rounded-lg hover:opacity-90 transition">
                             Book now
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}

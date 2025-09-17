@@ -6,7 +6,7 @@ import Testimonials from "./Testimonials";
 import ReelsSection from "./Reels";
 export default function Home() {
     return (
-        <div className="bg-black/90 ">
+        <div className=" ">
             <Hero />
             <Carousel />
             <Categories />

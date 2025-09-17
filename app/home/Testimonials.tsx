@@ -24,11 +24,22 @@ const testimonials = [
 
 export default function Testimonials() {
     return (
-        <section className="w-full py-20 px-6" id="footer">
-            <div className="max-w-6xl mx-auto text-center">
-                <h2 className="text-3xl md:text-4xl font-medium text-white/90 mb-12">
+        <section className="w-full py-20 px-6 " id="footer">
+            <div className="max-w-6xl mx-auto text-center space-y-10">
+                <h2 className="text-3xl md:text-4xl font-medium text-white/90 ">
                     What Clients Say
                 </h2>
+                 <motion.p
+          className="max-w-2xl mx-auto text-gray-300 text-lg leading-relaxed "
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          Every story I capture is unique, and hearing from my clients is the
+          greatest reward. Here’s what they felt when their memories came alive
+          through my lens.
+        </motion.p>
 
                 <div className="grid md:grid-cols-3 gap-8" >
                     {testimonials.map((t, index) => (
@@ -40,7 +51,7 @@ export default function Testimonials() {
                             transition={{ duration: 0.6, delay: index * 0.2 }}
                             viewport={{ once: true }}
                         >
-                            <p className="text-white mb-4">“{t.feedback}”</p>
+                            <p className="text-white italic mb-4">“{t.feedback}”</p>
                             <h3 className="text-lg font-semibold text-white">{t.name}</h3>
                             <span className="text-sm text-white">{t.role}</span>
                         </motion.div>
