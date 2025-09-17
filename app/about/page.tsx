@@ -1,18 +1,21 @@
-import { Metadata } from "next";
-import About from "./About";
-export const metadata: Metadata = {
-    title: "About Us | Blueye PhotoStudio",
-    description: "Learn more about Blueye Photography and our creative journey.",
-    openGraph: {
-        title: "About Blueye Photography",
-        description: "Our story, vision, and the passion behind the lens.",
-        images: ["/og-image.jpg"],
-    },
-};
+"use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import ExcellenceSection from "./Excellence";
+import Concerns from "./concerns";
+import Hero from "./hero";
+import ServicesSection from "./ServiceProvide";
+import ExtrasMarquee from "./Extras";
 
 export default function AboutPage() {
     return (
-        <div> <About /></div>
-
+        <section className="bg-black/90 space-y-20  ">
+            <Hero />
+            <ServicesSection />
+           
+            <ExcellenceSection />
+            <Concerns />
+             <ExtrasMarquee />
+        </section>
     );
 }

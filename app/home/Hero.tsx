@@ -26,7 +26,7 @@ export default function Hero() {
       id="hero"
       className="relative h-[40vw] flex justify-center "
     >
-      <div className="relative max-w-[600px] max-h-[75vh] w-full overflow-hidden rounded-2xl shadow-xl">
+      <div className="relative max-w-[600px] max-h-[75vh] 2xl:max-h-[80vh] w-full overflow-hidden rounded-2xl shadow-xl">
         {images.map((img, index) => (
           <img
             key={index}

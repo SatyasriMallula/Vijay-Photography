@@ -23,7 +23,7 @@ export default function ReelsSection() {
   return (
     <section className="py-10 space-y-10">
       <div className="text-center  space-y-8">
-        <h2 className="text-3xl md:text-4xl text-white/90 font-medium">
+        <h2 className="text-3xl md:text-4xl text-yellow-500 font-medium">
           Stories in Motion
         </h2>
         <motion.p
@@ -33,8 +33,9 @@ export default function ReelsSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Some stories can&apos;t be captured in a single frame — they need
-          movement, sound, and rhythm. These reels bring my photography
+          {/* Some stories can&apos;t be captured in a single frame — they need
+          movement, sound, and rhythm. */}
+          These reels bring my photography
           to life, turning fleeting emotions into timeless memories in motion.
         </motion.p>
       </div>

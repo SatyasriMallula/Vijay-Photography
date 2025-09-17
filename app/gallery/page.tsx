@@ -122,20 +122,20 @@ const allImages = [
 
 export default function GalleryPage() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const [visibleCount, setVisibleCount] = useState(8);
+  const [visibleCount, setVisibleCount] = useState(10);
 
   const visibleImages = allImages.slice(0, visibleCount);
 
   // Split images into chunks of 4 for rows
   const rows = [];
-  for (let i = 0; i < visibleImages.length; i += 4) {
+  for (let i = 0; i < visibleImages.length; i += 3) {
     rows.push(visibleImages.slice(i, i + 4));
   }
 
   return (
     <section className="py-20 px-4 bg-black/90">
       <div className="text-center max-w-2xl mx-auto mb-12">
-        <h2 className="text-4xl text-yellow-400 font-bold mb-4">My Photography Showcase</h2>
+        <h2 className="text-4xl text-yellow-400 font-bold mb-4">Blueye Studio Gallery</h2>
         <p className="text-gray-400">
           A curated selection of timeless moments, creative portraits, and storytelling frames.
         </p>

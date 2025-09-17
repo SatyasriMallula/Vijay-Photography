@@ -15,7 +15,7 @@ export default function Carousel() {
 
   return (
     <section className="w-full overflow-hidden  space-y-8">
-      <h2 className="text-3xl md:text-4xl font-medium text-center text-white/90 ">
+      <h2 className="text-3xl md:text-4xl font-medium text-center text-yellow-500 ">
         Featured Shots
       </h2>
  <motion.p
@@ -26,8 +26,9 @@ export default function Carousel() {
         viewport={{ once: true }}
       >
         A glimpse into some of my favorite captures — fleeting emotions,
-        stunning details, and stories told through still frames. These
-        photographs reflect the essence of moments that stay alive forever.
+        stunning details, and stories told through still frames.
+        {/* These
+        photographs reflect the essence of moments that stay alive forever. */}
       </motion.p>
       <div className="relative w-full overflow-hidden">
         <div className="flex animate-banner">

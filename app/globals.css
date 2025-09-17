@@ -105,7 +105,7 @@ h6 {
 }
 
 .input {
-  @apply w-full border rounded-lg p-3 focus:ring-1 focus:ring-yellow-600 outline-none;
+  @apply w-full border border-gray-500 text-white rounded-lg p-3 focus:ring-1 focus:ring-yellow-600 outline-none;
 }
 @keyframes growShrink {
   0%,
@@ -193,4 +193,24 @@ h6 {
 .animate-banner {
   display: flex;
   animation: bannerScroll 10s linear infinite;
+}
+
+
+
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes marquee2 {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+.animate-marquee2 {
+  animation: marquee2 20s linear infinite;
 }
