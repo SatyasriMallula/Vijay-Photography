@@ -1,11 +1,11 @@
-import { Instagram,  MessageCircle, MapIcon } from "lucide-react";
+import { Instagram,  MessageCircle, MapIcon, MapPin } from "lucide-react";
 
 const links = [
   {
     href: "https://instagram.com",title: "Instagram",icon: <Instagram className="w-7 h-7 text-pink-500" />,
   },
   {
-    href: "https://google.com",title: "Location",icon: <MapIcon className="w-7 h-7 text-blue-600" />,
+    href: "https://google.com",title: "Location",icon: <MapPin className="w-7 h-7 text-blue-600" />,
   },
   {
     href: "https://wa.me/7729803266",title: "WhatsApp",icon: <MessageCircle className="w-7 h-7 text-green-500" />,

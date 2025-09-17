@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import SocialLinks from "./components/SocialLinks";
 import { ArrowUp } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+
 
 export default function ClientLayout({
   children,
