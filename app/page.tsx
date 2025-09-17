@@ -41,11 +41,14 @@ export default function Home() {
               className="mt-3 px-6 py-2 rounded-lg bg-blue-500/20 text-blue-300 
                      hover:bg-blue-500/40 hover:text-white 
                      transition duration-300 shadow-md shadow-blue-500/40">
-              Explore
-            </Link>
+
+          Explore
+        </Link>
+      
             <Link
               href="/home"
               className="mt-3 px-6 py-2 rounded-lg text-gray-300 
+
                      hover:bg-blue-500/40 hover:text-white 
                      transition duration-300 shadow-md shadow-blue-500/40">
               Contact

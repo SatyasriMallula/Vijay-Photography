@@ -59,9 +59,7 @@ body {
   animation: scroll 40s linear infinite;
 }
 
-body {
-  cursor: url("/logo1.png") 0 0, auto;
-}
+
 html,
 body,
 #__next {

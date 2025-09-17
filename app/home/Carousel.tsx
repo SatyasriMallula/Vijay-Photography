@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const images = [
@@ -13,11 +14,21 @@ export default function Carousel() {
   const doubledImages = [...images, ...images];
 
   return (
-    <section className="w-full overflow-hidden py-10">
-      <h2 className="text-3xl md:text-4xl font-medium text-center text-white/90 mb-8">
+    <section className="w-full overflow-hidden  space-y-8">
+      <h2 className="text-3xl md:text-4xl font-medium text-center text-white/90 ">
         Featured Shots
       </h2>
-
+ <motion.p
+        className="max-w-2xl mx-auto text-center text-gray-300 text-lg leading-relaxed "
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        A glimpse into some of my favorite captures — fleeting emotions,
+        stunning details, and stories told through still frames. These
+        photographs reflect the essence of moments that stay alive forever.
+      </motion.p>
       <div className="relative w-full overflow-hidden">
         <div className="flex animate-banner">
           {doubledImages.map((src, index) => (
