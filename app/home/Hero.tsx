@@ -17,7 +17,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 4000);
+    }, 3000);
     return () => clearTimeout(timer);
   }, [currentIndex, images.length]);
 

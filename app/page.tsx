@@ -40,7 +40,7 @@ export default function Home() {
           Explore
         </Link>
         <Link 
-          href="/home"
+          href="/contact"
           className="mt-3 px-6 py-2 rounded-lg text-gray-300 
                      hover:bg-blue-500/40 hover:text-white 
                      transition duration-300 shadow-md shadow-blue-500/40">
