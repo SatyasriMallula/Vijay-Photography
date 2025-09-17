@@ -23,7 +23,7 @@ export default function Home() {
 
         {/* Main Heading */}
         <h1 className="text-2xl md:text-4xl border-2  font-serif font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-400 to-blue-500 tracking-wider animate-focus-in">
-          Welcome to <br></br>Blue Eye Photography
+          Welcome to <br></br>Blueye Photo Studio
           
         </h1>
 
