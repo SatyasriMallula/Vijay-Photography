@@ -15,22 +15,30 @@ import { motion } from "framer-motion"
 // };
 import { SetStateAction, useState } from "react";
 import Lightbox from "@/app/components/LightBox";
+import { s } from "framer-motion/client";
 export default function WeddingsPage() {
     const weddingPhotos = [
-        { src: "/weddings/DSC03243.jpg", alt: "Wedding Ceremony" },
+        { src: "/weddings/_KN10857.jpg", alt: "Reception" },
         { src: "/weddings/_DCS1392.jpg", alt: "Wedding Couple" },
         { src: "/weddings/1L4A1579.jpg", alt: "Reception" },
         { src: "/weddings/DSC00356 2.jpg", alt: "Ring Ceremony" },
-        { src: "/weddings/_DCS1646.jpg", alt: "Bride Portrait" },
-        { src: "/weddings/DSC06116.jpg", alt: "Wedding Dance" },
+        { src: "/weddings/_KN11039.jpg", alt: "Haldi Ceremony" },
+        { src: "/weddings/_KN12844.jpg", alt: "Wedding Dance" },
         { src: "/weddings/DSC03243.jpg", alt: "Wedding Ceremony" },
-        { src: "/weddings/_DCS1392.jpg", alt: "Wedding Couple" },
-        { src: "/weddings/1L4A1579.jpg", alt: "Reception" },
-        { src: "/weddings/DSC00356 2.jpg", alt: "Ring Ceremony" },
+        { src: "/weddings/0V8A9877.jpg", alt: "Wedding Couple" },
+        { src: "/weddings/_KN11133.jpg", alt: "Reception" },
+        { src: "/weddings/DSC08797.jpg", alt: "Ring Ceremony" },
         { src: "/weddings/_DCS1646.jpg", alt: "Bride Portrait" },
         { src: "/weddings/DSC06116.jpg", alt: "Wedding Dance" },
-        { src: "/weddings/DSC00356 2.jpg", alt: "Ring Ceremony" },
-        { src: "/weddings/_DCS1646.jpg", alt: "Bride Portrait" },
+      
+   { src: "/weddings/DSC07974.jpg", alt: "Bride Portrait" },
+
+           { src: "/weddings/DSC08989.jpg", alt: "Bride Portrait" },
+        { src: "/weddings/_KN12984.jpg", alt: "Bride Portrait" },
+        {src: "/weddings/DSC00195.jpg", alt: "Bridal Portrait" },
+
+
+
     ];
  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
     return (

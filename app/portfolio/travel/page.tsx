@@ -1,18 +1,19 @@
-
+"use client"
 import Lightbox from "@/app/components/LightBox";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 const TravelImages = [
-    { src: "/weddings/1L4A1579.jpg", alt: "Travel photo 1" },
-    { src: "/weddings/1L4A1579.jpg", alt: "Travel photo 2" },
-    { src: "/weddings/1L4A1579.jpg", alt: "Travel photo 3" },
-    { src: "/weddings/1L4A1579.jpg", alt: "Travel photo 4" },
-    { src: "/weddings/1L4A1579.jpg", alt: "Travel photo 5" },
-    { src: "/weddings/1L4A1579.jpg", alt: "Travel photo 6" }
+    { src: "/travel/IMG_9140.JPG", alt: "Travel photo 1" },
+    { src: "/travel/IMG_9145.JPG", alt: "Travel photo 2" },
+    { src: "/travel/IMG_9143.JPG", alt: "Travel photo 3" },
+    { src: "/travel/IMG_9148.JPG", alt: "Travel photo 4" },
+    { src: "/travel/IMG_9153.JPG", alt: "Travel photo 5" },
+    { src: "/travel/IMG_9151.JPG", alt: "Travel photo 6" }
 ];
 
 export default function TravelPage() {
+     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
     return (
         <div className="py-16 px-6 max-w-7xl mx-auto">
             <h1 className="text-4xl font-bold mb-8 text-center text-green-800">Travel Diaries</h1>
@@ -42,9 +43,11 @@ export default function TravelPage() {
                             width={100}
                             alt={img.alt}
                             className="w-full h-64 object-cover"
-                            loading="lazy"
+                          
                             decoding="async"
                             draggable={false}
+                            unoptimized
+                            priority
                         />
                     </div>
                 ))}
