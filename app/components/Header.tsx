@@ -13,7 +13,7 @@ const navItems = [
         dropdown: [
             { href: "/portfolio/weddings", label: "WEDDINGS" },
             { href: "/portfolio/travel", label: "TRAVEL" },
-            { href: "/portfolio/babyshoot", label: "BABY SHOOT" },
+            { href: "/portfolio/model", label: "MODEL" },
             { href: "/portfolio/portraits", label: "PORTRAITS" },
         ],
     },
