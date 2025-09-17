@@ -1,0 +1,187 @@
+// "use client";
+
+// import Image from "next/image";
+
+// const services = [
+//   {
+//     title: "Wedding Stories",
+//     description:
+//       "Capturing the magic of your special day with candid emotions, timeless portraits, and storytelling frames that you'll cherish forever.",
+//     image: "/services/wedding.jpg",
+//   },
+//   {
+//     title: "Portrait Sessions",
+//     description:
+//       "Personalized portrait shoots — whether outdoor or studio — designed to highlight your personality and create soulful keepsakes.",
+//     image: "/services/portrait.jpg",
+//   },
+//   {
+//     title: "Events & Celebrations",
+//     description:
+//       "From birthdays to cultural gatherings, I document your moments with precision and creativity, turning fleeting memories into art.",
+//     image: "/services/event.jpg",
+//   },
+// ];
+
+// export default function ServicesSection() {
+//   return (
+//     <section className="py-20 px-6 bg-black text-white">
+//       <div className="max-w-6xl mx-auto">
+//         {/* Section Title */}
+//         <div className="text-center mb-16">
+//           <h2 className="text-4xl font-bold text-yellow-400 mb-4">
+//             What I Offer
+//           </h2>
+//           <p className="text-gray-300 max-w-2xl mx-auto">
+//             My focus is on delivering a few meaningful services with quality and
+//             passion. Each one designed to tell your story beautifully.
+//           </p>
+//         </div>
+
+//         {/* Services List */}
+//         <div className="space-y-20">
+//           {services.map((service, index) => (
+//             <div
+//               key={index}
+//               className={`flex flex-col lg:flex-row items-center gap-10 ${
+//                 index % 2 === 1 ? "lg:flex-row-reverse" : ""
+//               }`}
+//             >
+//               {/* Image */}
+//               <div className="lg:w-1/2">
+//                 <Image
+//                   src={service.image}
+//                   alt={service.title}
+//                   width={600}
+//                   height={400}
+//                   className="rounded-2xl shadow-lg object-cover"
+//                 />
+//               </div>
+
+//               {/* Text */}
+//               <div className="lg:w-1/2">
+//                 <h3 className="text-2xl font-semibold text-yellow-300 mb-4">
+//                   {service.title}
+//                 </h3>
+//                 <p className="text-gray-300 leading-relaxed">
+//                   {service.description}
+//                 </p>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+"use client";
+
+import { CheckCircle } from "lucide-react";
+import Image from "next/image";
+
+const services = [
+  {
+    title: "Wedding Stories",
+    description:
+      "Your wedding is a once-in-a-lifetime celebration. I capture the candid laughter, heartfelt tears, and timeless moments so you can relive them forever. Every frame is crafted to tell your love story beautifully.",
+    subservices: [
+      "Pre-wedding & Engagement Shoots",
+      "Bridal & Groom Portraits",
+      "Candid Wedding Photography",
+      "Traditional Coverage",
+      "Post-wedding Sessions",
+    ],
+    image: "/weddings/1L4A1579.jpg",
+  },
+  {
+    title: "Portrait Sessions",
+    description:
+      "Portraits are about more than just a picture — they’re about personality, confidence, and soul. Whether outdoors in natural light or indoors with crafted studio setups, I create portraits that feel personal and timeless.",
+    subservices: [
+      "Individual Portraits",
+      "Couple Portraits",
+      "Family Portraits",
+      "Professional Headshots",
+      "Creative & Themed Portraits",
+    ],
+    image: "/portraits/cover-image.jpg",
+  },
+  {
+    title: "Events & Celebrations",
+    description:
+      "Life is filled with milestones worth cherishing. From birthdays to cultural celebrations, I document the details, the energy, and the emotions so you can look back at them for years to come.",
+    subservices: [
+      "Birthday Parties",
+      "Cultural & Religious Events",
+      "Corporate Gatherings",
+      "Baby Showers & Anniversaries",
+      "Festivals & Community Events",
+    ],
+    image: "/logo.png",
+  },
+];
+
+export default function ServicesSection() {
+  return (
+    <section className="py-20 px-6 bg-black text-white">
+      <div className="max-w-6xl mx-auto">
+        {/* Section Title */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-yellow-400 mb-4">
+            What I Offer
+          </h2>
+          <p className="text-gray-300 max-w-2xl mx-auto">
+            My focus is on delivering meaningful photography services with
+            passion and precision. Each experience is crafted to make your
+            memories last a lifetime.
+          </p>
+        </div>
+
+        
+        <div className="space-y-20">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className={`flex flex-col lg:flex-row items-center gap-10 ${
+                index % 2 === 1 ? "lg:flex-row-reverse" : ""
+              }`}
+            >
+              
+              <div className="lg:w-1/2 relative w-full h-[300px] sm:h-[400px]">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="rounded-2xl shadow-lg object-cover"
+                />
+              </div>
+
+              
+              <div className="lg:w-1/2">
+                <h3 className="text-2xl font-semibold text-yellow-300 mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  {service.description}
+                </p>
+
+                <ul className="list-disc list-inside text-gray-400 space-y-2">
+                  {service.subservices.map((sub, i) => (
+                    <li key={i} className="flex items-center text-gray-300 gap-2"
+                    >
+                     <CheckCircle
+                        size={18}
+                        className="text-green-400 flex-shrink-0"
+                      /> 
+                      {sub}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

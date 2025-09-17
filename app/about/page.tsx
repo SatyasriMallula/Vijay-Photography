@@ -3,10 +3,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import ExcellenceSection from "./Excellence";
 import Concerns from "./concerns";
+import ServicesSection from "./ServiceProvide";
+import ExtrasMarquee from "./Extras";
 
 export default function About() {
     return (
-        <section className="w-full h-full  pt-25 py-5  ">
+        <section className="w-full h-full  pt-25 py-5 space-y-10 ">
          
               
                 <motion.div
@@ -46,6 +48,8 @@ I specialize in portraits, fashion, weddings, and pre-weddings, capturing moment
                     </p> */}
                 </motion.div>
             <ExcellenceSection />
+            <ServicesSection/>
+            <ExtrasMarquee/>
             <Concerns/>
         </section>
     );
