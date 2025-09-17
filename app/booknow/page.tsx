@@ -182,7 +182,7 @@ export default function BookNowPage() {
                                 <select
                                     name="service"
                                     required
-                                    className="input bg-blue-50 text-black"
+                                    className="input "
                                 >
                                     <option value="">Select Service</option>
                                     <option value="wedding">Wedding Photography</option>

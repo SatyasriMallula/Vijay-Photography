@@ -1,6 +1,7 @@
 "use client";
 
 import Lightbox from "@/app/components/LightBox";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -23,10 +24,21 @@ export default function VisualBrandingPage() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   return (
-    <main className="min-h-screen bg-black py-16 px-6 max-w-7xl mx-auto flex flex-col items-center">
-      <h1 className="text-5xl font-extrabold text-amber-400 mb-16 text-center">
+    <main className="min-h-screen bg-black py-16 px-6 max-w-7xl mx-auto flex flex-col items-center space-y-8">
+      <h1 className="text-5xl font-extrabold text-amber-400  text-center">
         Blueye Studio Highlights
       </h1>
+      <motion.p className="max-w-2xl text-gray-300 text-center text-lg leading-relaxed"
+      initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+  Portrait photography is more than capturing faces — it is about telling a story through 
+  expressions, emotions, and details that often go unnoticed. Each frame is a timeless 
+  reflection of personality, mood, and essence, turning a fleeting moment into art that 
+  speaks long after it is captured.
+</motion.p>
 
       <div className="relative w-full max-w-8xl columns-1 sm:columns-2 md:columns-4 gap-14 space-y-14">
         {images.map(({ src, alt, style }, idx) => (
@@ -34,7 +46,7 @@ export default function VisualBrandingPage() {
             key={idx}
             className={`overflow-hidden rounded-3xl shadow-2xl cursor-pointer max-w-[340px] mx-auto break-inside-avoid transform transition-all duration-500 ${style} hover:rotate-0 hover:scale-100`}
             style={{ boxShadow: "0 8px 20px rgb(255 454 450 / 0.65)" }}
-            onClick={() => setSelectedIndex(idx)} // 👉 Open lightbox
+            onClick={() => setSelectedIndex(idx)} 
           >
             <Image
               src={src}
