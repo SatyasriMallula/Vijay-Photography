@@ -1,7 +1,17 @@
 
-"use client";
-
 import Image from "next/image";
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Portraits | Blueye PhotoStudio",
+    description: "Creative portraits that capture personality and emotion.",
+    openGraph: {
+        title: "Blueye PhotoStudio - Portraits",
+        description: "View our portrait photoStudio collection.",
+        images: ["/og-image.jpg"],
+    },
+};
+
+
 
 export default function VisualBrandingPage() {
     const images = [

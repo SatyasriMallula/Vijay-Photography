@@ -227,11 +227,6 @@ export default function BookNowPage() {
                 </div>
             </section>
 
-            <style jsx>{`
-        .input {
-          @apply block w-full rounded-lg border border-gray-600 px-6 py-4 text-gray-900 placeholder-gray-400 bg-gray-100 focus:outline-none focus:ring-4 focus:ring-blue-400 transition;
-        }
-      `}</style>
         </div>
     );
 } 

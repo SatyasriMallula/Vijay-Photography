@@ -1,7 +1,5 @@
-"use client";
 
 import Image from "next/image";
-
 const eventsImages = [
     "/weddings/1L4A1579.jpg",
     "/weddings/1L4A1579.jpg",
@@ -11,7 +9,7 @@ const eventsImages = [
     "/weddings/1L4A1579.jpg"
 ];
 
-export default function TravelPage() {
+export default function page() {
     return (
         <div className="py-16 px-6 max-w-7xl mx-auto">
             <h1 className="text-4xl font-bold mb-8 text-center text-blue-800">Events Portfolio</h1>
