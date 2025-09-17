@@ -41,7 +41,7 @@ const categories = [
 export default function Categories() {
     return (
         <section className="w-full px-6 py-15 space-y-10">
-            <h2 className="text-3xl md:text-4xl font-medium text-center text-white/90">
+            <h2 className="text-3xl md:text-4xl font-medium text-center text-yellow-500">
                 Explore My Work
             </h2>
   <motion.p
