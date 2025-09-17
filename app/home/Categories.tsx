@@ -1,41 +1,45 @@
-
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const categories = [
     {
         title: "Portraits",
         description: "Capturing expressions, emotions, and timeless moments.",
         img: "/potraits/cover-image.jpg",
+        href: "/portfolio/portraits"
     },
     {
         title: "Weddings",
         description: "Telling love stories with elegance and warmth.",
         img: "/weddings/cover-image.jpg",
+        href: "/portfolio/weddings"
     },
     {
         title: "Branding",
-        description:"Your brand deserves visuals that speak louder than words",
+        description: "Your brand deserves visuals that speak louder than words",
         img: "/branding/DSC06914.jpg",
+        href: "gallery"
     },
     {
         title: "Baby Shoots",
         description: "Capture the innocence, laughter of your little one with our baby photoshoots.",
-        img:"/babyshoot/DSC07897.jpg"
-    }
-    ,
+        img: "/babyshoot/DSC07897.jpg",
+        href: "portfolio/babyshoot"
+    },
     {
-        title: "travel",
+        title: "Travel",
         description: "Exploring cultures, landscapes, and adventures.",
-        img:"/travel/travelshot.png"
+        img: "/travel/travelshot.png",
+        href: "/portfolio/travel"
     },
     {
         title: "Drone Shots",
         description: "Elevate your story with stunning aerial shots",
-        img:"/droneshot/droneshot.jpg"
+        img: "/droneshot/droneshot.jpg",
+        href: "/gallery"
     }
-
 ];
 
 export default function Categories() {
@@ -75,11 +79,32 @@ export default function Categories() {
                             className="w-full h-100 object-cover transform group-hover:scale-110 transition duration-700"
                         />
 
-                        {/* Text (always visible) */}
-                        <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-black/10 px-4 py-3">
-                            <h3 className="text-xl font-medium text-yellow-400">{cat.title}</h3>
-                            <p className="text-sm text-gray-200">{cat.description}</p>
-                        </div>
+                        {/* Text */}
+                        <Link href={cat.href}>
+                            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-black/10 px-4 py-3">
+                                <h3 className="text-xl font-medium text-yellow-400">{cat.title}</h3>
+                                <p className="text-sm text-gray-200">{cat.description}</p>
+                            </div>
+
+                            {/* Hover arrow */}
+                            {/* Hover arrow */}
+                            <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className="bg-yellow-400/90 rounded-full w-8 h-8 flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer">
+                                    {/* Thicker arrow using SVG */}
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        strokeWidth={3}   // makes arrow thicker
+                                        stroke="black"
+                                        className="w-5 h-5"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-7-7l7 7-7 7" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                        </Link>
                     </motion.div>
                 ))}
             </div>

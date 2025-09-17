@@ -2,6 +2,17 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion"
+// import type { Metadata } from "next";
+
+// export const metadata: Metadata = {
+//     title: "Wedding Photography | Blueye Portfolio",
+//     description: "Capturing unforgettable wedding moments with creativity and precision.",
+//     openGraph: {
+//         title: "Wedding Portfolio | Blueye Photography",
+//         description: "Timeless wedding photos captured by Blueye Studio.",
+//         images: ["/og-image.jpg"],
+//     },
+// };
 import { SetStateAction, useState } from "react";
 import Lightbox from "@/app/components/LightBox";
 export default function WeddingsPage() {

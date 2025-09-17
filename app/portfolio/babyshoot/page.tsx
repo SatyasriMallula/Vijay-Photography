@@ -16,7 +16,6 @@ const portraits =  [
 const globalQuote =
     "A portrait is not just a photograph; it is a silent conversation between the soul and the lens.";
 
-// Example icons as SVG (can replace with react-icons or others)
 const icons = [
     // Camera
     <svg key="camera" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8 cursor-pointer text-blue-500 hover:text-blue-300 transition">
@@ -45,7 +44,7 @@ const icons = [
     </svg>,
 ];
 
-export default function BabyShootPage() {
+export default function BabyShoot() {
     const [index, setIndex] = useState(0);
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
     const rotateY = -index * 90;
@@ -58,7 +57,7 @@ export default function BabyShootPage() {
     }
 
     return (
-        <main className="min-h-screen bg-black flex flex-col md:flex-row items-center justify-center p-16 pt-0 gap-16 text-white">
+        <div className="min-h-screen bg-black flex flex-col md:flex-row items-center justify-center p-16 pt-0 gap-16 text-white">
             {/* Left side text + icons */}
             <aside className="max-w-xl px-6 flex flex-col items-start space-y-12">
                 <h2 className="text-4xl font-extrabold text-blue-400">Portraits Gallery</h2>
@@ -124,6 +123,6 @@ export default function BabyShootPage() {
 </div>
 
             </section>
-        </main>
+        </div>
     );
 }

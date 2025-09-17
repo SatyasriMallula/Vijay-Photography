@@ -1,10 +1,8 @@
-"use client";
 
 import Lightbox from "@/app/components/LightBox";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-
 const TravelImages = [
     { src: "/weddings/1L4A1579.jpg", alt: "Travel photo 1" },
     { src: "/weddings/1L4A1579.jpg", alt: "Travel photo 2" },
@@ -13,9 +11,8 @@ const TravelImages = [
     { src: "/weddings/1L4A1579.jpg", alt: "Travel photo 5" },
     { src: "/weddings/1L4A1579.jpg", alt: "Travel photo 6" }
 ];
- 
+
 export default function TravelPage() {
-    const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
     return (
         <div className="py-16 px-6 max-w-7xl mx-auto">
             <h1 className="text-4xl font-bold mb-8 text-center text-green-800">Travel Diaries</h1>

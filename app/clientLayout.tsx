@@ -26,7 +26,7 @@ export default function ClientLayout({
       const windowHeight = window.innerHeight;
       const documentHeight = document.body.scrollHeight;
 
-      
+
       if (scrollTop + windowHeight >= documentHeight - 50) {
         setShowButton(true);
       } else {
