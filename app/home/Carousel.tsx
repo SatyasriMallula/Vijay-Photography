@@ -14,7 +14,7 @@ export default function Carousel() {
   const doubledImages = [...images, ...images];
 
   return (
-    <section className="w-full overflow-hidden py-10 space-y-10">
+    <section className="w-full overflow-hidden  space-y-8">
       <h2 className="text-3xl md:text-4xl font-medium text-center text-white/90 ">
         Featured Shots
       </h2>

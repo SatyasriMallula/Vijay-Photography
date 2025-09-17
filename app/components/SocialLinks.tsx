@@ -1,4 +1,4 @@
-import { Instagram, Facebook, MessageCircle, MapIcon } from "lucide-react";
+import { Instagram,  MessageCircle, MapIcon } from "lucide-react";
 
 const links = [
   {

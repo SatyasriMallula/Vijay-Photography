@@ -21,8 +21,8 @@ const reels = [
 
 export default function ReelsSection() {
   return (
-    <section className="py-16 space-y-10">
-      <div className="text-center  space-y-10">
+    <section className="py-10 space-y-10">
+      <div className="text-center  space-y-8">
         <h2 className="text-3xl md:text-4xl text-white/90 font-medium">
           Stories in Motion
         </h2>
@@ -33,7 +33,7 @@ export default function ReelsSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Some stories can’t be captured in a single frame — they need
+          Some stories can&apos;t be captured in a single frame — they need
           movement, sound, and rhythm. These reels bring my photography
           to life, turning fleeting emotions into timeless memories in motion.
         </motion.p>
@@ -67,7 +67,7 @@ export default function ReelsSection() {
               <Link
                 href={reel.url}
                 target="_blank"
-                className="text-white flex px-4 py-2 rounded-lg font-semibold hover:bg-blue-900 hover:text-white transition"
+                className="text-white flex px-4 py-2 rounded-lg font-semibold  hover:text-white transition"
               >
                 Click to watch <Instagram className="w-7 h-7 mx-1 bg-white p-0.5 rounded-md text-pink-500" />
               </Link>
