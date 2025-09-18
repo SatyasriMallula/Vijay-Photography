@@ -45,17 +45,19 @@ export default function Header() {
                         <span className="text-2xl font-extrabold text-blue-400 uppercase tracking-tight">
                             Blueye
                         </span>
+                        <span className="pl-2 text-blue-200 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:inline">
+                            Capturing Moments
+                        </span>
                     </div>
-                    <span className="pl-2 text-blue-200 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:inline">
-                        Capturing Moments
-                    </span>
                 </a>
 
-                {/* Desktop Navigation */}
-                <div className="space-y-2">                    <h2 className="hidden md:block text-3xl text-blue-400 text-center">BLUE EYE PHOTOGRAPHY</h2>
+                {/* Desktop Title + Navigation */}
+                <div className="space-y-2">
+                    <h2 className="hidden md:block text-3xl text-blue-400 text-center">
+                        BLUE EYE PHOTOGRAPHY
+                    </h2>
 
                     <nav className="hidden md:flex items-center space-x-8 font-semibold tracking-widest text-sm">
-
                         {navItems.map((item) =>
                             item.dropdown ? (
                                 <div
@@ -71,13 +73,14 @@ export default function Header() {
                                         {item.label}
                                         <ChevronDown
                                             size={16}
-                                            className={`transition-transform ${servicesOpen ? "rotate-180" : ""
-                                                }`}
+                                            className={`transition-transform ${
+                                                servicesOpen ? "rotate-180" : ""
+                                            }`}
                                         />
                                     </Link>
 
                                     {servicesOpen && (
-                                        <ul className="absolute z-50 bg-black rounded-lg  shadow-lg w-40  border border-blue-600">
+                                        <ul className="absolute z-50 bg-black rounded-lg shadow-lg w-40 border border-blue-600">
                                             {item.dropdown.map((sub) => (
                                                 <li key={sub.href}>
                                                     <Link
@@ -103,7 +106,6 @@ export default function Header() {
                             )
                         )}
                     </nav>
-
                 </div>
 
                 {/* Desktop Book Now Button */}
@@ -131,7 +133,10 @@ export default function Header() {
                 <nav className="md:hidden fixed top-[65px] inset-x-0 bg-gradient-to-b from-[#08153a]/95 via-[#0f2a6a]/95 to-[#08153a]/95 backdrop-blur-lg border-t border-blue-800/20 shadow-2xl animate-slideDown z-50 px-6 py-8 flex flex-col space-y-8">
                     {navItems.map((item) =>
                         item.dropdown ? (
-                            <div key={item.label} className="flex flex-col items-center space-y-3">
+                            <div
+                                key={item.label}
+                                className="flex flex-col items-center space-y-3"
+                            >
                                 <button
                                     aria-expanded={servicesOpen}
                                     onClick={() => setServicesOpen(!servicesOpen)}
@@ -140,8 +145,9 @@ export default function Header() {
                                     {item.label}
                                     <ChevronDown
                                         size={18}
-                                        className={`transition-transform ${servicesOpen ? "rotate-180" : ""
-                                            }`}
+                                        className={`transition-transform ${
+                                            servicesOpen ? "rotate-180" : ""
+                                        }`}
                                     />
                                 </button>
 
@@ -152,7 +158,7 @@ export default function Header() {
                                                 key={sub.href}
                                                 href={sub.href}
                                                 className="text-blue-100/70 hover:text-blue-400 transition text-center w-full"
-                                                onClick={() => setOpen(false)} // close mobile menu on link click
+                                                onClick={() => setOpen(false)}
                                             >
                                                 {sub.label}
                                             </Link>
@@ -165,7 +171,7 @@ export default function Header() {
                                 key={item.href}
                                 href={item.href}
                                 className="text-lg uppercase font-bold tracking-wider text-blue-100/80 hover:text-blue-400 py-2 transition text-center"
-                                onClick={() => setOpen(false)} // close mobile menu on link click
+                                onClick={() => setOpen(false)}
                             >
                                 {item.label}
                             </Link>
