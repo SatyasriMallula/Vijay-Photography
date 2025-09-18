@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Hero() {
@@ -28,13 +29,14 @@ export default function Hero() {
     >
       <div className="relative max-w-[600px] max-h-[75vh] 2xl:max-h-[80vh] w-full overflow-hidden rounded-2xl shadow-xl">
         {images.map((img, index) => (
-          <img
+          <Image
             key={index}
             src={img}
+            height={100}
+            width={100}
             alt={`carousel-${index}`}
-            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out ${
-              index === currentIndex ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out ${index === currentIndex ? "opacity-100" : "opacity-0"
+              }`}
           />
         ))}
       </div>

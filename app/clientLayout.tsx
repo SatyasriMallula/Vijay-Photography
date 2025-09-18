@@ -16,7 +16,7 @@ export default function ClientLayout({
   const pathname = usePathname();
   const isRoot = pathname === "/";
   const [showButton, setShowButton] = useState(false);
-
+  console.log(showButton)
   function handleClick() {
     document.getElementById("header")?.scrollIntoView({ behavior: "smooth" });
   }
