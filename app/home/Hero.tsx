@@ -1,30 +1,47 @@
 "use client";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
-    return (
-        <section className="relative h-screen flex items-center justify-center text-center" id="hero">
-            {/* Background Image */}
-            {/* <Image
-                src="/selected blueye/selected blueye/DSC08756.jpg"
-                alt="Hero Background"
-                fill
-                priority
-                className="object-cover brightness-75"
-            /> */}
+  const images = [
+    "/home/DSC06591.jpg",
+    "/home/DSC05894.jpg",
+    "/selected blueye/selected blueye/DSC07974.jpg",
+    "/home/DSC08119.jpg",
+    "/home/featured-shot/_DCS0430.JPG",
+    "/home/featured-shot/DSC08778.jpg",
+    "/home/_DCS0075.JPG",
+    "/home/featured-shot/DSC06939.jpg",
+    "/weddings/_KN12844.jpg"
+  ];
 
-            {/* Overlay Content */}
-            <div className="relative z-10 text-white ">
-                <h1 className="text-4xl md:text-6xl font-extrabold drop-shadow-lg">
-                    Capturing Moments That Last Forever
-                </h1>
-                <p className="mt-4 text-lg md:text-2xl text-gray-200 drop-shadow-md">
-                    Welcome to my world of photography
-                </p>
-                <button className="mt-6 px-6 py-3 bg-yellow-400 text-black font-semibold rounded-full shadow-lg hover:bg-yellow-300 transition">
-                    View Portfolio
-                </button>
-            </div>
-        </section>
-    );
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [currentIndex, images.length]);
+
+  return (
+    <section
+      id="hero"
+      className="relative  h-[70vw] md:h-[40vw] flex justify-center "
+    >
+      <div className="relative  max-w-[300px] md:max-w-[600px] md:max-h-[75vh] 2xl:max-h-[80vh] w-full overflow-hidden rounded-2xl shadow-xl">
+        {images.map((img, index) => (
+          <Image
+            key={index}
+            src={img}
+            height={100}
+            width={100}
+            alt={`carousel-${index}`}
+            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out ${index === currentIndex ? "opacity-100" : "opacity-0"
+              }`}
+          />
+        ))}
+      </div>
+    </section>
+  );
 }
