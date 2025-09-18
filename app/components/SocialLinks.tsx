@@ -14,7 +14,7 @@ const links = [
 
 function SocialLinks() {
   return (
-    <div className="fixed top-1/2 right-5 z-50 -translate-y-1/2 flex flex-col gap-4 items-center justify-between py-4 px-2">
+    <div className="fixed hidden top-1/2 right-5 z-50 -translate-y-1/2 md:flex md:flex-col gap-4 items-center justify-between py-4 px-2">
       {links.map(({ href, icon, title }, i) => (
         <a
           key={i}

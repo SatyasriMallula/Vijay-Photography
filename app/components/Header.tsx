@@ -43,17 +43,18 @@ export default function Header() {
                     {/* Logo */}
                     <a
                         href="#home"
-                        className="flex w-[150px]  items-center gap-3 group cursor-pointer transition-transform duration-300 hover:scale-105 hover:-rotate-1"
+                        className="flex md:w-[150px] border-2 border-green-500  items-center gap-3 group cursor-pointer transition-transform duration-300 hover:scale-105 hover:-rotate-1"
                     >
                         <Image
                             src="/logo.png"
                             alt="Blue Photography Logo"
                             width={50}
                             height={50}
-                            className="rounded-full shadow-md border-2 border-blue-400"
+                            className="rounded-full shadow-md border-2 md:border-blue-400"
+                             sizes="(max-width: 640px) 30px, 50px"
                             priority
                         />
-                        <div className="flex flex-col leading-tight">
+                        <div className="flex flex-col leading-tight hidden md:block">
                             <span className="text-2xl font-extrabold text-blue-400 uppercase tracking-tight">
                                 Blueye
                             </span>
@@ -61,16 +62,16 @@ export default function Header() {
                                 Photography
                             </span> */}
                         </div>
-                        <span className="pl-2 text-blue-200 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className="hidden md:block pl-2 text-blue-200 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             Capturing Moments
                         </span>
                     </a>
-                    <div className="flex  gap-3 flex-col">
-                        <div>
-                            <h2 className="text-3xl text-blue-400 text-center ">BLUE EYE PHOTOGRAPHY</h2>
+                    <div className="flex border-2 border-red-500 text-center  gap-3 flex-col">
+                        <div className="" >
+                            <h2 className="md:text-3xl   text-blue-400 text-center ">BLUEYE PHOTOSTUDIO</h2>
                         </div>
                         {/* Desktop Navigation */}
-                        <nav className="hidden md:flex text-sm  items-center space-x-8 font-semibold  tracking-widest">
+                        <nav className="hidden md:flex text-sm  md:items-center md:space-x-8 font-semibold  tracking-widest">
 
                             {navItems.map((item) =>
                                 item.dropdown ? (
@@ -133,7 +134,7 @@ export default function Header() {
 
                     {/* Mobile Menu Button */}
                     <button
-                        className="md:hidden ml-2 p-2 rounded-xl text-blue-400 hover:bg-blue-400/20 transition"
+                        className="md:hidden border-4 md:ml-2 p-2 rounded-xl text-blue-400 hover:bg-blue-400/20 transition"
                         onClick={() => setOpen((v) => !v)}
                         aria-label="Open Menu"
                     >
@@ -144,14 +145,14 @@ export default function Header() {
                 {/* Mobile Menu */}
                 {open && (
                     <nav
-                        className="md:hidden flex flex-col items-center space-y-8 py-8
+                        className="md:hidden  flex gap-4 top-1/6 absolute   w-full  py-8
             bg-gradient-to-b from-[#08153a]/95 via-[#0f2a6a]/95 to-[#08153a]/95
             backdrop-blur-lg border-t border-blue-800/20 shadow-2xl animate-slideDown"
                     >
                         {navItems.map((item) =>
                             item.dropdown ? (
-                                <div key={item.label} className="flex flex-col items-center">
-                                    <span className="text-lg uppercase font-bold text-blue-100/80 mb-2">
+                                <div key={item.label} className="flex flex-col ">
+                                    <span className=" text-[10px] uppercase font-bold text-blue-100/80 mb-2">
                                         {item.label}
                                     </span>
                                     <div className="flex flex-col space-y-2">
@@ -159,7 +160,7 @@ export default function Header() {
                                             <Link
                                                 key={sub.href}
                                                 href={sub.href}
-                                                className="text-blue-100/70 hover:text-blue-400 transition"
+                                                className=" text-[8px]  text-blue-100/70 hover:text-blue-400 transition"
                                             >
                                                 {sub.label}
                                             </Link>
@@ -170,7 +171,7 @@ export default function Header() {
                                 <Link
                                     key={item.href}
                                     href={item.href}
-                                    className="text-lg uppercase font-bold tracking-wider text-blue-100/80 hover:text-blue-400 py-2 transition"
+                                    className="text-[10px]   uppercase font-bold tracking-wider text-blue-100/80 hover:text-blue-400 py-2 transition"
                                 >
                                     {item.label}
                                 </Link>
