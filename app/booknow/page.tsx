@@ -190,7 +190,7 @@ export default function BookNowPage() {
                                     <option value="fashion">Fashion Shoot</option>
                                     <option value="portfolio">Portfolio</option>
                                 </select>
-                                <input name="date" type="date" className="input" />
+                                <input name="date" type="date" className="input focus:bg-white focus:!text-black" />
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <input
@@ -218,7 +218,7 @@ export default function BookNowPage() {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="block mx-auto px-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-extrabold py-4 rounded-xl transition disabled:opacity-50"
+                                className="block mx-auto px-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white  py-2 rounded-xl transition disabled:opacity-50"
                             >
                                 {isSubmitting ? "Submitting..." : "Submit Booking"}
                             </button>
