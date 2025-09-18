@@ -6,7 +6,7 @@ import Concerns from "./concerns";
 
 export default function About() {
     return (
-        <section className="w-full h-full  pt-25 py-5  ">
+        <section className="w-full border-2 border-red-500 h-full  pt-25 py-5  ">
             <motion.div
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}

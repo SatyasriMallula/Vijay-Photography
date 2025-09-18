@@ -77,6 +77,7 @@
 
 "use client";
 
+import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import Image from "next/image";
 
@@ -105,7 +106,7 @@ const services = [
       "Professional Headshots",
       "Creative & Themed Portraits",
     ],
-    image: "/portraits/cover-image.jpg",
+    image: "/portraits/_DCS0213.JPG",
   },
   {
     title: "Events & Celebrations",
@@ -118,20 +119,20 @@ const services = [
       "Baby Showers & Anniversaries",
       "Festivals & Community Events",
     ],
-    image: "/logo.png",
+    image: "/portraits/DSC08825.JPG",
   },
 ];
 
 export default function ServicesSection() {
   return (
-    <section className=" px-6 bg-black text-white">
+    <section className="px-3 md:px-6 bg-black text-white">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-yellow-400 mb-4">
+        <div className="text-center mb-8 md:mb-16 px-2">
+          <h2 className="xl:text-5xl lg:text-4xl text-2xl font-bold text-yellow-400 mb-2 md:mb-4">
             What I Offer
           </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto">
+          <p className="text-gray-300  md:text-center text-left leading-6 md:leading-8 text-sm md:text-lg w-full md:max-w-2xl md:mx-auto">
             My focus is on delivering meaningful photography services with
             passion and precision. Each experience is crafted to make your
             memories last a lifetime.
@@ -139,16 +140,20 @@ export default function ServicesSection() {
         </div>
 
         
-        <div className="space-y-20">
+        <div className=" space-y-14 md:space-y-20">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
-              className={`flex flex-col lg:flex-row items-center gap-10 ${
+              className={`flex flex-col lg:flex-row items-center gap-6 md:gap-10  ${
                 index % 2 === 1 ? "lg:flex-row-reverse" : ""
               }`}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
               
-              <div className="lg:w-1/2 relative w-full h-[300px] sm:h-[400px]">
+              <div className="lg:w-1/2 relative w-full h-[300px] md:h-[400px]">
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -158,15 +163,15 @@ export default function ServicesSection() {
               </div>
 
               
-              <div className="lg:w-1/2">
-                <h3 className="text-2xl font-semibold text-yellow-300 mb-4">
+              <div className="lg:w-1/2 w-full px-2 md:px-0">
+                <h3 className="lg:text-4xl md:text-3xl text-xl font-semibold text-yellow-300 mb-3 md:mb-4 lg:text-left text-center">
                   {service.title}
                 </h3>
-                <p className="text-gray-300 leading-relaxed mb-4">
+                <p className="text-gray-300 md:text-lg lg:text-xl text-base leading-relaxed mb-4">
                   {service.description}
                 </p>
 
-                <ul className="list-disc list-inside text-gray-400 space-y-2">
+                <ul className=" text-gray-400 text-sm md:text-base space-y-2">
                   {service.subservices.map((sub, i) => (
                     <li key={i} className="flex items-center text-gray-300 gap-2"
                     >
@@ -178,7 +183,7 @@ export default function ServicesSection() {
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
