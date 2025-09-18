@@ -10,7 +10,7 @@ export default function Home() {
             <Hero />
             <Carousel />
             <Categories />
-            <ReelsSection/>
+            <ReelsSection />
             <Testimonials />
         </div>
 

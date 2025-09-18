@@ -112,7 +112,7 @@ export default function ModelsPage() {
             </div>
 
             {/* Extra Images - Full Width Horizontal Scroll */}
-            <section className="w-full  pb-20 relative mt-24">
+            <section className="w-full  pb-20 relative mt-10 md:mt-0">
                 <h3 className="text-2xl md:text-3xl font-semibold text-blue-300 mb-8 text-center px-4 sm:px-6 md:px-0">
                     More Models
                 </h3>
