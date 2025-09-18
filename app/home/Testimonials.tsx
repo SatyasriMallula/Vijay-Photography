@@ -24,13 +24,13 @@ const testimonials = [
 
 export default function Testimonials() {
     return (
-        <section className="w-full py-20 px-6 " id="footer">
-            <div className="max-w-6xl mx-auto text-center space-y-10">
-                <h2 className="text-3xl md:text-4xl font-medium text-yellow-500 ">
+        <section className="w-full px-6 " id="footer">
+            <div className="max-w-6xl mx-auto text-center space-y-6 md:space-y-10">
+                <h2 className="text-2xl md:text-4xl font-medium text-yellow-500 ">
                     What Clients Say
                 </h2>
                  <motion.p
-          className="max-w-2xl mx-auto text-gray-300 text-lg leading-relaxed "
+          className="max-w-2xl mx-auto text-gray-300 text-sm md:text-lg leading-relaxed "
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -51,8 +51,8 @@ export default function Testimonials() {
                             transition={{ duration: 0.6, delay: index * 0.2 }}
                             viewport={{ once: true }}
                         >
-                            <p className="text-white italic mb-4">“{t.feedback}”</p>
-                            <h3 className="text-lg font-semibold text-white">{t.name}</h3>
+                            <p className="text-white text-sm md:text-base italic mb-4">“{t.feedback}”</p>
+                            <h3 className="text-base md:text-lg font-semibold text-white">{t.name}</h3>
                             <span className="text-sm text-white">{t.role}</span>
                         </motion.div>
                     ))}

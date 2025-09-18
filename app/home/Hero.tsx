@@ -5,11 +5,13 @@ export default function Hero() {
   const images = [
     "/home/DSC06591.jpg",
     "/home/DSC05894.jpg",
+"selected blueye/selected blueye/DSC07974.jpg",
     "/home/DSC08119.jpg",
     "/home/featured-shot/_DCS0430.JPG",
     "/home/featured-shot/DSC08778.jpg",
     "/home/_DCS0075.JPG",
     "/home/featured-shot/DSC06939.jpg",
+    "weddings/_KN12844.jpg"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -24,9 +26,9 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-[40vw] flex justify-center "
+      className="relative  h-[70vw] md:h-[40vw] flex justify-center "
     >
-      <div className="relative max-w-[600px] max-h-[75vh] 2xl:max-h-[80vh] w-full overflow-hidden rounded-2xl shadow-xl">
+      <div className="relative  max-w-[300px] md:max-w-[600px] md:max-h-[75vh] 2xl:max-h-[80vh] w-full overflow-hidden rounded-2xl shadow-xl">
         {images.map((img, index) => (
           <img
             key={index}

@@ -67,7 +67,7 @@ export default function Header() {
                     </a>
                     <div className="flex  gap-3 flex-col">
                         <div>
-                            <h2 className="text-3xl text-blue-400 text-center ">BLUE EYE PHOTOGRAPHY</h2>
+                            <h2 className="text-3xl text-blue-400 text-center ">BLUEYE PHOTO STUDIO</h2>
                         </div>
                         {/* Desktop Navigation */}
                         <nav className="hidden md:flex text-sm  items-center space-x-8 font-semibold  tracking-widest">

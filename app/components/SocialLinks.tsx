@@ -2,7 +2,7 @@ import { Instagram,  MessageCircle, MapIcon, MapPin } from "lucide-react";
 
 const links = [
   {
-    href: "https://instagram.com",title: "Instagram",icon: <Instagram className="w-7 h-7 text-pink-500" />,
+    href: "https://www.instagram.com/blueye_photostudio/?hl=enm",title: "Instagram",icon: <Instagram className="w-7 h-7 text-pink-500" />,
   },
   {
     href: "https://google.com",title: "Location",icon: <MapPin className="w-7 h-7 text-blue-600" />,
@@ -14,7 +14,7 @@ const links = [
 
 function SocialLinks() {
   return (
-    <div className="fixed top-1/2 right-5 z-50 -translate-y-1/2 flex flex-col gap-4 items-center justify-between py-4 px-2">
+    <div className="hidden fixed top-1/2 right-5 z-50 -translate-y-1/2 md:flex md:flex-col gap-4 items-center justify-between py-4 px-2">
       {links.map(({ href, icon, title }, i) => (
         <a
           key={i}
