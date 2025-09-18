@@ -1,8 +1,10 @@
 "use client";
+
 import React, { useState } from "react";
 import { Menu, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation"; // 👈 import
 
 const navItems = [
     { href: "/home", label: "HOME" },
@@ -24,6 +26,9 @@ const navItems = [
 export default function Header() {
     const [open, setOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
+    const pathname = usePathname(); // 👈 get current route
+
+    const isActive = (href: string) => pathname === href; // check active link
 
     return (
         <>
@@ -52,10 +57,12 @@ export default function Header() {
                 </a>
 
                 {/* Desktop Navigation */}
-                <div className="space-y-2">                    <h2 className="hidden md:block text-3xl text-blue-400 text-center">BLUE EYE PHOTOGRAPHY</h2>
+                <div className="space-y-2">
+                    <h2 className="hidden md:block text-3xl text-blue-400 text-center">
+                        BLUE EYE PHOTOGRAPHY
+                    </h2>
 
                     <nav className="hidden md:flex items-center space-x-8 font-semibold tracking-widest text-sm">
-
                         {navItems.map((item) =>
                             item.dropdown ? (
                                 <div
@@ -66,7 +73,10 @@ export default function Header() {
                                 >
                                     <Link
                                         href={item.href}
-                                        className="flex items-center gap-1 text-white/90 hover:text-blue-400 transition"
+                                        className={`flex items-center gap-1 transition ${isActive(item.href)
+                                                ? "text-yellow-400"
+                                                : "text-white/90 hover:text-blue-400"
+                                            }`}
                                     >
                                         {item.label}
                                         <ChevronDown
@@ -77,12 +87,15 @@ export default function Header() {
                                     </Link>
 
                                     {servicesOpen && (
-                                        <ul className="absolute z-50 bg-black rounded-lg  shadow-lg w-40  border border-blue-600">
+                                        <ul className="absolute z-[9999] bg-[#0f172a]/95 rounded-lg shadow-xl w-48 border border-blue-600">
                                             {item.dropdown.map((sub) => (
                                                 <li key={sub.href}>
                                                     <Link
                                                         href={sub.href}
-                                                        className="block px-4 py-2 text-white/90 hover:bg-blue-400/20 hover:text-blue-300 rounded-lg transition duration-300"
+                                                        className={`block px-4 py-2 rounded-lg transition duration-300 ${isActive(sub.href)
+                                                                ? "text-yellow-400"
+                                                                : "text-white/90 hover:bg-blue-400/20 hover:text-blue-300"
+                                                            }`}
                                                     >
                                                         {sub.label}
                                                     </Link>
@@ -95,7 +108,10 @@ export default function Header() {
                                 <Link
                                     key={item.href}
                                     href={item.href}
-                                    className="relative group px-2 py-0.5 text-white/90 hover:text-blue-400 transition"
+                                    className={`relative group px-2 py-0.5 transition ${isActive(item.href)
+                                            ? "text-yellow-400"
+                                            : "text-white/90 hover:text-blue-400"
+                                        }`}
                                 >
                                     {item.label}
                                     <span className="gradient-line"></span>
@@ -103,7 +119,6 @@ export default function Header() {
                             )
                         )}
                     </nav>
-
                 </div>
 
                 {/* Desktop Book Now Button */}
@@ -151,8 +166,11 @@ export default function Header() {
                                             <Link
                                                 key={sub.href}
                                                 href={sub.href}
-                                                className="text-blue-100/70 hover:text-blue-400 transition text-center w-full"
-                                                onClick={() => setOpen(false)} // close mobile menu on link click
+                                                className={`w-full text-center transition ${isActive(sub.href)
+                                                        ? "text-yellow-400"
+                                                        : "text-blue-100/70 hover:text-blue-400"
+                                                    }`}
+                                                onClick={() => setOpen(false)}
                                             >
                                                 {sub.label}
                                             </Link>
@@ -164,8 +182,11 @@ export default function Header() {
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className="text-lg uppercase font-bold tracking-wider text-blue-100/80 hover:text-blue-400 py-2 transition text-center"
-                                onClick={() => setOpen(false)} // close mobile menu on link click
+                                className={`text-lg uppercase font-bold tracking-wider py-2 text-center transition ${isActive(item.href)
+                                        ? "text-yellow-400"
+                                        : "text-blue-100/80 hover:text-blue-400"
+                                    }`}
+                                onClick={() => setOpen(false)}
                             >
                                 {item.label}
                             </Link>

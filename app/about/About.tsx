@@ -26,7 +26,7 @@ export default function About() {
                     </div>
                     <div className="w-1/2">
                         <p className="leading-relaxed text-lg ">
-                            I’m Vijay, a passionate photographer and Assistant DOP based in Bangalore. My journey in the Kannada film industry has shaped my eye for cinematic detail and storytelling.
+                            I&apos;m Vijay, a passionate photographer and Assistant DOP based in Bangalore. My journey in the Kannada film industry has shaped my eye for cinematic detail and storytelling.
                             I specialize in portraits, fashion, weddings, and pre-weddings, capturing moments that reflect both beauty and emotion. For me, photography is not just about pictures, but about preserving memories that last a lifetime.
                         </p>
                     </div>

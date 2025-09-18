@@ -1,79 +1,4 @@
-// "use client";
 
-// import Image from "next/image";
-
-// const services = [
-//   {
-//     title: "Wedding Stories",
-//     description:
-//       "Capturing the magic of your special day with candid emotions, timeless portraits, and storytelling frames that you'll cherish forever.",
-//     image: "/services/wedding.jpg",
-//   },
-//   {
-//     title: "Portrait Sessions",
-//     description:
-//       "Personalized portrait shoots — whether outdoor or studio — designed to highlight your personality and create soulful keepsakes.",
-//     image: "/services/portrait.jpg",
-//   },
-//   {
-//     title: "Events & Celebrations",
-//     description:
-//       "From birthdays to cultural gatherings, I document your moments with precision and creativity, turning fleeting memories into art.",
-//     image: "/services/event.jpg",
-//   },
-// ];
-
-// export default function ServicesSection() {
-//   return (
-//     <section className="py-20 px-6 bg-black text-white">
-//       <div className="max-w-6xl mx-auto">
-//         {/* Section Title */}
-//         <div className="text-center mb-16">
-//           <h2 className="text-4xl font-bold text-yellow-400 mb-4">
-//             What I Offer
-//           </h2>
-//           <p className="text-gray-300 max-w-2xl mx-auto">
-//             My focus is on delivering a few meaningful services with quality and
-//             passion. Each one designed to tell your story beautifully.
-//           </p>
-//         </div>
-
-//         {/* Services List */}
-//         <div className="space-y-20">
-//           {services.map((service, index) => (
-//             <div
-//               key={index}
-//               className={`flex flex-col lg:flex-row items-center gap-10 ${
-//                 index % 2 === 1 ? "lg:flex-row-reverse" : ""
-//               }`}
-//             >
-//               {/* Image */}
-//               <div className="lg:w-1/2">
-//                 <Image
-//                   src={service.image}
-//                   alt={service.title}
-//                   width={600}
-//                   height={400}
-//                   className="rounded-2xl shadow-lg object-cover"
-//                 />
-//               </div>
-
-//               {/* Text */}
-//               <div className="lg:w-1/2">
-//                 <h3 className="text-2xl font-semibold text-yellow-300 mb-4">
-//                   {service.title}
-//                 </h3>
-//                 <p className="text-gray-300 leading-relaxed">
-//                   {service.description}
-//                 </p>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
 
 "use client";
 
@@ -98,7 +23,7 @@ const services = [
   {
     title: "Portrait Sessions",
     description:
-      "Portraits are about more than just a picture — they’re about personality, confidence, and soul. Whether outdoors in natural light or indoors with crafted studio setups, I create portraits that feel personal and timeless.",
+      "Portraits are about more than just a picture — they&apos;re about personality, confidence, and soul. Whether outdoors in natural light or indoors with crafted studio setups, I create portraits that feel personal and timeless.",
     subservices: [
       "Individual Portraits",
       "Couple Portraits",
@@ -139,20 +64,19 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        
+
         <div className=" space-y-14 md:space-y-20">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className={`flex flex-col lg:flex-row items-center gap-6 md:gap-10  ${
-                index % 2 === 1 ? "lg:flex-row-reverse" : ""
-              }`}
+              className={`flex flex-col lg:flex-row items-center gap-6 md:gap-10  ${index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                }`}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              
+
               <div className="lg:w-1/2 relative w-full h-[300px] md:h-[400px]">
                 <Image
                   src={service.image}
@@ -162,7 +86,7 @@ export default function ServicesSection() {
                 />
               </div>
 
-              
+
               <div className="lg:w-1/2 w-full px-2 md:px-0">
                 <h3 className="lg:text-4xl md:text-3xl text-xl font-semibold text-yellow-300 mb-3 md:mb-4 lg:text-left text-center">
                   {service.title}
@@ -175,10 +99,10 @@ export default function ServicesSection() {
                   {service.subservices.map((sub, i) => (
                     <li key={i} className="flex items-center text-gray-300 gap-2"
                     >
-                     <CheckCircle
+                      <CheckCircle
                         size={18}
                         className="text-green-400 flex-shrink-0"
-                      /> 
+                      />
                       {sub}</li>
                   ))}
                 </ul>

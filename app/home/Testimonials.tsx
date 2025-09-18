@@ -29,17 +29,17 @@ export default function Testimonials() {
                 <h2 className="text-2xl md:text-4xl font-medium text-yellow-500 ">
                     What Clients Say
                 </h2>
-                 <motion.p
-          className="max-w-2xl mx-auto text-gray-300 text-sm md:text-lg leading-relaxed "
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          Every story I capture is unique, and hearing from my clients is the
-          greatest reward. Here’s what they felt when their memories came alive
-          through my lens.
-        </motion.p>
+                <motion.p
+                    className="max-w-2xl mx-auto text-gray-300 text-sm md:text-lg leading-relaxed "
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    viewport={{ once: true }}
+                >
+                    Every story I capture is unique, and hearing from my clients is the
+                    greatest reward. Here&apos;s what they felt when their memories came alive
+                    through my lens.
+                </motion.p>
 
                 <div className="grid md:grid-cols-3 gap-8" >
                     {testimonials.map((t, index) => (

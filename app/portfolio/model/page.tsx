@@ -52,7 +52,7 @@ export default function ModelsPage() {
                         Models Gallery
                     </h2>
                     <p className="italic text-base md:text-lg text-blue-200 max-w-md">
-                        A model is more than appearance — it’s the art of expression, style,
+                        A model is more than appearance — it&apos;s the art of expression, style,
                         and presence.
                     </p>
                 </aside>

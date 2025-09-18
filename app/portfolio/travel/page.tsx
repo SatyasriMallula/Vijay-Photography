@@ -13,7 +13,7 @@ const TravelImages = [
 ];
 
 export default function TravelPage() {
-     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+    const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
     return (
         <div className="py-16 px-6 max-w-7xl mx-auto">
@@ -25,10 +25,10 @@ export default function TravelPage() {
                 viewport={{ once: true }}
                 className="text-center max-w-3xl mx-auto text-gray-300 text-lg mb-10 leading-relaxed"
             >
-                Traveling is more than just reaching a destination—it’s about the stories,
+                Traveling is more than just reaching a destination—it&apos;s about the stories,
                 cultures, and experiences you gather along the way. From majestic
                 mountains to vibrant city streets, each frame captures the spirit of
-                adventure and discovery. Here’s a glimpse into unforgettable travel
+                adventure and discovery. Here&apos;s a glimpse into unforgettable travel
                 moments.
             </motion.p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -44,7 +44,7 @@ export default function TravelPage() {
                             width={100}
                             alt={img.alt}
                             className="w-full h-64 object-cover"
-                          
+
                             decoding="async"
                             draggable={false}
                             unoptimized

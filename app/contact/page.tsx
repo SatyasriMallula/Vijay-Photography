@@ -12,7 +12,7 @@ export default function ContactPage() {
                         Get in Touch
                     </h1>
                     <p className="text-gray-600 dark:text-gray-300 text-base sm:text-sm md:text-lg">
-                        We’d love to hear from you!
+                        We&apos;d love to hear from you!
                     </p>
                 </div>
 

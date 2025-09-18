@@ -6,13 +6,13 @@ export default function Hero() {
   const images = [
     "/home/DSC06591.jpg",
     "/home/DSC05894.jpg",
-"selected blueye/selected blueye/DSC07974.jpg",
+    "/selected blueye/selected blueye/DSC07974.jpg",
     "/home/DSC08119.jpg",
     "/home/featured-shot/_DCS0430.JPG",
     "/home/featured-shot/DSC08778.jpg",
     "/home/_DCS0075.JPG",
     "/home/featured-shot/DSC06939.jpg",
-    "weddings/_KN12844.jpg"
+    "/weddings/_KN12844.jpg"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
