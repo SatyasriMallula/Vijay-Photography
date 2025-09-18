@@ -1,6 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
-import Image from "next/image";
+
 import ExcellenceSection from "./Excellence";
 import Concerns from "./concerns";
 import Hero from "./hero";
@@ -12,10 +11,10 @@ export default function AboutPage() {
         <section className="bg-black/90 space-y-14 md:space-y-16 lg:space-y-20  ">
             <Hero />
             <ServicesSection />
-           
+
             <ExcellenceSection />
             <Concerns />
-             <ExtrasMarquee />
+            <ExtrasMarquee />
         </section>
     );
 }

@@ -8,18 +8,18 @@ import Lightbox from "../components/LightBox";
 import Image from "next/image";
 
 const allImages = [
-  {src:"selected blueye/selected blueye/_KN11127.jpg",alt:"frfhr"},
+  { src: "selected blueye/selected blueye/_KN11127.jpg", alt: "frfhr" },
   { src: "selected blueye/selected blueye/_DCS7412.jpg", alt: "frfhr" },
-   {src:"home/59be7081def4d.jpg",alt:"landscape "},
+  { src: "home/59be7081def4d.jpg", alt: "landscape " },
   { src: "/selected blueye/selected blueye/DSC03543.jpg", alt: "Couple at sunset" },
 
   { src: "/home/featured-shot/_DCS0275.JPG", alt: "fhcjsj" },
-   {src:"selected blueye/selected blueye/_DCS7306.jpg",alt:"frfhr"},
+  { src: "selected blueye/selected blueye/_DCS7306.jpg", alt: "frfhr" },
   { src: "/selected blueye/selected blueye/DSC05947.jpg", alt: "Branding session" },
   { src: "/selected blueye/selected blueye/DSC06699.jpg", alt: "Family portrait" },
   { src: "/selected blueye/selected blueye/_DCS0210.jpg", alt: "Outdoor wedding" },
   { src: "/selected blueye/selected blueye/_DCS7247.jpg", alt: "frfhr" },
-   {src:"home/DSC05894.jpg",alt:"landscape2"},
+  { src: "home/DSC05894.jpg", alt: "landscape2" },
   { src: "/selected blueye/selected blueye/_DCS0129.JPG", alt: "frfhr" },
   { src: "/home/featured-shot/_DCS0430.JPG", alt: "frfhr" },
   { src: "/selected blueye/selected blueye/DSC06690.jpg", alt: "frfhr" },
@@ -27,7 +27,7 @@ const allImages = [
   { src: "/selected blueye/selected blueye/DSC07857.jpg", alt: "frfhr" },
   { src: "/selected blueye/selected blueye/DSC07974.jpg", alt: "frfhr" },
   { src: "/selected blueye/selected blueye/DSC08523.jpg", alt: "frfhr" },
-      { src: "/selected blueye/selected blueye/DSC07655.jpg", alt: "frfhr" },
+  { src: "/selected blueye/selected blueye/DSC07655.jpg", alt: "frfhr" },
   { src: "selected blueye/selected blueye/_DCS7389.jpg", alt: "frfhr" },
   { src: "/selected blueye/selected blueye/DSC09816.jpg", alt: "frfhr" },
   { src: "/selected blueye/selected blueye/DSC09867.jpg", alt: "frfhr" },
@@ -42,10 +42,10 @@ export default function GalleryPage() {
   const visibleImages = allImages.slice(0, visibleCount);
 
   // Split images into chunks of 4 for rows
- const rows = [];
-for (let i = 0; i < visibleImages.length; i += 4) {
-  rows.push(visibleImages.slice(i, i + 4));
-}
+  const rows = [];
+  for (let i = 0; i < visibleImages.length; i += 4) {
+    rows.push(visibleImages.slice(i, i + 4));
+  }
 
   return (
     <section className="py-20 px-4 bg-black/90">
@@ -68,16 +68,15 @@ for (let i = 0; i < visibleImages.length; i += 4) {
                 className="relative overflow-hidden   shadow-md cursor-pointer"
                 onClick={() => setSelectedIndex(rowIndex * 4 + idx)}
               >
-                <img
+                <Image
                   src={img.src}
                   alt={img.alt}
-                  width={0} // width auto
-
-                  height={0} // height auto
+                  width={0}
+                  height={0}
                   style={{
-                    height: "300px", // fixed height
-                    width: "auto",   // width adjusts automatically
-                    objectFit: "cover", // or "contain" if you want full image
+                    height: "300px",
+                    width: "auto",
+                    objectFit: "cover",
                   }}
                 />
               </motion.div>

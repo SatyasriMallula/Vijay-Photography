@@ -14,12 +14,12 @@ export default function Carousel() {
   const doubledImages = [...images, ...images];
 
   return (
-    <section className="w-full overflow-hidden  space-y-8">
-      <h2 className="text-3xl md:text-4xl font-medium text-center text-yellow-500 ">
+    <section className="w-full overflow-hidden space-y-3 md:space-y-8">
+      <h2 className="text-2xl md:text-4xl font-medium text-center text-yellow-500 ">
         Featured Shots
       </h2>
  <motion.p
-        className="max-w-2xl mx-auto text-center text-gray-300 text-lg leading-relaxed "
+        className="max-w-2xl mx-3 md:mx-auto text-center text-gray-300 text-sm md:text-lg leading-relaxed "
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}

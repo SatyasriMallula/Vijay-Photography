@@ -186,25 +186,45 @@ h6 {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-160%);
   }
 }
-
 .animate-banner {
-  display: flex;
-  animation: bannerScroll 10s linear infinite;
+
+  animation: bannerScroll 27s linear infinite; /* desktop default */
 }
+
+@media (max-width: 767px) {
+  @keyframes bannerScroll {
+    0%   { transform: translateX(0%); }
+    100% { transform: translateX(-600%); } /* maybe scroll entire width */
+  }
+  .animate-banner {
+
+  animation: bannerScroll 15s linear infinite; /* desktop default */
+}
+}
+
+
 
 
 
 @keyframes marquee {
-  0%   { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes marquee2 {
-  0%   { transform: translateX(100%); }
-  100% { transform: translateX(0%); }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 .animate-marquee {
@@ -213,4 +233,12 @@ h6 {
 
 .animate-marquee2 {
   animation: marquee2 25s linear infinite;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

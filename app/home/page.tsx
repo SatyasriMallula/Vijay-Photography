@@ -6,11 +6,11 @@ import Testimonials from "./Testimonials";
 import ReelsSection from "./Reels";
 export default function Home() {
     return (
-        <div className=" ">
+        <div className="space-y-10 md:space-y-15 ">
             <Hero />
             <Carousel />
             <Categories />
-            <ReelsSection/>
+            <ReelsSection />
             <Testimonials />
         </div>
 
