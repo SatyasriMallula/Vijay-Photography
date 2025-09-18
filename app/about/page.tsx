@@ -9,7 +9,7 @@ import ExtrasMarquee from "./Extras";
 
 export default function AboutPage() {
     return (
-        <section className="bg-black/90 space-y-20  ">
+        <section className="bg-black/90 space-y-14 md:space-y-16 lg:space-y-20  ">
             <Hero />
             <ServicesSection />
            

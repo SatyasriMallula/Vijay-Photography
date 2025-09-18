@@ -20,21 +20,21 @@ function Hero() {
             width={100}
             height={100}
             unoptimized
-            className="w-full h-[500px] object-contain rounded-xl"
+            className="w-full xl:h-[630px] h-[200px] md:h-[400px] lg:h-[500px] object-contain rounded-xl"
           />
           {/* Radial dark edges overlay */}
           <div className="absolute inset-0 rounded-xl bg-[radial-gradient(circle,transparent_70%,rgba(0,0,0,0.7)_100%)]"></div>
         </div>
 
         {/* Text section */}
-        <div className="w-full flex pt-4 px-20">
-          <div className="w-[600px] flex items-center">
-            <h2 className="text-5xl leading-16 font-semibold bg-gradient-to-l bg-clip-text text-transparent from-orange-400 to-orange-600">
+        <div className="w-full flex   md:flex-row flex-col pt-4 px-4 md:px-12 lg:px-20 gap-4 md:gap-0">
+          <div className="w-full  md:w-1/2 lg:w-[600px] x:w-full flex items-center">
+            <h2 className=" md:text-4xl lg:text-5xl text-2xl md:leading-10 lg:leading-16 text-center md:text-left font-semibold bg-gradient-to-l bg-clip-text text-transparent from-orange-400 to-orange-600">
               Capturing Life&apos;s Most Precious Moments
             </h2>
           </div>
-          <div className="w-[600px]">
-            <p className="leading-8 text-white/90 text-base">
+          <div className="w-full   xl:w-[700px]">
+            <p className="lg:leading-8  text-white/90  lg:text-xl  xl:text-lg text-sm leading-6">
               I’m Vijay, a passionate photographer and Assistant DOP based in
               Bangalore. My journey in the Kannada film industry has shaped my
               eye for cinematic detail and storytelling. I specialize in

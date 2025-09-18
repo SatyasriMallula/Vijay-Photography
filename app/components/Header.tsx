@@ -43,7 +43,7 @@ export default function Header() {
                     {/* Logo */}
                     <a
                         href="#home"
-                        className="flex md:w-[150px] border-2 border-green-500  items-center gap-3 group cursor-pointer transition-transform duration-300 hover:scale-105 hover:-rotate-1"
+                        className="flex md:w-[150px]  items-center gap-3 group cursor-pointer transition-transform duration-300 hover:scale-105 hover:-rotate-1"
                     >
                         <Image
                             src="/logo.png"
@@ -66,7 +66,7 @@ export default function Header() {
                             Capturing Moments
                         </span>
                     </a>
-                    <div className="flex border-2 border-red-500 text-center  gap-3 flex-col">
+                    <div className="flex  text-center  gap-3 flex-col">
                         <div className="" >
                             <h2 className="md:text-3xl   text-blue-400 text-center ">BLUEYE PHOTOSTUDIO</h2>
                         </div>
