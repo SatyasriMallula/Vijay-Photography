@@ -7,17 +7,17 @@ import Lightbox from "@/app/components/LightBox";
 
 export default function VisualPortrait() {
   const images = [
-    { src: "/weddings/DSC03243.jpg", alt: "Signature shot 1", style: "rotate-3" },
-    { src: "/weddings/DSC03243.jpg", alt: "Creative portrait", style: "-rotate-2 scale-110" },
-    { src: "/weddings/1L4A1579.jpg", alt: "Event highlight", style: "rotate-1 scale-105" },
-    { src: "/weddings/DSC03243.jpg", alt: "Behind the scenes", style: "-rotate-1" },
-    { src: "/weddings/DSC03243.jpg", alt: "Artistic frame", style: "rotate-2 scale-110" },
-    { src: "/weddings/1L4A1579.jpg", alt: "Golden hour", style: "scale-105" },
-    { src: "/weddings/DSC03243.jpg", alt: "Cityscape", style: "-rotate-3" },
-    { src: "/weddings/1L4A1579.jpg", alt: "Fashion shoot", style: "rotate-4 scale-105" },
-    { src: "/weddings/DSC03243.jpg", alt: "Cityscape", style: "-rotate-3" },
-    { src: "/weddings/DSC03243.jpg", alt: "Fashion shoot", style: "rotate-4 scale-105" },
-    { src: "/weddings/DSC03243.jpg", alt: "Fashion shoot", style: "rotate-4 scale-105" },
+    { src: "/portraits/_DCS0018.JPG", alt: "Signature shot 1", style: "rotate-3" },
+    { src: "/portraits/_DCS0023.JPG", alt: "Creative portrait", style: "-rotate-2 scale-110" },
+    { src: "/portraits/_DCS0121.JPG", alt: "Event highlight", style: "rotate-1 scale-105" },
+    { src: "/portraits/_DCS6394.jpg", alt: "Behind the scenes", style: "-rotate-1" },
+    { src: "/portraits/_DCS7230.jpg", alt: "Artistic frame", style: "rotate-2 scale-110" },
+    { src: "/portraits/IMG_7822.JPG", alt: "Golden hour", style: "scale-105" },
+    { src: "/portraits/_DCS7340.jpg", alt: "Cityscape", style: "-rotate-3" },
+    { src: "/portraits/DSC06116.jpg", alt: "Fashion shoot", style: "rotate-4 scale-105" },
+    { src: "/portraits/IMG_7867.JPG", alt: "Cityscape", style: "-rotate-3" },
+    { src: "/portraits/IMG_7871.JPG", alt: "Fashion shoot", style: "rotate-4 scale-105" },
+    { src: "/weddings/DSC03243.jpg", alt: "Fashion shoot1", style: "rotate-4 scale-105" },
   ];
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -55,9 +55,11 @@ export default function VisualPortrait() {
               width={100}
               height={50}
               className="w-full object-contain object-center"
-              loading="lazy"
+            
               decoding="async"
-              draggable={false}
+                    draggable={false}
+                    unoptimized
+                    priority
             />
           </div>
         ))}

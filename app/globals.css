@@ -163,7 +163,7 @@ h6 {
 }
 
 .animate-fade-in {
-  animation: fade-in 2s ease forwards;
+  animation: fade-in 5s ease forwards;
 }
 
 /* Slow bounce for logo */
