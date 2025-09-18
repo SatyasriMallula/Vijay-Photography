@@ -14,21 +14,22 @@ const TravelImages = [
 
 export default function TravelPage() {
      const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
     return (
         <div className="py-16 px-6 max-w-7xl mx-auto">
             <h1 className="text-4xl font-bold mb-8 text-center text-green-800">Travel Diaries</h1>
             <motion.p
-            initial={{opacity:1}}
-            whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        viewport={{ once: true }}
-            className="text-center max-w-3xl mx-auto text-gray-300 text-lg mb-10 leading-relaxed"
+                initial={{ opacity: 1 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-center max-w-3xl mx-auto text-gray-300 text-lg mb-10 leading-relaxed"
             >
-         Traveling is more than just reaching a destination—it’s about the stories,
-        cultures, and experiences you gather along the way. From majestic
-        mountains to vibrant city streets, each frame captures the spirit of
-        adventure and discovery. Here’s a glimpse into unforgettable travel
-        moments.
+                Traveling is more than just reaching a destination—it’s about the stories,
+                cultures, and experiences you gather along the way. From majestic
+                mountains to vibrant city streets, each frame captures the spirit of
+                adventure and discovery. Here’s a glimpse into unforgettable travel
+                moments.
             </motion.p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {TravelImages.map((img, idx) => (
@@ -52,8 +53,8 @@ export default function TravelPage() {
                     </div>
                 ))}
             </div>
-                        <Lightbox images={TravelImages} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}  onClose={() => setSelectedIndex(null)}/>
-            
+            <Lightbox images={TravelImages} selectedIndex={selectedIndex || null} setSelectedIndex={setSelectedIndex} onClose={() => setSelectedIndex(null)} />
+
         </div>
     );
 }
