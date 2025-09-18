@@ -1,9 +1,28 @@
 "use client";
-import { Instagram, MapIcon, MapPin, MessageCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import { Instagram, MapPin, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
+  const line1 = "Welcome to";
+  const line2 = "Blue Eye Photo Studio";
+
+  // Container animation
+  const container = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.05 },
+    },
+  };
+
+  // Letter animation
+  const letter = {
+    hidden: { y: -50, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
+
   return (
     <section className="relative w-full h-screen overflow-hidden">
       {/* Background image */}
@@ -20,7 +39,7 @@ export default function Home() {
 
       {/* Overlay content */}
       <div className="absolute inset-0 flex justify-center items-center px-4 z-20">
-        <div className="backdrop-blur-lg bg-black/30 p-10 text-center max-w-2xl flex flex-col items-center gap-6 rounded-2xl">
+        <div className=" p-10 text-center max-w-2xl flex flex-col items-center gap-6 rounded-2xl">
           {/* Logo */}
           <Image
             src="/logo.png"
@@ -31,10 +50,33 @@ export default function Home() {
             className="w-24 h-24 mx-auto mb-4 animate-bounce-slow"
           />
 
-          {/* Main Heading */}
-          <h1 className="text-2xl md:text-4xl font-serif font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-400 to-blue-500 tracking-wider animate-focus-in">
-            Welcome to <br /> Blueye Photo Studio
-          </h1>
+          {/* Title line 1 */}
+          <motion.h1
+            className="text-5xl font-bold text-yellow-400 flex flex-wrap justify-center"
+            variants={container}
+            initial="hidden"
+            animate="visible"
+          >
+            {line1.split("").map((char, i) => (
+              <motion.span key={i} variants={letter}>
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+          </motion.h1>
+
+          {/* Title line 2 */}
+          <motion.h1
+            className="text-5xl font-bold text-yellow-400 flex flex-wrap justify-center"
+            variants={container}
+            initial="hidden"
+            animate="visible"
+          >
+            {line2.split("").map((char, i) => (
+              <motion.span key={i} variants={letter}>
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+          </motion.h1>
 
           {/* Subheading */}
           <p className="mt-4 text-gray-300 text-lg md:text-xl font-light opacity-90 animate-fade-in">
@@ -45,7 +87,7 @@ export default function Home() {
           <div className="flex gap-6">
             <Link
               href="/home"
-              className="mt-3 px-6 py-2 rounded-lg bg-blue-500/20 text-blue-300 
+              className="mt-3 px-6 py-2 rounded-lg bg-yellow-500/80 text-white font-medium
                      hover:bg-blue-500/40 hover:text-white 
                      transition duration-300 shadow-md shadow-blue-500/40"
             >
@@ -54,7 +96,7 @@ export default function Home() {
 
             <Link
               href="/contact"
-              className="mt-3 px-6 py-2 rounded-lg text-gray-300 
+              className="mt-3 px-6 py-2 rounded-lg text-white bg-yellow-500/80 font-medium
                      hover:bg-blue-500/40 hover:text-white 
                      transition duration-300 shadow-md shadow-blue-500/40"
             >
