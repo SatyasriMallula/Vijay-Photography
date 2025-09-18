@@ -209,16 +209,22 @@ h6 {
 
 
 
-
-
 @keyframes marquee {
-  0%   { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes marquee2 {
-  0%   { transform: translateX(100%); }
-  100% { transform: translateX(0%); }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 .animate-marquee {
@@ -227,4 +233,12 @@ h6 {
 
 .animate-marquee2 {
   animation: marquee2 20s linear infinite;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
