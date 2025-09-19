@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Menu, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // 👈 import
+import { usePathname } from "next/navigation";
 
 const navItems = [
     { href: "/home", label: "HOME" },
@@ -26,14 +26,44 @@ const navItems = [
 export default function Header() {
     const [open, setOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
-    const pathname = usePathname(); // 👈 get current route
+    const pathname = usePathname();
+    const menuRef = useRef<HTMLDivElement | null>(null);
 
-    const isActive = (href: string) => pathname === href; // check active link
+    const isActive = (href: string) => pathname === href;
+
+    // 🔹 Close menu on outside click
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+                setOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
+    // 🔹 Close menu on scroll
+    useEffect(() => {
+        const handleScroll = () => setOpen(false);
+        if (open) {
+            window.addEventListener("scroll", handleScroll);
+        }
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [open]);
+
+    // 🔹 Close menu on Escape key
+    useEffect(() => {
+        const handleEsc = (e: KeyboardEvent) => {
+            if (e.key === "Escape") setOpen(false);
+        };
+        document.addEventListener("keydown", handleEsc);
+        return () => document.removeEventListener("keydown", handleEsc);
+    }, []);
 
     return (
         <>
-            <header className="w-full z-50 flex items-center justify-between py-3 pt-5 px-6 md:px-16 bg-black/90 backdrop-blur-sm">
-                {/* Logo & Title */}
+            <header className="w-full z-50 flex items-center justify-around py-3 pt-5">
+                {/* Logo */}
                 <a
                     href="#home"
                     className="flex w-[150px] items-center gap-3 group cursor-pointer transition-transform duration-300 hover:scale-105 hover:-rotate-1"
@@ -59,7 +89,7 @@ export default function Header() {
                 {/* Desktop Navigation */}
                 <div className="space-y-2">
                     <h2 className="hidden md:block text-3xl text-blue-400 text-center">
-                        BLUE EYE PHOTOGRAPHY
+                        BLUE EYE PHOTOSTUDIO
                     </h2>
 
                     <nav className="hidden md:flex items-center space-x-8 font-semibold tracking-widest text-sm">
@@ -67,35 +97,29 @@ export default function Header() {
                             item.dropdown ? (
                                 <div
                                     key={item.label}
-                                    className="relative"
+                                    className="relative group"
                                     onMouseEnter={() => setServicesOpen(true)}
                                     onMouseLeave={() => setServicesOpen(false)}
                                 >
                                     <Link
                                         href={item.href}
-                                        className={`flex items-center gap-1 transition ${isActive(item.href)
-                                                ? "text-yellow-400"
-                                                : "text-white/90 hover:text-blue-400"
-                                            }`}
+                                        className="flex items-center gap-1 text-white/90 hover:text-blue-400 transition"
                                     >
                                         {item.label}
                                         <ChevronDown
                                             size={16}
-                                            className={`transition-transform ${servicesOpen ? "rotate-180" : ""
-                                                }`}
+                                            className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`}
                                         />
                                     </Link>
 
+                                    {/* Dropdown */}
                                     {servicesOpen && (
-                                        <ul className="absolute z-[9999] bg-[#0f172a]/95 rounded-lg shadow-xl w-48 border border-blue-600">
+                                        <ul className="drop-down z-50">
                                             {item.dropdown.map((sub) => (
                                                 <li key={sub.href}>
                                                     <Link
                                                         href={sub.href}
-                                                        className={`block px-4 py-2 rounded-lg transition duration-300 ${isActive(sub.href)
-                                                                ? "text-yellow-400"
-                                                                : "text-white/90 hover:bg-blue-400/20 hover:text-blue-300"
-                                                            }`}
+                                                        className="block px-4 py-2 text-white/90 hover:bg-blue-400/20 hover:text-blue-300 transition duration-300 rounded-lg"
                                                     >
                                                         {sub.label}
                                                     </Link>
@@ -109,8 +133,8 @@ export default function Header() {
                                     key={item.href}
                                     href={item.href}
                                     className={`relative group px-2 py-0.5 transition ${isActive(item.href)
-                                            ? "text-yellow-400"
-                                            : "text-white/90 hover:text-blue-400"
+                                        ? "text-yellow-400"
+                                        : "text-white/90 hover:text-blue-400"
                                         }`}
                                 >
                                     {item.label}
@@ -143,66 +167,68 @@ export default function Header() {
 
             {/* Mobile Navigation */}
             {open && (
-                <nav className="md:hidden fixed top-[65px] inset-x-0 bg-gradient-to-b from-[#08153a]/95 via-[#0f2a6a]/95 to-[#08153a]/95 backdrop-blur-lg border-t border-blue-800/20 shadow-2xl animate-slideDown z-50 px-6 py-8 flex flex-col space-y-8">
-                    {navItems.map((item) =>
-                        item.dropdown ? (
-                            <div key={item.label} className="flex flex-col items-center space-y-3">
-                                <button
-                                    aria-expanded={servicesOpen}
-                                    onClick={() => setServicesOpen(!servicesOpen)}
-                                    className="flex items-center gap-1 text-lg uppercase font-bold text-blue-100/80"
-                                >
-                                    {item.label}
-                                    <ChevronDown
-                                        size={18}
-                                        className={`transition-transform ${servicesOpen ? "rotate-180" : ""
-                                            }`}
-                                    />
-                                </button>
+                <div ref={menuRef} className="absolute right-2 top-[60px] z-50">
+                    <nav className="w-[180px] bg-gradient-to-b from-[#08153a]/95 via-[#0f2a6a]/95 to-[#08153a]/95 backdrop-blur-lg border border-blue-800/30 shadow-xl rounded-xl px-4 py-3 flex flex-col space-y-2">
+                        {navItems.map((item) =>
+                            item.dropdown ? (
+                                <div key={item.label} className="relative">
+                                    <button
+                                        aria-expanded={servicesOpen}
+                                        onClick={() => setServicesOpen(!servicesOpen)}
+                                        className="flex items-center justify-center gap-3 w-full text-sm font-semibold text-blue-100/90 py-2"
+                                    >
+                                        {item.label}
+                                        <ChevronDown
+                                            size={18}
+                                            className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`}
+                                        />
+                                    </button>
 
-                                {servicesOpen && (
-                                    <div className="flex flex-col space-y-2 w-full items-center">
-                                        {item.dropdown.map((sub) => (
-                                            <Link
-                                                key={sub.href}
-                                                href={sub.href}
-                                                className={`w-full text-center transition ${isActive(sub.href)
-                                                        ? "text-yellow-400"
-                                                        : "text-blue-100/70 hover:text-blue-400"
-                                                    }`}
-                                                onClick={() => setOpen(false)}
-                                            >
-                                                {sub.label}
-                                            </Link>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-                        ) : (
-                            <Link
-                                key={item.href}
-                                href={item.href}
-                                className={`text-lg uppercase font-bold tracking-wider py-2 text-center transition ${isActive(item.href)
+                                    {servicesOpen && (
+                                        <div className="mt-1 flex flex-col items-center    space-y-2">
+                                            {item.dropdown.map((sub) => (
+                                                <Link
+                                                    key={sub.href}
+                                                    href={sub.href}
+                                                    className={`block px-2 py-1 rounded-md text-sm transition ${isActive(sub.href)
+                                                        ? "text-yellow-400 font-semibold"
+                                                        : "text-blue-100/80 hover:text-blue-400"
+                                                        }`}
+                                                    onClick={() => setOpen(false)}
+                                                >
+                                                    {sub.label}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            ) : (
+                                <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    className={`block text-sm font-semibold tracking-wide py-2 rounded-md text-center transition ${isActive(item.href)
                                         ? "text-yellow-400"
                                         : "text-blue-100/80 hover:text-blue-400"
-                                    }`}
-                                onClick={() => setOpen(false)}
-                            >
-                                {item.label}
-                            </Link>
-                        )
-                    )}
+                                        }`}
+                                    onClick={() => setOpen(false)}
+                                >
+                                    {item.label}
+                                </Link>
+                            )
+                        )}
 
-                    {/* Mobile Book Now Button */}
-                    <Link
-                        href="/booknow"
-                        className="px-4 py-2 mt-4 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700 text-white rounded-lg text-center text-lg hover:opacity-90 transition"
-                        onClick={() => setOpen(false)}
-                    >
-                        Book now
-                    </Link>
-                </nav>
+                        {/* Mobile Book Now Button */}
+                        <Link
+                            href="/booknow"
+                            className="px-4 py-2 mt-3 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700 text-white rounded-lg text-center text-sm hover:opacity-90 transition"
+                            onClick={() => setOpen(false)}
+                        >
+                            Book now
+                        </Link>
+                    </nav>
+                </div>
             )}
+
         </>
     );
 }

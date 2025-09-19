@@ -1,10 +1,7 @@
-
 import type { Metadata } from "next";
-import { Inter, Roboto_Mono, Kalnia, Moderustic, Josefin_Sans } from "next/font/google";
+import { Inter, Roboto_Mono, Kalnia, Moderustic, Josefin_Sans, Chewy } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "./clientLayout";
-
-
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -21,6 +18,12 @@ const kalnia = Kalnia({
 
   display: "swap",
 });
+const chewy = Chewy({
+  variable: '--font-chewy',
+  subsets: ['latin'],
+  weight: '400' // Chewy only has 400
+});
+
 const josefin = Josefin_Sans({
   variable: "--font-josefin-sans",
   subsets: ["latin"],
@@ -34,7 +37,7 @@ const moderustic = Moderustic({
   display: "swap",
 });
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.blueyephotography.com"),
+  metadataBase: new URL("https://blueyephotostudio.vercel.app/"),
   title: "Blueye | Capture Your Moments",
   robots: {
     index: true,
@@ -53,7 +56,7 @@ export const metadata: Metadata = {
     title: "Blueye PhotoStudio | Capture Your Moments",
     description:
       "Explore Blueye PhotoStudio's portfolio: weddings, portraits, and creative photography projects.",
-    url: "https://your-domain.com",
+    url: "https://blueyephotostudio.vercel.app/",
     siteName: "Blueye PhotoStudio",
     images: [
       {
@@ -83,7 +86,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable}  ${josefin.variable} ${kalnia.variable} ${moderustic.variable}  ${robotoMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${chewy.variable}  ${josefin.variable} ${kalnia.variable} ${moderustic.variable}  ${robotoMono.variable}`}>
 
       <body className="antialiased ">
         {/* Client wrapper handles conditional header */}
@@ -93,8 +96,8 @@ export default function RootLayout({
             "@context": "https://schema.org",
             "@type": "PhotoStudio",
             "name": "Blueye Photogstudio",
-            "url": "https://www.blueyephotostudio.com",
-            "logo": "https://www.blueyephotostudio.com/logo.png",
+            "url": "https://blueyephotostudio.vercel.app/",
+            "logo": "https://blueyephotostudio.vercel.app/logo.png",
             "sameAs": [
               "https://www.instagram.com/yourhandle",
               "https://www.facebook.com/yourhandle"
@@ -102,8 +105,6 @@ export default function RootLayout({
           })
         }} />
       </body>
-
-
     </html >
   );
 }
