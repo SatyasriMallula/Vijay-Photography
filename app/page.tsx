@@ -1,30 +1,55 @@
 "use client";
-import { motion } from "framer-motion";
-import { Instagram, MapPin, MessageCircle } from "lucide-react";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
+import { Instagram, MapPin, MessageCircle } from "lucide-react";
 
 export default function Home() {
-  const line1 = "Welcome to";
-  const line2 = "Blue Eye Photo Studio";
+  const line1 = "Blueye";
+  const line2 = "Photo Studio";
 
-  // Container animation
-  const container = {
-    hidden: { opacity: 1 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.05 },
-    },
-  };
+  const textRef = useRef<HTMLSpanElement[]>([]);
 
-  // Letter animation
-  const letter = {
-    hidden: { y: -50, opacity: 0 },
-    visible: { y: 0, opacity: 1 },
-  };
+  useEffect(() => {
+    if (!textRef.current) return;
+
+    const letters = textRef.current;
+    const amplitude = 10; // wave height for MD+
+    const frequency = 0.5; // wave frequency
+    const isSmallScreen = window.innerWidth < 768;
+
+    letters.forEach((letter, i) => {
+      if (isSmallScreen) {
+        // Small screens: simple drop animation
+        gsap.fromTo(
+          letter,
+          { y: -100, opacity: 0 },
+          { y: 0, opacity: 1, ease: "bounce.out", delay: i * 0.08, duration: 1 }
+        );
+      } else {
+        // MD+ screens: sine arc + drop
+        gsap.fromTo(
+          letter,
+          { y: -100, opacity: 0 },
+          {
+            y: amplitude * Math.sin(i * frequency),
+            opacity: 1,
+            ease: "bounce.out",
+            delay: i * 0.12,
+            duration: 1.2,
+          }
+        );
+      }
+    });
+  }, []);
+
+  // Single gradient for heading text
+  const gradientClass = "bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600";
 
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full h-screen py-5">
       {/* Background image */}
       <Image
         src="/booknow/IMG_0380.JPG"
@@ -35,11 +60,11 @@ export default function Home() {
       />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60 z-10" />
+      <div className="absolute inset-0 bg-black/70 z-10" />
 
       {/* Overlay content */}
       <div className="absolute inset-0 flex justify-center items-center px-4 z-20">
-        <div className=" p-10 text-center max-w-2xl flex flex-col items-center gap-6 rounded-2xl">
+        <div className="p-6 md:p-10 text-center max-w-3xl flex flex-col items-center gap-6 rounded-2xl">
           {/* Logo */}
           <Image
             src="/logo.png"
@@ -47,85 +72,73 @@ export default function Home() {
             width={100}
             priority
             alt="Blue Eye Logo"
-            className="w-24 h-24 mx-auto mb-4 animate-bounce-slow"
+            className="w-17 h-17 md:w-20 md:h-20 lg:w-24 lg:h-24 mx-auto mb-2 md:my-3 animate-bounce-slow"
           />
 
-          {/* Title line 1 */}
-          <motion.h1
-            className="text-5xl font-bold text-yellow-400 flex flex-wrap justify-center"
-            variants={container}
-            initial="hidden"
-            animate="visible"
-          >
-            {line1.split("").map((char, i) => (
-              <motion.span key={i} variants={letter}>
-                {char === " " ? "\u00A0" : char}
-              </motion.span>
-            ))}
-          </motion.h1>
+          {/* Animated Heading */}
+          <div className="flex flex-col items-center gap-6 md:gap-10">
+            {/* Line 1 */}
+            <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold flex flex-wrap md:tracking-widest md:leading-[1.4] justify-center chewy">
+              {line1.split("").map((char, i) => (
+                <span
+                  key={i}
+                  ref={(el) => (textRef.current[i] = el!)}
+                  className={`inline-block text-transparent bg-clip-text ${gradientClass} mr-1`}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </span>
+              ))}
+            </h1>
 
-          {/* Title line 2 */}
-          <motion.h1
-            className="text-5xl font-bold text-yellow-400 flex flex-wrap justify-center"
-            variants={container}
-            initial="hidden"
-            animate="visible"
-          >
-            {line2.split("").map((char, i) => (
-              <motion.span key={i} variants={letter}>
-                {char === " " ? "\u00A0" : char}
-              </motion.span>
-            ))}
-          </motion.h1>
+            {/* Line 2 */}
+            <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold flex flex-wrap justify-center gap-1 md:gap-2 chewy">
+              {line2.split("").map((char, i) => (
+                <span
+                  key={i + line1.length}
+                  ref={(el) => (textRef.current[i + line1.length] = el!)}
+                  className={`inline-block text-transparent bg-clip-text ${gradientClass} md:mr-1`}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </span>
+              ))}
+            </h1>
+          </div>
 
           {/* Subheading */}
-          <p className="mt-4 text-gray-300 text-lg md:text-xl font-light opacity-90 animate-fade-in">
+          <p className="mt-4 text-gray-300 text-sm md:text-lg lg:text-xl font-light opacity-90 animate-fade-in">
             Every picture tells your story — let&apos;s capture yours
           </p>
 
           {/* Buttons */}
-          <div className="flex gap-6">
+          <div className="flex flex-col sm:flex-row gap-4 mt-4">
             <Link
               href="/home"
-              className="mt-3 px-6 py-2 rounded-lg bg-yellow-500/80 text-white font-medium
-                     hover:bg-blue-500/40 hover:text-white 
-                     transition duration-300 shadow-md shadow-blue-500/40"
+              className="px-6 py-2 rounded-lg bg-blue-500/20 text-blue-300 hover:bg-blue-500/40 hover:text-white transition duration-300 shadow-md shadow-blue-500/40 text-center"
             >
               Explore
             </Link>
 
             <Link
               href="/contact"
-              className="mt-3 px-6 py-2 rounded-lg text-white bg-yellow-500/80 font-medium
-                     hover:bg-blue-500/40 hover:text-white 
-                     transition duration-300 shadow-md shadow-blue-500/40"
+              className="px-6 py-2 rounded-lg text-gray-300 hover:bg-blue-500/40 hover:text-white transition duration-300 shadow-md shadow-blue-500/40 text-center"
             >
               Contact
             </Link>
           </div>
 
-          {/* Social icons */}
-          <div className="flex gap-6 text-2xl text-white mt-8">
-            <a
-              href="https://google.com"
-              target="_blank"
-              className="hover:text-blue-400"
-              title="location"
-            >
+          {/* Social Icons */}
+          <div className="flex gap-6 text-2xl text-white mt-6">
+            <a href="https://google.com" target="_blank" className="hover:text-blue-400" title="location">
               <MapPin />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/blueye_photostudio/?hl=en"
               target="_blank"
               className="hover:text-pink-400"
             >
               <Instagram />
             </a>
-            <a
-              href="https://youtube.com"
-              target="_blank"
-              className="hover:text-green-500"
-            >
+            <a href="https://wa.me/7729803266" title="WhatsApp" target="_blank" className="hover:text-green-400">
               <MessageCircle />
             </a>
           </div>

@@ -80,6 +80,9 @@ h5,
 h6 {
   font-family: var(--heading-font);
 }
+.chewy {
+  font-family: var(--font-chewy) !important;
+}
 
 .gradient-line {
   @apply absolute left-1/2 -translate-x-1/2 bottom-0 w-0 h-[3px] rounded-full bg-gradient-to-r from-blue-400 via-blue-300 to-blue-500 transition-all duration-400 group-hover:w-full;
@@ -230,11 +233,11 @@ h6 {
 }
 
 .animate-marquee {
-  animation: marquee 25s linear infinite;
+  animation: marquee 20s linear infinite;
 }
 
 .animate-marquee2 {
-  animation: marquee2 25s linear infinite;
+  animation: marquee2 20s linear infinite;
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari */

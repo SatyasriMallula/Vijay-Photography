@@ -1,6 +1,5 @@
-
 import type { Metadata } from "next";
-import { Inter, Roboto_Mono, Kalnia, Moderustic, Josefin_Sans } from "next/font/google";
+import { Inter, Roboto_Mono, Kalnia, Moderustic, Josefin_Sans,Chewy } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "./clientLayout";
 
@@ -21,6 +20,12 @@ const kalnia = Kalnia({
 
   display: "swap",
 });
+const chewy = Chewy({ 
+  variable: '--font-chewy',
+  subsets: ['latin'], 
+  weight: '400' // Chewy only has 400
+});
+
 const josefin = Josefin_Sans({
   variable: "--font-josefin-sans",
   subsets: ["latin"],
@@ -83,7 +88,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable}  ${josefin.variable} ${kalnia.variable} ${moderustic.variable}  ${robotoMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${chewy.variable}  ${josefin.variable} ${kalnia.variable} ${moderustic.variable}  ${robotoMono.variable}`}>
 
       <body className="antialiased ">
         {/* Client wrapper handles conditional header */}
