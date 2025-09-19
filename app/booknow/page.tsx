@@ -66,11 +66,6 @@ export default function BookNowPage() {
             setIsSubmitting(false);
             return;
         }
-        if (!data.requirements.trim()) {
-            setError("Please tell us about your requirement.");
-            setIsSubmitting(false);
-            return;
-        }
 
         try {
             const res = await fetch("/api/sendMail", {
