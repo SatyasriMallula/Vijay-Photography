@@ -21,8 +21,8 @@ const reels = [
 
 export default function ReelsSection() {
   return (
-    <section className="py-10 space-y-10">
-      <div className="text-center  space-y-8">
+    <section className="md:py-10  space-y-4 md:space-y-8">
+      <div className="text-center space-y-4 md:space-y-8 ">
         <h2 className="text-3xl md:text-4xl text-yellow-500 font-medium">
           Stories in Motion
         </h2>

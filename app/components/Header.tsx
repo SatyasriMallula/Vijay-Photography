@@ -5,6 +5,7 @@ import { Menu, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import BackButton from "./BackButton";
 
 const navItems = [
     { href: "/home", label: "HOME" },
@@ -64,8 +65,8 @@ export default function Header() {
         <>
             <header className="w-full z-50 flex items-center justify-around py-3 pt-5">
                 {/* Logo */}
-                <a
-                    href="#home"
+                <Link
+                    href="/home"
                     className="flex w-[150px] items-center gap-3 group cursor-pointer transition-transform duration-300 hover:scale-105 hover:-rotate-1"
                 >
                     <Image
@@ -84,14 +85,14 @@ export default function Header() {
                     <span className="pl-2 text-blue-200 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:inline">
                         Capturing Moments
                     </span>
-                </a>
+                </Link>
 
                 {/* Desktop Navigation */}
                 <div className="space-y-2">
                     <h2 className="hidden md:block text-3xl text-blue-400 text-center">
-                        BLUE EYE PHOTOSTUDIO
+                        BLUEYE PHOTOSTUDIO
                     </h2>
-
+<BackButton/>
                     <nav className="hidden md:flex items-center space-x-8 font-semibold tracking-widest text-sm">
                         {navItems.map((item) =>
                             item.dropdown ? (

@@ -20,13 +20,13 @@ const categories = [
         title: "Branding",
         description: "Your brand deserves visuals that speak louder than words",
         img: "/branding/DSC06914.jpg",
-        href: "gallery"
+        href: "/gallery"
     },
     {
         title: "Baby Shoots",
         description: "Capture the innocence, laughter of your little one with our baby photoshoots.",
         img: "/babyshoot/DSC07897.jpg",
-        href: "portfolio/babyshoot"
+        href: "/gallery"
     },
     {
         title: "Travel",
@@ -44,7 +44,7 @@ const categories = [
 
 export default function Categories() {
     return (
-        <section className="w-full px-6 py-15 space-y-10">
+        <section className="w-full px-6 py-15 space-y-4 md:space-y-8">
             <h2 className="text-3xl md:text-4xl font-medium text-center text-yellow-500">
                 Explore My Work
             </h2>

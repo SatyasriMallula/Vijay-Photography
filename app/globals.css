@@ -240,3 +240,10 @@ h6 {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+
+@supports (-webkit-touch-callout: none) {
+  .ios-only {
+    display: block !important;
+  }
+}

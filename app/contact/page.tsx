@@ -8,10 +8,10 @@ export default function ContactPage() {
             <div className="w-full rounded-2xl shadow-2xl p-6 sm:p-10  space-y-8 bg-gray-800">
                 {/* Heading */}
                 <div className="text-center space-y-2">
-                    <h1 className="text-3xl font-bold  dark:text-white sm:text-4xl">
+                    <h1 className="text-3xl font-bold text-white sm:text-4xl">
                         Get in Touch
                     </h1>
-                    <p className="text-gray-600 dark:text-gray-300 text-base sm:text-sm md:text-lg">
+                    <p className=" text-white sm:text-sm md:text-lg">
                         We&apos;d love to hear from you!
                     </p>
                 </div>
@@ -20,15 +20,15 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                     <div className="flex flex-col items-center space-y-2">
                         <Phone className="w-6 h-6 text-blue-500" />
-                        <p className="font-medium">+91 7729803266</p>
+                        <p className="font-medium text-white">+91 7729803266</p>
                     </div>
                     <div className="flex flex-col items-center space-y-2">
                         <Mail className="w-6 h-6 text-blue-500" />
-                        <p className=" font-medium">blueyephotostudio@gmail.com</p>
+                        <p className=" font-medium text-white">blueyephotostudio@gmail.com</p>
                     </div>
                     <div className="flex flex-col items-center space-y-2">
                         <MapPin className="w-6 h-6 text-blue-500" />
-                        <p className=" font-medium">
+                        <p className=" font-medium text-white">
                             123 Studio Lane, Hyderabad
                         </p>
                     </div>
