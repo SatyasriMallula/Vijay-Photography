@@ -8,25 +8,35 @@ import { X } from "lucide-react";
 
 export default function VisualPortrait() {
   const images = [
-    { src: "/portraits/_DCS0018.JPG", alt: "Signature shot 1", style: "rotate-3" },
-    { src: "/portraits/_DCS0023.JPG", alt: "Creative portrait", style: "-rotate-2 scale-110" },
-    { src: "/portraits/_DCS0121.JPG", alt: "Event highlight", style: "rotate-1 scale-105" },
-    { src: "/portraits/_DCS6394.jpg", alt: "Behind the scenes", style: "-rotate-1" },
-    { src: "/portraits/_DCS7230.jpg", alt: "Artistic frame", style: "rotate-2 scale-110" },
-    { src: "/portraits/_DCS1698.jpg", alt: "Behind the scenes", style: "-rotate-1" },
-    { src: "/portraits/IMG_7822.JPG", alt: "Golden hour", style: "scale-105" },
-    { src: "/portraits/_DCS7340.jpg", alt: "Cityscape", style: "-rotate-3" },
-    // { src: "/portraits/DSC06116.jpg", alt: "Fashion shoot", style: "rotate-4 scale-105" },
-    { src: "/portraits/IMG_7867.JPG", alt: "Cityscape", style: "-rotate-3" },
-    // { src: "/portraits/IMG_7871.JPG", alt: "Fashion shoot", style: "rotate-4 scale-105" },
-    { src: "/weddings/DSC03243.jpg", alt: "Fashion shoot1", style: "rotate-4 scale-105" },
-    { src: "/portraits/_DCS0212.JPG", alt: "Cityscape", style: "-rotate-3" },
-    { src: "/portraits/_KN13188.jpg", alt: "Artistic frame", style: "rotate-2 scale-110" },
-    { src: "/portraits/_DCS0213.JPG", alt: "Cityscape", style: "-rotate-3" },
-    // { src: "/portraits/_DCS0099.jpg", alt: "Fashion shoot", style: "rotate-4 scale-105" },
-    // { src: "/portraits/2P6A5682.JPG", alt: "Fashion shoot", style: "rotate-4 scale-105" },
+    { src: "/portraits/_DCS0018.JPG", alt: "Signature shot 1", style: "rotate-3 scale-105" },
+    { src: "/portraits/_DCS0023.JPG", alt: "Creative portrait", style: "-rotate-3 scale-110" },
+    { src: "/portraits/_DCS0121.JPG", alt: "Event highlight", style: "rotate-3 scale-105" },
+    { src: "/portraits/DSC06165_Original.jpg", alt: "Fashion shoot1", style: "-rotate-2 scale-105" },
+    { src: "/portraits/portraits.jpg", alt: "Fashion shoot", style: "rotate-2 scale-105" },
+    { src: "/portraits/_DCS6394.jpg", alt: "Behind the scenes", style: "-rotate-3 scale-110" },
+    { src: "/portraits/_DCS0115.jpg", alt: "Behind the scenes", style: "rotate-2 scale-105" },
+    { src: "/portraits/_DCS7230.jpg", alt: "Artistic frame", style: "-rotate-3 scale-110" },
+    { src: "/portraits/_DCS0210.jpg", alt: "Behind the scenes", style: "rotate-3 scale-105" },
+    { src: "/portraits/_DCS0222.jpg", alt: "Artistic frame", style: "-rotate-3 scale-110" },
+    { src: "/portraits/_DCS1698.jpg", alt: "Behind the scenes", style: "rotate-2 scale-110" },
+    { src: "/portraits/IMG_7822.JPG", alt: "Golden hour", style: "-rotate-3 scale-105" },
+    { src: "/portraits/_DCS7340.jpg", alt: "Cityscape", style: "rotate-2 scale-110" },
+    { src: "/portraits/DSC06116.jpg", alt: "Fashion shoot", style: "-rotate-2 scale-105" },
+    { src: "/portraits/IMG_7867.JPG", alt: "Cityscape", style: "rotate-1 scale-105" },
+    { src: "/portraits/IMG_7871.JPG", alt: "Fashion shoot", style: "-rotate-3 scale-110" },
+    { src: "/weddings/DSC03243.jpg", alt: "Fashion shoot1", style: "rotate-2 scale-110" },
+    { src: "/portraits/_DCS0212.JPG", alt: "Cityscape", style: "-rotate-2 scale-105" },
+    { src: "/portraits/d.jpg", alt: "1", style: "rotate-1 scale-110" },
+    { src: "/portraits/_KN13188.jpg", alt: "Artistic frame", style: "-rotate-2 scale-105" },
+    { src: "/portraits/_DCS0213.JPG", alt: "Cityscape", style: "rotate-2 scale-105" },
+    { src: "/portraits/_DCS0099.jpg", alt: "Fashion shoot", style: "-rotate-2 scale-110" },
+    { src: "/portraits/2P6A5682.JPG", alt: "Fashion shoot", style: "rotate-2 scale-105" },
+    { src: "/portraits/_DCS0275.JPG", alt: "Fashion shoot", style: "-rotate-3 scale-110" },
+    { src: "/portraits/_DCS1698.JPG", alt: "Cityscape", style: "rotate-2 scale-110" },
 
   ];
+
+
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -37,13 +47,13 @@ export default function VisualPortrait() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <main className="min-h-screen bg-black py-16 px-6 max-w-7xl mx-auto flex flex-col items-center space-y-8">
-      <h1 className="text-5xl font-extrabold text-amber-400 text-center">
+    <main className="min-h-screen bg-black py-16 px-6 max-w-7xl mx-auto flex flex-col items-center space-y-6 md:space-y-8">
+      <h1 className="text-3xl md:text-5xl font-extrabold text-amber-400 text-center">
         Blueye Studio Highlights
       </h1>
 
       <motion.p
-        className="max-w-2xl text-gray-300 text-center text-lg leading-relaxed"
+        className="max-w-2xl text-gray-300 text-center text-sm md:text-lg leading-relaxed"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -55,7 +65,7 @@ export default function VisualPortrait() {
         speaks long after it is captured.
       </motion.p>
 
-      <div className="relative w-full max-w-8xl columns-1 sm:columns-2 md:columns-4 gap-14 space-y-14">
+      <div className="relative w-full h-full p-10 overflow-hidden  columns-1 sm:columns-2 md:columns-4 gap-14 space-y-14">
         {images.map(({ src, alt, style }, idx) => (
           <motion.div
             key={idx}
@@ -76,7 +86,6 @@ export default function VisualPortrait() {
               height={700}
               className="w-full object-contain object-center"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-              priority={idx < 4}
             />
           </motion.div>
         ))}
@@ -119,7 +128,7 @@ export default function VisualPortrait() {
                   const width = el.clientWidth;
                   el.scrollTo({
                     left: selectedIndex * width,
-                    behavior: "instant", // or "smooth"
+                    behavior: "instant",
                   });
                 }
               }}

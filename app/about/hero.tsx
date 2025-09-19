@@ -10,9 +10,9 @@ function Hero() {
         <Image
           src="/about/2P6A6331.jpg"
           alt="about"
-          width={100}
-          height={100}
-          unoptimized
+         width={1200}       
+          height={630} 
+          priority
           className="w-full xl:h-[630px] h-[200px] md:h-[400px] lg:h-[500px] object-contain rounded-xl"
         />
         {/* Radial dark edges overlay */}

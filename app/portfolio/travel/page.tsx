@@ -9,11 +9,14 @@ import { useEffect, useState } from "react";
 
 const TravelImages = [
     { src: "/travel/IMG_9140.JPG", alt: "Travel photo 1" },
+    { src: "/travel/IMG_8403.JPG", alt: "Travel photo 1" },
+    { src: "/travel/_DCS5752.jpg", alt: "Travel photo 7" },
     { src: "/travel/IMG_9145.JPG", alt: "Travel photo 2" },
     { src: "/travel/IMG_9143.JPG", alt: "Travel photo 3" },
     { src: "/travel/IMG_9148.JPG", alt: "Travel photo 4" },
     { src: "/travel/IMG_9153.JPG", alt: "Travel photo 5" },
-    { src: "/travel/IMG_9151.JPG", alt: "Travel photo 6" }
+    { src: "/travel/IMG_9151.JPG", alt: "Travel photo 6" },
+    { src: "/travel/travelshot.png", alt: "Travel photo 8" }
 ];
 
 export default function TravelPage() {
