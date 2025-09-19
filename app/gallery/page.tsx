@@ -33,22 +33,17 @@ const allImages = [
 
 export default function GalleryPage() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const [visibleCount, setVisibleCount] = useState(16); // start with 12 images
-
-  const visibleImages = allImages.slice(0, visibleCount);
 
   return (
     <section className="px-6 py-16">
       <h2 className="text-3xl font-bold mb-5 text-center text-yellow-500">Gallery</h2>
-      <p
-        className="text-center max-w-3xl mx-auto text-gray-300 text-lg mb-8 leading-relaxed"
-      >
+      <p id="hero" className="text-center max-w-3xl mx-auto text-gray-300 text-lg mb-8 leading-relaxed">
         A curated selection of timeless moments, creative portraits, and storytelling frames.
       </p>
 
       {/* Masonry Gallery */}
       <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 px-2">
-        {visibleImages.map((p, idx) => (
+        {allImages.map((p, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0 }}
@@ -67,18 +62,6 @@ export default function GalleryPage() {
           </motion.div>
         ))}
       </div>
-
-      {/* Load More Button */}
-      {visibleCount < allImages.length && (
-        <div className="text-center mt-8">
-          <button
-            onClick={() => setVisibleCount((prev) => prev + 4)}
-            className="px-6 py-3 bg-gray-800 text-white rounded-full shadow hover:bg-gray-700 transition"
-          >
-            Load More
-          </button>
-        </div>
-      )}
 
       {/* Lightbox */}
       <Lightbox

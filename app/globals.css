@@ -62,10 +62,14 @@ body {
 html,
 body,
 #__next {
-  height: 100vh;
+  /* height: 100vh; */
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+main {
+  height: 100%;
+  overflow-y: auto;
 }
 
 h1,
@@ -190,24 +194,22 @@ h6 {
   }
 }
 .animate-banner {
-
   animation: bannerScroll 27s linear infinite; /* desktop default */
 }
 
 @media (max-width: 767px) {
   @keyframes bannerScroll {
-    0%   { transform: translateX(0%); }
-    100% { transform: translateX(-600%); } /* maybe scroll entire width */
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-600%);
+    } /* maybe scroll entire width */
   }
   .animate-banner {
-
-  animation: bannerScroll 15s linear infinite; /* desktop default */
+    animation: bannerScroll 15s linear infinite; /* desktop default */
+  }
 }
-}
-
-
-
-
 
 @keyframes marquee {
   0% {

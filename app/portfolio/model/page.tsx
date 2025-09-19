@@ -79,9 +79,6 @@ export default function ModelsPage() {
                                 style={{
                                     transform: `rotateY(${i * angle}deg) translateZ(230px)`,
                                 }}
-                                loading="lazy"
-                                decoding="async"
-                                unoptimized
                             />
                         ))}
                     </div>

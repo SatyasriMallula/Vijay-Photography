@@ -55,11 +55,6 @@ export default function VisualPortrait() {
               width={100}
               height={50}
               className="w-full object-contain object-center"
-            
-              decoding="async"
-                    draggable={false}
-                    unoptimized
-                    priority
             />
           </div>
         ))}
