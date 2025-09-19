@@ -7,7 +7,7 @@ const categories = [
     {
         title: "Portraits",
         description: "Capturing expressions, emotions, and timeless moments.",
-        img: "/potraits/cover-image.jpg",
+        img: "/portraits/cover-image.jpg",
         href: "/portfolio/portraits"
     },
     {
