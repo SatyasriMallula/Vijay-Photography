@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import { Instagram, MapPin, MessageCircle } from "lucide-react";
 
 export default function Home() {
   const line1 = "Blueye";
@@ -78,7 +77,7 @@ export default function Home() {
           {/* Animated Heading */}
           <div className="flex flex-col items-center gap-6 md:gap-10">
             {/* Line 1 */}
-            <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold flex flex-wrap md:tracking-widest md:leading-[1.4] justify-center chewy">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold flex flex-wrap md:tracking-widest md:leading-[1.4] justify-center chewy">
               {line1.split("").map((char, i) => (
                 <span
                   key={i}
@@ -93,7 +92,7 @@ export default function Home() {
             </h1>
 
             {/* Line 2 */}
-            <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold flex flex-wrap justify-center gap-1 md:gap-2 chewy">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold flex flex-wrap justify-center gap-1 md:gap-2 chewy">
               {line2.split("").map((char, i) => (
                 <span
                   key={i + line1.length}
@@ -129,22 +128,7 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Social Icons */}
-          <div className="flex gap-6 text-2xl text-white mt-6">
-            <a href="https://google.com" target="_blank" className="hover:text-blue-400" title="location">
-              <MapPin />
-            </a>
-            <a
-              href="https://www.instagram.com/blueye_photostudio/?hl=en"
-              target="_blank"
-              className="hover:text-pink-400"
-            >
-              <Instagram />
-            </a>
-            <a href="https://wa.me/7729803266" title="WhatsApp" target="_blank" className="hover:text-green-400">
-              <MessageCircle />
-            </a>
-          </div>
+
         </div>
       </div>
     </section>

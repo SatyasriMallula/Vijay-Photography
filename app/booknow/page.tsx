@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Camera, Calendar, Heart } from "lucide-react";
-import ReCAPTCHA from "react-google-recaptcha/"
+
 type FormDataType = {
     name: string;
     phone: string;
@@ -19,7 +19,6 @@ export default function BookNowPage() {
     const [error, setError] = useState<string>("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [animate, setAnimate] = useState(false);
-    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
     useEffect(() => {
         setAnimate(true);
@@ -27,12 +26,6 @@ export default function BookNowPage() {
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        const token = await recaptchaRef.current?.executeAsync();
-        if (!token) {
-            alert("Please complete the reCAPTCHA");
-            return;
-        }
-
         setError("");
         setIsSubmitting(true);
 
@@ -81,7 +74,7 @@ export default function BookNowPage() {
         try {
             const res = await fetch("/api/sendMail", {
                 method: "POST",
-                body: JSON.stringify({ ...data, recaptchaToken: token }),
+                body: JSON.stringify(data),
                 headers: { "Content-Type": "application/json" },
             });
             if (res.ok) setSubmitted(true);
@@ -159,15 +152,13 @@ export default function BookNowPage() {
                         </div>
                     ) : (
                         <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 md:space-y-6 lg:space-y-8" noValidate>
-                            <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} size="invisible" ref={recaptchaRef} />
-
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                                 <input name="name" type="text" placeholder="Your Name" required className="input" autoComplete="off" />
                                 <input name="phone" type="tel" placeholder="Phone Number" maxLength={10} required className="input" />
                             </div>
                             <input name="email" type="email" placeholder="Email Address" required className="input" autoComplete="off" />
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                                <select name="service" required className="input focus:bg-black">
+                                <select name="service" required className="input bg-black">
                                     <option value="">Select Service</option>
                                     <option value="wedding">Wedding Photography</option>
                                     <option value="birthday">Birthday Event</option>
