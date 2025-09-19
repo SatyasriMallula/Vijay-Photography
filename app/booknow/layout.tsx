@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Book Now | Blueye PhotoStudio",
+    title: "Gallery | Blueye PhotoStudio",
     description: "Explore our photography portfolio across weddings, travel, and events.",
     openGraph: {
         title: "Blueye PhotoStudio - Gallery",

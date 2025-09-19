@@ -3,7 +3,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Model | Blueye PhotoStudio",
+    title: "Baby Shoot | Blueye PhotoStudio",
     description: "Adorable baby shoots that preserve precious memories.",
     openGraph: {
         title: "Blueye PhotoStudio - Baby Shoots",

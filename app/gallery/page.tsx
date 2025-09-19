@@ -1,6 +1,9 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
+
+
 import { AnimatePresence, motion } from "framer-motion";
 import Lightbox from "../components/LightBox";
 import Image from "next/image";
@@ -12,19 +15,19 @@ const allImages = [
   { src: "/home/59be7081def4d.jpg", alt: "landscape " },
   { src: "/gallery/DSC03543.jpg", alt: "Couple at sunset" },
   { src: "/home/featured-shot/_DCS0275.JPG", alt: "fhcjsj" },
-  // { src: "/gallery/_DCS7306.jpg", alt: "1" },
+  { src: "/gallery/_DCS7306.jpg", alt: "1" },
   { src: "/gallery/DSC05947.jpg", alt: "Branding session" },
   { src: "/gallery/DSC06699.jpg", alt: "Family portrait" },
-  // { src: "/gallery/_DCS0210.jpg", alt: "Outdoor wedding" },
+  { src: "/gallery/_DCS0210.jpg", alt: "Outdoor wedding" },
   { src: "/home/DSC05894.jpg", alt: "landscape2" },
   { src: "/gallery/_DCS0129.JPG", alt: "2" },
   // { src: "/gallery/DSC08825.jpg", alt: "Gallery" },
   // { src: "/gallery/_DCS1799.JPG", alt: "3" },
   { src: "/gallery/DSC06690.jpg", alt: "4" },
-  // { src: "/gallery/DSC08825.jpg", alt: "5" },
+  { src: "/gallery/DSC08825.jpg", alt: "5" },
   { src: "/gallery/DSC07857.jpg", alt: "6" },
   { src: "/gallery/2P6A5682.JPG", alt: "7" },
-  // { src: "/gallery/DSC07974.jpg", alt: "8" },
+  { src: "/gallery/DSC07974.jpg", alt: "8" },
   { src: "/gallery/DSC08523.jpg", alt: "9" },
   { src: "/gallery/as.jpg", alt: "10" },
   { src: "/gallery/_DCS7389.jpg", alt: "11" },
@@ -32,7 +35,7 @@ const allImages = [
   // { src: "/gallery/DSC09867.jpg", alt: "13" },
   { src: "/home/featured-shot/DSC05890.jpg", alt: "prewedding" },
   { src: "/weddings/DSC00356 2.jpg", alt: "portrait" },
-  // { src: "/gallery/IMG_7840.JPG", alt: "haldi" },
+  { src: "/gallery/IMG_7840.JPG", alt: "haldi" },
 ];
 
 export default function GalleryPage() {
@@ -93,7 +96,7 @@ export default function GalleryPage() {
         />
       )}
 
-
+      
       {isMobile && selectedIndex !== null && (
         <AnimatePresence>
           <motion.div
@@ -102,7 +105,7 @@ export default function GalleryPage() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-
+          
             <button
               onClick={() => setSelectedIndex(null)}
               className="absolute top-4 right-4 z-50 text-white bg-black/60 p-2 rounded-full"
@@ -110,7 +113,7 @@ export default function GalleryPage() {
               <X size={24} />
             </button>
 
-
+            
             <motion.div
               ref={(el) => {
                 if (el && selectedIndex !== null) {

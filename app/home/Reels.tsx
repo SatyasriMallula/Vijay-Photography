@@ -21,13 +21,13 @@ const reels = [
 
 export default function ReelsSection() {
   return (
-    <section className=" space-y-6 md:space-y-10">
-      <div className="text-center space-y-4   md:space-y-8">
-        <h2 className="text-2xl md:text-4xl text-yellow-500 font-medium">
+    <section className="md:py-10  space-y-4 md:space-y-8">
+      <div className="text-center space-y-4 md:space-y-8 ">
+        <h2 className="text-3xl md:text-4xl text-yellow-500 font-medium">
           Stories in Motion
         </h2>
         <motion.p
-          className="max-w-2xl mx-auto text-gray-300 text-sm md:text-lg leading-relaxed px-4"
+          className="max-w-2xl mx-auto text-gray-300 text-lg leading-relaxed px-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
