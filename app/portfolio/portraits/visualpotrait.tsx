@@ -13,7 +13,7 @@ export default function VisualPortrait() {
     { src: "/portraits/_DCS0121.JPG", alt: "Event highlight", style: "rotate-3 scale-105" },
     { src: "/portraits/DSC06165_Original.jpg", alt: "Fashion shoot1", style: "-rotate-2 scale-105" },
     { src: "/portraits/portraits.jpg", alt: "Fashion shoot", style: "rotate-2 scale-105" },
-    { src: "/portraits/_DCS6394.jpg", alt: "Behind the scenes", style: "-rotate-3 scale-110" },
+    { src: "/portraits/_DCS6394.jpg", alt: "Behind the scenes3", style: "-rotate-3 scale-110" },
     { src: "/portraits/_DCS0115.jpg", alt: "Behind the scenes", style: "rotate-2 scale-105" },
     { src: "/portraits/_DCS7230.jpg", alt: "Artistic frame", style: "-rotate-3 scale-110" },
     { src: "/portraits/_DCS0210.jpg", alt: "Behind the scenes", style: "rotate-3 scale-105" },
