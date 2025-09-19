@@ -7,15 +7,15 @@ import Link from "next/link";
 const reels = [
   {
     image: "/about/DSC08756.jpg",
-    url: "https://www.instagram.com/reel/XXXXXXXX/",
+    url: "https://www.instagram.com/blueye_photostudio/?hl=enm",
   },
   {
     image: "/about/DSC05840.jpg",
-    url: "https://www.instagram.com/reel/YYYYYYYY/",
+    url: "https://www.instagram.com/blueye_photostudio/?hl=enm",
   },
   {
     image: "/about/DSC03595.jpg",
-    url: "https://www.instagram.com/reel/ZZZZZZZZ/",
+    url:"https://www.instagram.com/blueye_photostudio/?hl=enm",
   },
 ];
 
