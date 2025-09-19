@@ -73,7 +73,7 @@ export default function ClientLayout({
             </a>
           ))}
         </div>
-        <p className="text-white/70">© {new Date().getFullYear()} Blue eye PhotoStudio. All Rights Reserved.</p>
+        <p className="text-white/70">© {new Date().getFullYear()} Blueye PhotoStudio. All Rights Reserved.</p>
 
       </footer>
       {!isRoot && showButton && (

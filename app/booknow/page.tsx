@@ -158,7 +158,7 @@ export default function BookNowPage() {
                             </div>
                             <input name="email" type="email" placeholder="Email Address" required className="input" autoComplete="off" />
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                                <select name="service" required className="input bg-black">
+                                <select name="service" required className="input">
                                     <option value="">Select Service</option>
                                     <option value="wedding">Wedding Photography</option>
                                     <option value="birthday">Birthday Event</option>
