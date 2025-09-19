@@ -46,6 +46,14 @@ export default function GalleryPage() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section className="py-20 px-4 bg-black/90">
       <div className="text-center max-w-2xl mx-auto mb-12">
@@ -76,7 +84,6 @@ export default function GalleryPage() {
         ))}
       </div>
 
-
       {!isMobile && (
         <Lightbox
           images={allImages}
@@ -105,9 +112,16 @@ export default function GalleryPage() {
 
 
             <motion.div
-              className="flex w-full h-full overflow-x-scroll snap-x snap-mandatory"
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
+              ref={(el) => {
+                if (el && selectedIndex !== null) {
+                  const width = el.clientWidth;
+                  el.scrollTo({
+                    left: selectedIndex * width,
+                    behavior: "instant",
+                  });
+                }
+              }}
+              className="flex w-full h-full overflow-x-auto snap-x snap-mandatory"
             >
               {allImages.map((img, idx) => (
                 <div

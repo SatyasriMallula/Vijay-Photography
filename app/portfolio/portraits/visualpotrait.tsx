@@ -76,7 +76,10 @@ export default function VisualPortrait() {
               height={700}
               className="w-full object-contain object-center"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-
+              decoding="async"
+              draggable={false}
+              unoptimized
+              priority={idx < 4}
             />
           </motion.div>
         ))}
@@ -104,7 +107,7 @@ export default function VisualPortrait() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-
+            {/* Close Button */}
             <button
               onClick={() => setSelectedIndex(null)}
               className="absolute top-4 right-4 z-50 text-white bg-black/60 p-2 rounded-full"
@@ -112,11 +115,18 @@ export default function VisualPortrait() {
               <X size={24} />
             </button>
 
-
+            {/* Scrollable Lightbox */}
             <motion.div
-              className="flex w-full h-full overflow-x-scroll snap-x snap-mandatory"
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
+              ref={(el) => {
+                if (el && selectedIndex !== null) {
+                  const width = el.clientWidth;
+                  el.scrollTo({
+                    left: selectedIndex * width,
+                    behavior: "instant", // or "smooth"
+                  });
+                }
+              }}
+              className="flex w-full h-full overflow-x-auto snap-x snap-mandatory"
             >
               {images.map((img, idx) => (
                 <div
@@ -136,6 +146,7 @@ export default function VisualPortrait() {
           </motion.div>
         </AnimatePresence>
       )}
+
     </main>
   );
 }

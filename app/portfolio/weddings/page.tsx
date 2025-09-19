@@ -1,20 +1,11 @@
+
 "use client";
 
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion"
-// import type { Metadata } from "next";
-
-// export const metadata: Metadata = {
-//     title: "Wedding Photography | Blueye Portfolio",
-//     description: "Capturing unforgettable wedding moments with creativity and precision.",
-//     openGraph: {
-//         title: "Wedding Portfolio | Blueye Photography",
-//         description: "Timeless wedding photos captured by Blueye Studio.",
-//         images: ["/og-image.jpg"],
-//     },
-// };
 import { useEffect, useState } from "react";
 import Lightbox from "@/app/components/LightBox";
+
 import { X } from "lucide-react";
 
 export default function WeddingsPage() {
@@ -100,9 +91,16 @@ export default function WeddingsPage() {
 
 
                         <motion.div
-                            className="flex w-full h-full overflow-x-scroll snap-x snap-mandatory"
-                            drag="x"
-                            dragConstraints={{ left: 0, right: 0 }}
+                            ref={(el) => {
+                                if (el && selectedIndex !== null) {
+                                    const width = el.clientWidth;
+                                    el.scrollTo({
+                                        left: selectedIndex * width,
+                                        behavior: "instant",
+                                    });
+                                }
+                            }}
+                            className="flex w-full h-full overflow-x-auto snap-x snap-mandatory"
                         >
                             {weddingPhotos.map((img, idx) => (
                                 <div
