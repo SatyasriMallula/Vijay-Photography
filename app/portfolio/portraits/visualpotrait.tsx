@@ -36,8 +36,6 @@ export default function VisualPortrait() {
 
   ];
 
-
-
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -73,11 +71,7 @@ export default function VisualPortrait() {
             style={{ boxShadow: "0 8px 20px rgb(255 454 450 / 0.65)" }}
             onClick={() => setSelectedIndex(idx)}
             whileHover={{ scale: 1.05, rotate: 0 }}
-            whileTap={{ scale: 0.97 }}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+
           >
             <Image
               src={src}
@@ -86,10 +80,7 @@ export default function VisualPortrait() {
               height={700}
               className="w-full object-contain object-center"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-              decoding="async"
-              draggable={false}
-              unoptimized
-              priority={idx < 4}
+
             />
           </motion.div>
         ))}
