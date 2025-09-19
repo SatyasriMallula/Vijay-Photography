@@ -69,65 +69,55 @@ export default function BabyShoot() {
                     </p>
                 </aside>
 
-            {/* 3D Cube images */}
-            <section className="relative w-96 h-96 perspective" style={{ perspective: "1400px" }}>
-                <div
-                    className="absolute inset-0 transition-transform duration-700"
-                    style={{
-                        transformStyle: "preserve-3d",
-                        transform: `rotateY(${rotateY}deg)`,
-                    }}
+                <section
+                    className="relative w-[280px] sm:w-80 md:w-96 h-[280px] sm:h-80 md:h-96 pb-16 md:pb-0"
+                    style={{ perspective: "1400px" }}
                 >
-                    {portraits.map((src, i) => (
-                        
-                        <Image
-                            key={i}
-                            src={src.src || ""}
-                            height={100}
-                            width={100}
-                            alt="Portrait"
-                            className="absolute w-96 h-96 object-cover rounded-xl shadow-xl"
-                            onClick={() => setSelectedIndex(i)}
-                            style={{
-                                transform: `rotateY(${i * 90}deg) translateZ(180px)`,
-                            }}
-                            loading="lazy"
-                            decoding="async"
-                            unoptimized
-                        />
-                    ))}
-                </div>
-                            <Lightbox images={portraits} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}  onClose={() => setSelectedIndex(null)}/>
-                
+                    <div
+                        className="absolute inset-0 transition-transform duration-700"
+                        style={{
+                            transformStyle: "preserve-3d",
+                            transform: `rotateY(${rotateY}deg)`,
+                        }}
+                    >
+                        {models.map((src, i) => (
+                            <Image
+                                key={i}
+                                src={src.src}
+                                height={100}
+                                width={100}
+                                alt={src.alt}
+                                className="absolute w-full h-full object-contain rounded-xl shadow-xl cursor-pointer"
+                                style={{
+                                    transform: `rotateY(${i * angle}deg) translateZ(230px)`,
+                                }}
+                            />
+                        ))}
+                    </div>
 
-                {/* Controls under cube */}
-                
+                    <div
+                        className="
+      absolute 
+      left-1/2 transform -translate-x-1/2 
+      flex gap-6 md:gap-8
+      bottom-[-50px] md:bottom-[-96px] top-auto
+    "
+                    >
+                        <button
+                            onClick={prevCube}
+                            className="p-3 md:p-4 rounded-full bg-white/10 border border-white/20 text-blue-400 hover:text-blue-200 transition"
+                        >
+                            <ChevronLeft size={24} />
+                        </button>
+                        <button
+                            onClick={nextCube}
+                            className="p-3 md:p-4 rounded-full bg-white/10 border border-white/20 text-blue-400 hover:text-blue-200 transition"
+                        >
+                            <ChevronRight size={24} />
+                        </button>
+                    </div>
+                </section>
 
-{/* Controls under cube */}
-<div className="absolute bottom-[-96px] left-1/2 transform -translate-x-1/2 flex gap-8">
-  <button
-  title="previous"
-    onClick={prev}
-    aria-label="Previous portrait"
-    className="p-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 
-               text-blue-400 hover:text-blue-200 hover:bg-white/20 
-               transition transform hover:scale-110 shadow-lg"
-  >
-    <ChevronLeft size={28} />
-  </button>
-  <button
-  title="next"
-    onClick={next}
-    aria-label="Next portrait"
-    className="p-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 
-               text-blue-400 hover:text-blue-200 hover:bg-white/20 
-               transition transform hover:scale-110 shadow-lg"
-  >
-    <ChevronRight size={28} />
-  </button>
-</div>
-
-            </section>
             </div>
         </div>
     );

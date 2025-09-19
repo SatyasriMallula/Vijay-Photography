@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Hero() {
   return (
-    <section className="md:mt-10">
+    <section className="md:mt-10" id="hero">
       {/* Image with dark border effect */}
       <div className="relative  flex items-center justify-center">
         <Image

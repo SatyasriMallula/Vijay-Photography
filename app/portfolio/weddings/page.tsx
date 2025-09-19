@@ -2,19 +2,9 @@
 
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion"
-// import type { Metadata } from "next";
-
-// export const metadata: Metadata = {
-//     title: "Wedding Photography | Blueye Portfolio",
-//     description: "Capturing unforgettable wedding moments with creativity and precision.",
-//     openGraph: {
-//         title: "Wedding Portfolio | Blueye Photography",
-//         description: "Timeless wedding photos captured by Blueye Studio.",
-//         images: ["/og-image.jpg"],
-//     },
-// };
 import { useEffect, useState } from "react";
 import Lightbox from "@/app/components/LightBox";
+
 import { X } from "lucide-react";
 
 export default function WeddingsPage() {
@@ -26,10 +16,9 @@ export default function WeddingsPage() {
         { src: "/weddings/_KN11039.jpg", alt: "Haldi Ceremony" },
        { src: "/weddings/DSC05947.jpg", alt: "Haldi Ceremony" },
         { src: "/weddings/_KN12844.jpg", alt: "Wedding Dance" },
-
         { src: "/weddings/DSC03243.jpg", alt: "Wedding Ceremony" },
         { src: "/weddings/0V8A9877.jpg", alt: "Wedding Couple" },
-          { src: "/weddings/IMG_7867.jpg", alt: "Haldi Ceremony" },
+        { src: "/weddings/IMG_7867.jpg", alt: "Haldi Ceremony" },
         { src: "/weddings/_KN11133.jpg", alt: "Reception" },
         { src: "/weddings/DSC08797.jpg", alt: "Ring Ceremony" },
         { src: "/weddings/_DCS1646.jpg", alt: "Bride Portrait" },
@@ -99,31 +88,37 @@ export default function WeddingsPage() {
             </button>
 
             
-            <motion.div
-              className="flex w-full h-full overflow-x-scroll snap-x snap-mandatory"
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-            >
-              {weddingPhotos.map((img, idx) => (
-                <div
-                  key={idx}
-                  className="relative flex-shrink-0 w-full h-full snap-center flex items-center justify-center"
-                >
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-contain"
-                    priority
-                  />
-                </div>
-              ))}
-            </motion.div>
-          </motion.div>
-        </AnimatePresence>
-      )}
+           <motion.div
+                   ref={(el) => {
+                     if (el && selectedIndex !== null) {
+                       const width = el.clientWidth;
+                       el.scrollTo({
+                         left: selectedIndex * width,
+                         behavior: "instant", 
+                       });
+                     }
+                   }}
+                   className="flex w-full h-full overflow-x-auto snap-x snap-mandatory"
+                 >
+                   {weddingPhotos.map((img, idx) => (
+                     <div
+                       key={idx}
+                       className="relative flex-shrink-0 w-full h-full snap-center flex items-center justify-center"
+                     >
+                       <Image
+                         src={img.src}
+                         alt={img.alt}
+                         fill
+                         className="object-contain"
+                         priority
+                       />
+                     </div>
+                   ))}
+                 </motion.div>
+               </motion.div>
+             </AnimatePresence>
+           )}
 
         </section>
     );
 }
-

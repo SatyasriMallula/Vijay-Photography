@@ -37,13 +37,13 @@ export default function VisualPortrait() {
      return () => window.removeEventListener("resize", handleResize);
    }, []);
   return (
-    <main className="min-h-screen bg-black py-16 px-6 max-w-7xl mx-auto flex flex-col items-center space-y-8">
-      <h1 className="text-5xl font-extrabold text-amber-400 text-center">
+    <main className="min-h-screen bg-black py-16 px-6 max-w-7xl mx-auto flex flex-col items-center space-y-6 md:space-y-8">
+      <h1 className="text-3xl md:text-5xl font-extrabold text-amber-400 text-center">
         Blueye Studio Highlights
       </h1>
 
       <motion.p
-        className="max-w-2xl text-gray-300 text-center text-lg leading-relaxed"
+        className="max-w-2xl text-gray-300 text-center text-sm md:text-lg leading-relaxed"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -100,45 +100,53 @@ export default function VisualPortrait() {
 
       
       {isMobile && selectedIndex !== null && (
-        <AnimatePresence>
-          <motion.div
-            className="fixed inset-0 bg-black flex items-center justify-center z-50"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-          
-            <button
-              onClick={() => setSelectedIndex(null)}
-              className="absolute top-4 right-4 z-50 text-white bg-black/60 p-2 rounded-full"
-            >
-              <X size={24} />
-            </button>
+  <AnimatePresence>
+    <motion.div
+      className="fixed inset-0 bg-black flex items-center justify-center z-50"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      {/* Close Button */}
+      <button
+        onClick={() => setSelectedIndex(null)}
+        className="absolute top-4 right-4 z-50 text-white bg-black/60 p-2 rounded-full"
+      >
+        <X size={24} />
+      </button>
 
-            
-            <motion.div
-              className="flex w-full h-full overflow-x-scroll snap-x snap-mandatory"
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-            >
-              {images.map((img, idx) => (
-                <div
-                  key={idx}
-                  className="relative flex-shrink-0 w-full h-full snap-center flex items-center justify-center"
-                >
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-contain"
-                    priority
-                  />
-                </div>
-              ))}
-            </motion.div>
-          </motion.div>
-        </AnimatePresence>
-      )}
+      
+      <motion.div
+        ref={(el) => {
+          if (el && selectedIndex !== null) {
+            const width = el.clientWidth;
+            el.scrollTo({
+              left: selectedIndex * width,
+              behavior: "instant", 
+            });
+          }
+        }}
+        className="flex w-full h-full overflow-x-auto snap-x snap-mandatory"
+      >
+        {images.map((img, idx) => (
+          <div
+            key={idx}
+            className="relative flex-shrink-0 w-full h-full snap-center flex items-center justify-center"
+          >
+            <Image
+              src={img.src}
+              alt={img.alt}
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+        ))}
+      </motion.div>
+    </motion.div>
+  </AnimatePresence>
+)}
+
     </main>
   );
 }
