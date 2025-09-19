@@ -5,7 +5,7 @@ import Image from "next/image";
 const features = [
   {
     title: "Worried about dreamy shots?",
-    text: "We&apos;ll plan everything together and I’ll ensure your vision turns into timeless photographs.",
+    text: "We ll plan everything together and I’ll ensure your vision turns into timeless photographs.",
     image: "/about/DSC08756.jpg",
   },
   {

@@ -18,7 +18,7 @@ export default function Carousel() {
       <h2 className="text-2xl md:text-4xl font-medium text-center text-yellow-500 ">
         Featured Shots
       </h2>
- <motion.p
+      <motion.p
         className="max-w-2xl mx-3 md:mx-auto text-center text-gray-300 text-sm md:text-lg leading-relaxed "
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -42,6 +42,7 @@ export default function Carousel() {
                 alt={`Carousel image ${index + 1}`}
                 width={500}
                 height={320}
+                priority
                 className="w-full h-full object-cover"
               />
             </div>

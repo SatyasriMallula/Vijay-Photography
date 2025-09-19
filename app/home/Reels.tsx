@@ -15,7 +15,7 @@ const reels = [
   },
   {
     image: "/about/DSC03595.jpg",
-    url:"https://www.instagram.com/blueye_photostudio/?hl=enm",
+    url: "https://www.instagram.com/blueye_photostudio/?hl=enm",
   },
 ];
 

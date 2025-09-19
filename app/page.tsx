@@ -82,7 +82,9 @@ export default function Home() {
               {line1.split("").map((char, i) => (
                 <span
                   key={i}
-                  ref={(el) => (textRef.current[i] = el!)}
+                  ref={(el) => {
+                    textRef.current[i] = el!;
+                  }}
                   className={`inline-block text-transparent bg-clip-text ${gradientClass} mr-1`}
                 >
                   {char === " " ? "\u00A0" : char}
@@ -95,8 +97,9 @@ export default function Home() {
               {line2.split("").map((char, i) => (
                 <span
                   key={i + line1.length}
-                  ref={(el) => (textRef.current[i + line1.length] = el!)}
-                  className={`inline-block text-transparent bg-clip-text ${gradientClass} md:mr-1`}
+                  ref={(el) => {
+                    textRef.current[i + line1.length] = el!;
+                  }} className={`inline-block text-transparent bg-clip-text ${gradientClass} md:mr-1`}
                 >
                   {char === " " ? "\u00A0" : char}
                 </span>

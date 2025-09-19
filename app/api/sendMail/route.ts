@@ -1,17 +1,40 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    console.log(body);
+
+    // 1️⃣ Verify reCAPTCHA token
+    const token = body.recaptchaToken;
+    if (!token) {
+      return NextResponse.json(
+        { success: false, message: "reCAPTCHA token missing" },
+        { status: 400 }
+      );
+    }
+
+    const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET}&response=${token}`;
+    const recaptchaRes = await fetch(verifyUrl, { method: "POST" });
+    const recaptchaData = await recaptchaRes.json();
+
+    if (!recaptchaData.success) {
+      return NextResponse.json(
+        { success: false, message: "reCAPTCHA verification failed" },
+        { status: 400 }
+      );
+    }
+
+    // 2️⃣ Configure Nodemailer
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        pass: process.env.EMAIL_PASS, // Gmail App Password
       },
     });
 
+    // 3️⃣ Mail content
     const mailOptions = {
       from: `"Studio Website" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_TO,
@@ -29,11 +52,15 @@ export async function POST(req: Request) {
       `,
     };
 
+    // 4️⃣ Send email
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ success: true });
   } catch (err) {
     console.error("Error sending email:", err);
-    return NextResponse.json({ success: false }, { status: 500 });
+    return NextResponse.json(
+      { success: false, message: "Server error" },
+      { status: 500 }
+    );
   }
 }

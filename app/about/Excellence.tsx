@@ -50,7 +50,7 @@ export default function ExcellenceSection() {
                 height={250}
                 className="w-full h-48 md:h-65  lg:h-75 object-cover"
               />
-              <div className="p-6 border-3 bg-black/40 h-[140px] lg:h-[220px] xl:h-[155px] md:h-[165px]">
+              <div className="p-6  bg-black/40 h-[140px] lg:h-[220px] xl:h-[155px] md:h-[165px]">
                 <h3 className=" text-sm md:text-lg text-white/90 font-semibold mb-2">{item.title}</h3>
                 <p className="text-white/70 text-sm lg:text-base text-center  ">{item.desc}</p>
               </div>

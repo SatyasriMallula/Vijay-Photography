@@ -1,10 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
+// import type { Metadata } from "next";
 
-import { useState } from "react";
+// export const metadata: Metadata = {
+//     title: "Wedding Photography | Blueye Portfolio",
+//     description: "Capturing unforgettable wedding moments with creativity and precision.",
+//     openGraph: {
+//         title: "Wedding Portfolio | Blueye Photography",
+//         description: "Timeless wedding photos captured by Blueye Studio.",
+//         images: ["/og-image.jpg"],
+//     },
+// };
+import { useEffect, useState } from "react";
 import Lightbox from "@/app/components/LightBox";
+import { X } from "lucide-react";
 
 export default function WeddingsPage() {
     const weddingPhotos = [
@@ -13,25 +24,32 @@ export default function WeddingsPage() {
         { src: "/weddings/1L4A1579.jpg", alt: "Reception" },
         { src: "/weddings/DSC00356 2.jpg", alt: "Ring Ceremony" },
         { src: "/weddings/_KN11039.jpg", alt: "Haldi Ceremony" },
+        { src: "/weddings/DSC05947.jpg", alt: "Haldi Ceremony" },
         { src: "/weddings/_KN12844.jpg", alt: "Wedding Dance" },
+
         { src: "/weddings/DSC03243.jpg", alt: "Wedding Ceremony" },
         { src: "/weddings/0V8A9877.jpg", alt: "Wedding Couple" },
-          { src: "/weddings/IMG_7867.jpg", alt: "Haldi Ceremony" },
+        { src: "/weddings/IMG_7867.jpg", alt: "Haldi Ceremony" },
         { src: "/weddings/_KN11133.jpg", alt: "Reception" },
         { src: "/weddings/DSC08797.jpg", alt: "Ring Ceremony" },
         { src: "/weddings/_DCS1646.jpg", alt: "Bride Portrait" },
         { src: "/weddings/DSC06116.jpg", alt: "Wedding Dance" },
-        
-   { src: "/weddings/DSC07974.jpg", alt: "Bride Portrait" },
-  { src: "/weddings/_KN12764.jpg", alt: "Haldi Ceremony" },
-           { src: "/weddings/DSC08989.jpg", alt: "Bride Portrait" },
+        { src: "/weddings/DSC07974.jpg", alt: "Bride Portrait" },
+        { src: "/weddings/_KN12764.jpg", alt: "Haldi Ceremony" },
+        { src: "/weddings/DSC08989.jpg", alt: "Bride Portrait" },
         { src: "/weddings/_KN12984.jpg", alt: "Bride Portrait" },
-        {src: "/weddings/DSC00195.jpg", alt: "Bridal Portrait" },
-  { src: "/weddings/_KN13188.jpg", alt: "Haldi Ceremony" },
-
-
+        { src: "/weddings/DSC00195.jpg", alt: "Bridal Portrait" },
+        { src: "/weddings/_KN13188.jpg", alt: "Haldi Ceremony" },
+        { src: "/weddings/DSC06713.jpg", alt: "Bride Portrait" },
     ];
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
     return (
         <section className="px-6 py-16">
             <h2 className="text-3xl font-bold mb-10 text-center text-yellow-500">Wedding Moments</h2>
@@ -54,9 +72,57 @@ export default function WeddingsPage() {
                     </motion.div>
                 ))}
             </div>
-            <Lightbox images={weddingPhotos} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} onClose={() => setSelectedIndex(null)} />
+            {!isMobile && (
+                <Lightbox
+                    images={weddingPhotos}
+                    selectedIndex={selectedIndex}
+                    setSelectedIndex={setSelectedIndex}
+                    onClose={() => setSelectedIndex(null)}
+                />
+            )}
+
+
+            {isMobile && selectedIndex !== null && (
+                <AnimatePresence>
+                    <motion.div
+                        className="fixed inset-0 bg-black flex items-center justify-center z-50"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                    >
+
+                        <button
+                            onClick={() => setSelectedIndex(null)}
+                            className="absolute top-4 right-4 z-50 text-white bg-black/60 p-2 rounded-full"
+                        >
+                            <X size={24} />
+                        </button>
+
+
+                        <motion.div
+                            className="flex w-full h-full overflow-x-scroll snap-x snap-mandatory"
+                            drag="x"
+                            dragConstraints={{ left: 0, right: 0 }}
+                        >
+                            {weddingPhotos.map((img, idx) => (
+                                <div
+                                    key={idx}
+                                    className="relative flex-shrink-0 w-full h-full snap-center flex items-center justify-center"
+                                >
+                                    <Image
+                                        src={img.src}
+                                        alt={img.alt}
+                                        fill
+                                        className="object-contain"
+                                        priority
+                                    />
+                                </div>
+                            ))}
+                        </motion.div>
+                    </motion.div>
+                </AnimatePresence>
+            )}
 
         </section>
     );
 }
-

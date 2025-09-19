@@ -44,7 +44,7 @@ const services = [
       "Baby Showers & Anniversaries",
       "Festivals & Community Events",
     ],
-    image: "/portraits/DSC08825.JPG",
+    image: "/portraits/DSC08825.jpg",
   },
 ];
 
