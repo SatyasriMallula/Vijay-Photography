@@ -1,58 +1,46 @@
 "use client";
-import Lightbox from "@/app/components/LightBox";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
-const portraits =  [
-    { src: "/weddings/1L4A1579.jpg", alt: "Travel photo 1" },
-    { src: "/weddings/DSC03243.jpg", alt: "Travel photo 2" },
-    { src: "/weddings/cover-image.jpg", alt: "Travel photo 3" },
-    { src: "/weddings/DSC06116.jpg", alt: "Travel photo 4" },
-    { src: "/weddings/DSC06713.jpg", alt: "Travel photo 6" }
+const models = [
+    { src: "/models/2 2.jpg", alt: "Model 1" },
+    { src: "/models/_RO_2603.jpg", alt: "Model 2" },
+    { src: "/models/_RO_2835.jpg", alt: "Model 3" },
+    { src: "/models/_RO_3246.jpg", alt: "Model 4" },
+    { src: "/models/_RO_2917.jpg", alt: "Model 5" },
+    { src: "/models/_RO_3055.jpg", alt: "Model 6" },
 ];
 
-const globalQuote =
-    "A portrait is not just a photograph; it is a silent conversation between the soul and the lens.";
-
-const icons = [
-    // Camera
-    <svg key="camera" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8 cursor-pointer text-blue-500 hover:text-blue-300 transition">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7h2l1-2h10l1 2h2a2 2 0 012 2v9a2 2 0 01-2 2H3a2 2 0 01-2-2V9a2 2 0 012-2z" />
-        <circle cx={12} cy={13} r={3} stroke="currentColor" strokeWidth={2} />
-    </svg>,
-
-    // Palette (artistic creativity)
-    <svg key="palette" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8 cursor-pointer text-blue-500 hover:text-blue-300 transition">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 20a7 7 0 100-14 7 7 0 000 14z" />
-        <circle cx={7.5} cy={9.5} r={1.5} />
-        <circle cx={16.5} cy={8.5} r={1.5} />
-        <circle cx={14} cy={15} r={1.5} />
-        <circle cx={9} cy={16} r={1.5} />
-    </svg>,
-
-    // Clock (capturing the moment)
-    <svg key="clock" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8 cursor-pointer text-blue-500 hover:text-blue-300 transition">
-        <circle cx={12} cy={12} r={10} stroke="currentColor" strokeWidth={2} />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6l4 2" />
-    </svg>,
-
-    // Heart (emotion & connection)
-    <svg key="heart" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-10 h-8 cursor-pointer text-blue-500 hover:text-blue-300 transition">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 010 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-    </svg>,
+const extraImages = [
+    { src: "/models/1.jpg", alt: "Model Extra 1" },
+    { src: "/models/2.jpg", alt: "Model Extra 2" },
+    { src: "/models/BeFunky-collage (2).jpg", alt: "Model Extra 3" },
+    { src: "/models/_RO_2761.jpg", alt: "Model Extra 4" },
+    { src: "/models/_RO_3069.jpg", alt: "Model Extra 5" },
+    { src: "/models/_RO_2835.jpg", alt: "Model Extra 6" },
 ];
 
-export default function BabyShoot() {
+const angle = 360 / models.length;
+
+export default function ModelsPage() {
     const [index, setIndex] = useState(0);
-    const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+    const scrollRef = useRef<HTMLDivElement>(null);
+
     const rotateY = -index * 90;
 
-    function prev() {
-        setIndex((i) => (i === 0 ? portraits.length - 1 : i - 1));
+    function prevCube() {
+        setIndex((i) => (i === 0 ? models.length - 1 : i - 1));
     }
-    function next() {
-        setIndex((i) => (i === portraits.length - 1 ? 0 : i + 1));
+    function nextCube() {
+        setIndex((i) => (i === models.length - 1 ? 0 : i + 1));
+    }
+
+    function scrollLeft() {
+        scrollRef.current?.scrollBy({ left: -400, behavior: "smooth" });
+    }
+    function scrollRight() {
+        scrollRef.current?.scrollBy({ left: 400, behavior: "smooth" });
     }
 
     return (
@@ -87,6 +75,8 @@ export default function BabyShoot() {
                                 height={100}
                                 width={100}
                                 alt={src.alt}
+                                priority
+                                loading="eager"
                                 className="absolute w-full h-full object-contain rounded-xl shadow-xl cursor-pointer"
                                 style={{
                                     transform: `rotateY(${i * angle}deg) translateZ(230px)`,
@@ -119,6 +109,50 @@ export default function BabyShoot() {
                 </section>
 
             </div>
+
+            {/* Extra Images - Full Width Horizontal Scroll */}
+            <section className="w-full  pb-20 relative mt-10 md:mt-0">
+                <h3 className="text-2xl md:text-3xl font-semibold text-blue-300 mb-8 text-center px-4 sm:px-6 md:px-0">
+                    More Models
+                </h3>
+                <div className="relative w-full">
+                    {/* Left Scroll Button */}
+                    <button
+                        onClick={scrollLeft}
+                        aria-label="Scroll left"
+                        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 p-3 sm:p-4 bg-black/60 rounded-full text-white hover:bg-black/80 transition"
+                    >
+                        <ChevronLeft size={24} />
+                    </button>
+
+                    {/* Scrollable Container */}
+                    <div
+                        ref={scrollRef}
+                        className="flex overflow-x-auto gap-6 px-4 sm:px-8 scrollbar-hide scroll-smooth"
+                    >
+                        {extraImages.map((img, i) => (
+                            <Image
+                                key={i}
+                                src={img.src}
+                                width={320}
+                                height={420}
+                                alt={img.alt}
+                                className="rounded-lg shadow-lg hover:scale-105 transition cursor-pointer object-cover flex-shrink-0 w-[320px] sm:w-[380px] md:w-[450px] h-[420px] sm:h-[500px] md:h-[600px]"
+                                unoptimized
+                            />
+                        ))}
+                    </div>
+
+                    {/* Right Scroll Button */}
+                    <button
+                        onClick={scrollRight}
+                        aria-label="Scroll right"
+                        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 p-3 sm:p-4 bg-black/60 rounded-full text-white hover:bg-black/80 transition"
+                    >
+                        <ChevronRight size={24} />
+                    </button>
+                </div>
+            </section>
         </div>
     );
 }
