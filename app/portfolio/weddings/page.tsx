@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 // import type { Metadata } from "next";
 
 // export const metadata: Metadata = {
@@ -13,8 +13,9 @@ import { motion } from "framer-motion"
 //         images: ["/og-image.jpg"],
 //     },
 // };
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Lightbox from "@/app/components/LightBox";
+import { X } from "lucide-react";
 
 export default function WeddingsPage() {
     const weddingPhotos = [
@@ -42,6 +43,13 @@ export default function WeddingsPage() {
     { src: "/weddings/DSC06713.jpg", alt: "Bride Portrait" },
     ];
  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+      const handleResize = () => setIsMobile(window.innerWidth < 768);
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
     return (
         <section className="px-6 py-16">
             <h2 className="text-3xl font-bold mb-10 text-center text-yellow-500">Wedding Moments</h2>
@@ -64,7 +72,56 @@ export default function WeddingsPage() {
                     </motion.div>
                 ))}
             </div>
-            <Lightbox images={weddingPhotos} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}  onClose={() => setSelectedIndex(null)}/>
+             {!isMobile && (
+        <Lightbox
+          images={weddingPhotos}
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+          onClose={() => setSelectedIndex(null)}
+        />
+      )}
+
+      
+      {isMobile && selectedIndex !== null && (
+        <AnimatePresence>
+          <motion.div
+            className="fixed inset-0 bg-black flex items-center justify-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+          
+            <button
+              onClick={() => setSelectedIndex(null)}
+              className="absolute top-4 right-4 z-50 text-white bg-black/60 p-2 rounded-full"
+            >
+              <X size={24} />
+            </button>
+
+            
+            <motion.div
+              className="flex w-full h-full overflow-x-scroll snap-x snap-mandatory"
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+            >
+              {weddingPhotos.map((img, idx) => (
+                <div
+                  key={idx}
+                  className="relative flex-shrink-0 w-full h-full snap-center flex items-center justify-center"
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </AnimatePresence>
+      )}
 
         </section>
     );

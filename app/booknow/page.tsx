@@ -119,9 +119,9 @@ export default function BookNowPage() {
                     ))}
                 </div>
 
-                <blockquote className="italic max-w-md text-gray-400 border-l-4 border-blue-600 pl-5">
-                    “Blueye Studio made our day extra special with their amazing shots and professional approach. Highly recommend!”
-                    <footer className="mt-4 text-gray-500 font-semibold">— Syam N.</footer>
+                <blockquote className="italic max-w-md text-gray-400 border-l-4 border-blue-600 pl-4 sm:pl-5">
+                    &quot;Blueye Studio made our day extra special with their amazing shots and professional approach. Highly recommend!&quot;
+                    <footer className="mt-2 text-gray-500 font-semibold">— Syam N.</footer>
                 </blockquote>
             </section>
 
@@ -139,9 +139,9 @@ export default function BookNowPage() {
                 >
                     {submitted ? (
                         <div className="text-center text-white">
-                            <h2 className="text-4xl font-bold mb-5">🎉 Thank You!</h2>
-                            <p className="mb-10 text-lg text-gray-300">
-                                Your booking has been received! We’ll contact you shortly.
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-4 sm:mb-5">🎉 Thank You!</h2>
+                            <p className="mb-4 sm:mb-6 md:mb-8 text-gray-300 text-sm sm:text-base md:text-lg lg:text-lg">
+                                Your booking has been received! We&apos;ll contact you shortly.
                             </p>
                             <button
                                 onClick={() => setSubmitted(false)}

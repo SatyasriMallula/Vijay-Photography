@@ -56,13 +56,18 @@ export default function BabyShoot() {
     }
 
     return (
-        <div className="min-h-screen bg-black flex flex-col md:flex-row items-center justify-center p-16 pt-0 gap-16 text-white">
-            {/* Left side text + icons */}
-            <aside className="max-w-xl px-6 flex flex-col items-start space-y-12">
-                <h2 className="text-4xl font-extrabold text-blue-400">Portraits Gallery</h2>
-                <p className="italic text-lg text-blue-200">{globalQuote}</p>
-                <div className="flex space-x-6">{icons.map((icon) => icon)}</div>
-            </aside>
+        <div>
+            {/* Cube Section */}
+            <div className="overflow-y-hidden min-h-[90vh] overflow-x-hidden flex flex-col md:flex-row items-center justify-evenly gap-10 text-white px-4 md:px-16">
+                <aside className="max-w-xl flex flex-col items-start space-y-12">
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-blue-400">
+                        Models Gallery
+                    </h2>
+                    <p className="italic text-base md:text-lg text-blue-200 max-w-md">
+                        A model is more than appearance — it&apos;s the art of expression, style,
+                        and presence.
+                    </p>
+                </aside>
 
             {/* 3D Cube images */}
             <section className="relative w-96 h-96 perspective" style={{ perspective: "1400px" }}>
@@ -123,6 +128,7 @@ export default function BabyShoot() {
 </div>
 
             </section>
+            </div>
         </div>
     );
 }

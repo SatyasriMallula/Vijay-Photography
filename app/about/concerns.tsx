@@ -5,12 +5,12 @@ import Image from "next/image";
 const features = [
   {
     title: "Worried about dreamy shots?",
-    text: "We’ll plan everything together and I’ll ensure your vision turns into timeless photographs.",
+    text: "We&apos;ll plan everything together and I’ll ensure your vision turns into timeless photographs.",
     image: "/about/DSC08756.jpg",
   },
   {
     title: "Not confident in posing?",
-    text: "I’ll guide you with simple directions, while bringing out your natural expressions.",
+    text: "I&apos;ll guide you with simple directions, while bringing out your natural expressions.",
     image: "/about/_DCS0295.JPG",
   },
   {
@@ -20,7 +20,7 @@ const features = [
   },
   {
     title: "Think a photoshoot is just about pictures?",
-    text: "It’s about creating an experience that leaves you with lasting memories beyond the photos.",
+    text: "It&apos;s about creating an experience that leaves you with lasting memories beyond the photos.",
     image: "/about/DSC05840.jpg",
   },
 ];

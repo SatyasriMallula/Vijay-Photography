@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Lightbox from "@/app/components/LightBox";
+import { X } from "lucide-react";
 
 export default function VisualPortrait() {
   const images = [
@@ -28,7 +29,13 @@ export default function VisualPortrait() {
   ];
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-
+ const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+     const handleResize = () => setIsMobile(window.innerWidth < 768);
+     handleResize();
+     window.addEventListener("resize", handleResize);
+     return () => window.removeEventListener("resize", handleResize);
+   }, []);
   return (
     <main className="min-h-screen bg-black py-16 px-6 max-w-7xl mx-auto flex flex-col items-center space-y-8">
       <h1 className="text-5xl font-extrabold text-amber-400 text-center">
@@ -50,25 +57,31 @@ export default function VisualPortrait() {
 
       <div className="relative w-full max-w-8xl columns-1 sm:columns-2 md:columns-4 gap-14 space-y-14">
         {images.map(({ src, alt, style }, idx) => (
-          <div
-            key={idx}
-            className={`overflow-hidden rounded-3xl shadow-2xl cursor-pointer max-w-[340px] mx-auto break-inside-avoid transform transition-all duration-500 ${style} hover:rotate-0 hover:scale-100`}
-            style={{ boxShadow: "0 8px 20px rgb(255 454 450 / 0.65)" }}
-            onClick={() => setSelectedIndex(idx)}
-          >
+         <motion.div
+  key={idx}
+  className={`overflow-hidden rounded-3xl shadow-2xl cursor-pointer max-w-[340px] mx-auto break-inside-avoid transform transition-all duration-500 ${style} hover:rotate-0 hover:scale-100`}
+  style={{ boxShadow: "0 8px 20px rgb(255 454 450 / 0.65)" }}
+  onClick={() => setSelectedIndex(idx)}
+  whileHover={{ scale: 1.05, rotate: 0 }}   
+  whileTap={{ scale: 0.97 }}                
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+>
             <Image
               src={src}
               alt={alt}
-              width={100}
-              height={50}
+             width={500}
+  height={700}
               className="w-full object-contain object-center"
-            
+             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
               decoding="async"
                     draggable={false}
                     unoptimized
-                    priority
+                   priority={idx < 4}
             />
-          </div>
+          </motion.div>
         ))}
       </div>
 
@@ -76,12 +89,56 @@ export default function VisualPortrait() {
         Moments captured with passion, creativity, and uniqueness.
       </p>
 
-      <Lightbox
-        images={images}
-        selectedIndex={selectedIndex}
-        setSelectedIndex={setSelectedIndex}
-        onClose={() => setSelectedIndex(null)}
-      />
+      {!isMobile && (
+        <Lightbox
+          images={images}
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+          onClose={() => setSelectedIndex(null)}
+        />
+      )}
+
+      
+      {isMobile && selectedIndex !== null && (
+        <AnimatePresence>
+          <motion.div
+            className="fixed inset-0 bg-black flex items-center justify-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+          
+            <button
+              onClick={() => setSelectedIndex(null)}
+              className="absolute top-4 right-4 z-50 text-white bg-black/60 p-2 rounded-full"
+            >
+              <X size={24} />
+            </button>
+
+            
+            <motion.div
+              className="flex w-full h-full overflow-x-scroll snap-x snap-mandatory"
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+            >
+              {images.map((img, idx) => (
+                <div
+                  key={idx}
+                  className="relative flex-shrink-0 w-full h-full snap-center flex items-center justify-center"
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </AnimatePresence>
+      )}
     </main>
   );
 }

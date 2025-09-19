@@ -1,14 +1,15 @@
-import { Instagram,  MessageCircle, MapIcon, MapPin } from "lucide-react";
-
+import { Instagram, MessageCircle, MapPin } from "lucide-react";
+const phoneNumber = "917729803266";
+const message = "Hello! I want to contact you.";
 const links = [
   {
-    href: "https://instagram.com",title: "Instagram",icon: <Instagram className="w-7 h-7 text-pink-500" />,
+    href: "https://www.instagram.com/blueye_photostudio/?hl=enm", title: "Instagram", icon: <Instagram className="w-7 h-7 text-pink-500" />,
   },
   {
-    href: "https://google.com",title: "Location",icon: <MapPin className="w-7 h-7 text-blue-600" />,
+    href: "https://maps.app.goo.gl/iL4T7yBjVTVbXCBE6", title: "Location", icon: <MapPin className="w - 7 h- 7 text-blue-600" />,
   },
   {
-    href: "https://wa.me/7729803266",title: "WhatsApp",icon: <MessageCircle className="w-7 h-7 text-green-500" />,
+    href: `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, title: "WhatsApp", icon: <MessageCircle className="w-7 h-7 text-green-500" />,
   },
 ];
 

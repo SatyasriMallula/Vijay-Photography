@@ -8,8 +8,12 @@ export default function ContactPage() {
             <div className="w-full  shadow-2xl rounded-2xl p-10   border-1 border-y-amber-400  space-y-8">
                 {/* Heading */}
                 <div className="text-center space-y-2">
-                    <h1 className="text-3xl font-bold ">Get in Touch</h1>
-                    <p className="">We’d love to hear from you!</p>
+                    <h1 className="text-3xl font-bold  dark:text-white sm:text-4xl">
+                        Get in Touch
+                    </h1>
+                    <p className="text-gray-600 dark:text-gray-300 text-base sm:text-sm md:text-lg">
+                        We&apos;d love to hear from you!
+                    </p>
                 </div>
 
                 {/* Contact Info */}

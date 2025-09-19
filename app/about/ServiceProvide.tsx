@@ -23,7 +23,7 @@ const services = [
   {
     title: "Portrait Sessions",
     description:
-      "Portraits are about more than just a picture — they’re about personality, confidence, and soul. Whether outdoors in natural light or indoors with crafted studio setups, I create portraits that feel personal and timeless.",
+      "Portraits are about more than just a picture — they&apos;re about personality, confidence, and soul. Whether outdoors in natural light or indoors with crafted studio setups, I create portraits that feel personal and timeless.",
     subservices: [
       "Individual Portraits",
       "Couple Portraits",
@@ -64,20 +64,19 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        
+
         <div className=" space-y-14 md:space-y-20">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className={`flex flex-col lg:flex-row items-center gap-6 md:gap-10  ${
-                index % 2 === 1 ? "lg:flex-row-reverse" : ""
-              }`}
+              className={`flex flex-col lg:flex-row items-center gap-6 md:gap-10  ${index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                }`}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              
+
               <div className="lg:w-1/2 relative w-full h-[300px] md:h-[400px]">
                 <Image
                   src={service.image}
@@ -87,7 +86,7 @@ export default function ServicesSection() {
                 />
               </div>
 
-              
+
               <div className="lg:w-1/2 w-full px-2 md:px-0">
                 <h3 className="lg:text-4xl md:text-3xl text-xl font-semibold text-yellow-300 mb-3 md:mb-4 lg:text-left text-center">
                   {service.title}
@@ -100,10 +99,10 @@ export default function ServicesSection() {
                   {service.subservices.map((sub, i) => (
                     <li key={i} className="flex items-center text-gray-300 gap-2"
                     >
-                     <CheckCircle
+                      <CheckCircle
                         size={18}
                         className="text-green-400 flex-shrink-0"
-                      /> 
+                      />
                       {sub}</li>
                   ))}
                 </ul>
