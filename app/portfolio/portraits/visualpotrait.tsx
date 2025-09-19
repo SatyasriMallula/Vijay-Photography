@@ -14,10 +14,10 @@ export default function VisualPortrait() {
     { src: "/portraits/DSC06165_Original.jpg", alt: "Fashion shoot1", style: "-rotate-2 scale-105" },
     { src: "/portraits/portraits.jpg", alt: "Fashion shoot", style: "rotate-2 scale-105" },
     { src: "/portraits/_DCS6394.jpg", alt: "Behind the scenes3", style: "-rotate-3 scale-110" },
-    { src: "/portraits/_DCS0115.jpg", alt: "Behind the scenes", style: "rotate-2 scale-105" },
+    { src: "/portraits/_DCS0115.JPG", alt: "Behind the scenes", style: "rotate-2 scale-105" },
     { src: "/portraits/_DCS7230.jpg", alt: "Artistic frame", style: "-rotate-3 scale-110" },
-    { src: "/portraits/_DCS0210.jpg", alt: "Behind the scenes", style: "rotate-3 scale-105" },
-    { src: "/portraits/_DCS0222.jpg", alt: "Artistic frame", style: "-rotate-3 scale-110" },
+    { src: "/portraits/_DCS0210.JPG", alt: "Behind the scenes", style: "rotate-3 scale-105" },
+    { src: "/portraits/_DCS0222.JPG", alt: "Artistic frame", style: "-rotate-3 scale-110" },
     { src: "/portraits/_DCS1698.jpg", alt: "Behind the scenes", style: "rotate-2 scale-110" },
     { src: "/portraits/IMG_7822.JPG", alt: "Golden hour", style: "-rotate-3 scale-105" },
     { src: "/portraits/_DCS7340.jpg", alt: "Cityscape", style: "rotate-2 scale-110" },
@@ -29,14 +29,12 @@ export default function VisualPortrait() {
     { src: "/portraits/d.jpg", alt: "1", style: "rotate-1 scale-110" },
     { src: "/portraits/_KN13188.jpg", alt: "Artistic frame", style: "-rotate-2 scale-105" },
     { src: "/portraits/_DCS0213.JPG", alt: "Cityscape", style: "rotate-2 scale-105" },
-    { src: "/portraits/_DCS0099.jpg", alt: "Fashion shoot", style: "-rotate-2 scale-110" },
+    { src: "/portraits/_DCS0099.JPG", alt: "Fashion shoot", style: "-rotate-2 scale-110" },
     { src: "/portraits/2P6A5682.JPG", alt: "Fashion shoot", style: "rotate-2 scale-105" },
     { src: "/portraits/_DCS0275.JPG", alt: "Fashion shoot", style: "-rotate-3 scale-110" },
-    { src: "/portraits/_DCS1698.JPG", alt: "Cityscape", style: "rotate-2 scale-110" },
+    { src: "/portraits/_DCS1698.jpg", alt: "Cityscape", style: "rotate-2 scale-110" },
 
   ];
-
-
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -73,11 +71,7 @@ export default function VisualPortrait() {
             style={{ boxShadow: "0 8px 20px rgb(255 454 450 / 0.65)" }}
             onClick={() => setSelectedIndex(idx)}
             whileHover={{ scale: 1.05, rotate: 0 }}
-            whileTap={{ scale: 0.97 }}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+
           >
             <Image
               src={src}
@@ -86,10 +80,7 @@ export default function VisualPortrait() {
               height={700}
               className="w-full object-contain object-center"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-              decoding="async"
-              draggable={false}
-              unoptimized
-              priority={idx < 4}
+
             />
           </motion.div>
         ))}
