@@ -12,12 +12,19 @@ export default function VisualPortrait() {
     { src: "/portraits/_DCS0121.JPG", alt: "Event highlight", style: "rotate-1 scale-105" },
     { src: "/portraits/_DCS6394.jpg", alt: "Behind the scenes", style: "-rotate-1" },
     { src: "/portraits/_DCS7230.jpg", alt: "Artistic frame", style: "rotate-2 scale-110" },
+    { src: "/portraits/_DCS1698.jpg", alt: "Behind the scenes", style: "-rotate-1" },
     { src: "/portraits/IMG_7822.JPG", alt: "Golden hour", style: "scale-105" },
     { src: "/portraits/_DCS7340.jpg", alt: "Cityscape", style: "-rotate-3" },
     { src: "/portraits/DSC06116.jpg", alt: "Fashion shoot", style: "rotate-4 scale-105" },
     { src: "/portraits/IMG_7867.JPG", alt: "Cityscape", style: "-rotate-3" },
     { src: "/portraits/IMG_7871.JPG", alt: "Fashion shoot", style: "rotate-4 scale-105" },
     { src: "/weddings/DSC03243.jpg", alt: "Fashion shoot1", style: "rotate-4 scale-105" },
+    { src: "/portraits/_DCS0212.JPG", alt: "Cityscape", style: "-rotate-3" },
+    { src: "/portraits/_KN13188.jpg", alt: "Artistic frame", style: "rotate-2 scale-110" },
+    { src: "/portraits/_DCS0213.JPG", alt: "Cityscape", style: "-rotate-3" },
+    { src: "/portraits/_DCS0099.jpg", alt: "Fashion shoot", style: "rotate-4 scale-105" },
+     { src: "/portraits/2P6A5682.JPG", alt: "Fashion shoot", style: "rotate-4 scale-105" },
+
   ];
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);

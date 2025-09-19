@@ -7,6 +7,7 @@ export default function Hero() {
     "/home/DSC05894.jpg",
     "/home/DSC08119.jpg",
     "/home/featured-shot/_DCS0430.JPG",
+    "/home/59be7081def4d.jpg",
     "/home/featured-shot/DSC08778.jpg",
     "/home/_DCS0075.JPG",
     "/home/featured-shot/DSC06939.jpg",
