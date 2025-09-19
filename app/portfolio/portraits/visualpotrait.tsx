@@ -16,15 +16,15 @@ export default function VisualPortrait() {
     { src: "/portraits/_DCS1698.jpg", alt: "Behind the scenes", style: "-rotate-1" },
     { src: "/portraits/IMG_7822.JPG", alt: "Golden hour", style: "scale-105" },
     { src: "/portraits/_DCS7340.jpg", alt: "Cityscape", style: "-rotate-3" },
-    { src: "/portraits/DSC06116.jpg", alt: "Fashion shoot", style: "rotate-4 scale-105" },
+    // { src: "/portraits/DSC06116.jpg", alt: "Fashion shoot", style: "rotate-4 scale-105" },
     { src: "/portraits/IMG_7867.JPG", alt: "Cityscape", style: "-rotate-3" },
-    { src: "/portraits/IMG_7871.JPG", alt: "Fashion shoot", style: "rotate-4 scale-105" },
+    // { src: "/portraits/IMG_7871.JPG", alt: "Fashion shoot", style: "rotate-4 scale-105" },
     { src: "/weddings/DSC03243.jpg", alt: "Fashion shoot1", style: "rotate-4 scale-105" },
     { src: "/portraits/_DCS0212.JPG", alt: "Cityscape", style: "-rotate-3" },
     { src: "/portraits/_KN13188.jpg", alt: "Artistic frame", style: "rotate-2 scale-110" },
     { src: "/portraits/_DCS0213.JPG", alt: "Cityscape", style: "-rotate-3" },
-    { src: "/portraits/_DCS0099.jpg", alt: "Fashion shoot", style: "rotate-4 scale-105" },
-     { src: "/portraits/2P6A5682.JPG", alt: "Fashion shoot", style: "rotate-4 scale-105" },
+    // { src: "/portraits/_DCS0099.jpg", alt: "Fashion shoot", style: "rotate-4 scale-105" },
+    // { src: "/portraits/2P6A5682.JPG", alt: "Fashion shoot", style: "rotate-4 scale-105" },
 
   ];
 
@@ -75,11 +75,8 @@ export default function VisualPortrait() {
              width={500}
   height={700}
               className="w-full object-contain object-center"
-             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-              decoding="async"
-                    draggable={false}
-                    unoptimized
-                   priority={idx < 4}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+              priority={idx < 4}
             />
           </motion.div>
         ))}
@@ -100,52 +97,52 @@ export default function VisualPortrait() {
 
       
       {isMobile && selectedIndex !== null && (
-  <AnimatePresence>
-    <motion.div
-      className="fixed inset-0 bg-black flex items-center justify-center z-50"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-      {/* Close Button */}
-      <button
-        onClick={() => setSelectedIndex(null)}
-        className="absolute top-4 right-4 z-50 text-white bg-black/60 p-2 rounded-full"
-      >
-        <X size={24} />
-      </button>
-
-      
-      <motion.div
-        ref={(el) => {
-          if (el && selectedIndex !== null) {
-            const width = el.clientWidth;
-            el.scrollTo({
-              left: selectedIndex * width,
-              behavior: "instant", 
-            });
-          }
-        }}
-        className="flex w-full h-full overflow-x-auto snap-x snap-mandatory"
-      >
-        {images.map((img, idx) => (
-          <div
-            key={idx}
-            className="relative flex-shrink-0 w-full h-full snap-center flex items-center justify-center"
+        <AnimatePresence>
+          <motion.div
+            className="fixed inset-0 bg-black flex items-center justify-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-        ))}
-      </motion.div>
-    </motion.div>
-  </AnimatePresence>
-)}
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedIndex(null)}
+              className="absolute top-4 right-4 z-50 text-white bg-black/60 p-2 rounded-full"
+            >
+              <X size={24} />
+            </button>
+
+            {/* Scrollable Lightbox */}
+            <motion.div
+              ref={(el) => {
+                if (el && selectedIndex !== null) {
+                  const width = el.clientWidth;
+                  el.scrollTo({
+                    left: selectedIndex * width,
+                    behavior: "instant", 
+                  });
+                }
+              }}
+              className="flex w-full h-full overflow-x-auto snap-x snap-mandatory"
+            >
+              {images.map((img, idx) => (
+                <div
+                  key={idx}
+                  className="relative flex-shrink-0 w-full h-full snap-center flex items-center justify-center"
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </AnimatePresence>
+      )}
 
     </main>
   );

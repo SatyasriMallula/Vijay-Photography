@@ -23,7 +23,7 @@ const services = [
   {
     title: "Portrait Sessions",
     description:
-      "Portraits are about more than just a picture — they&apos;re about personality, confidence, and soul. Whether outdoors in natural light or indoors with crafted studio setups, I create portraits that feel personal and timeless.",
+      "Portraits are about more than just a picture — they're about personality, confidence, and soul. Whether outdoors in natural light or indoors with crafted studio setups, I create portraits that feel personal and timeless.",
     subservices: [
       "Individual Portraits",
       "Couple Portraits",
@@ -44,7 +44,7 @@ const services = [
       "Baby Showers & Anniversaries",
       "Festivals & Community Events",
     ],
-    image: "/selected blueye/selected blueye/DSC08825.jpg",
+    image: "/portraits/DSC08825.jpg",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function ServicesSection() {
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
         <div className="text-center mb-8 md:mb-16 px-2">
-          <h2 className="xl:text-5xl lg:text-4xl text-2xl font-bold text-yellow-400 mb-2 md:mb-4">
+          <h2 className="xl:text-5xl lg:text-4xl text-2xl font-bold text-yellow-500 mb-2 md:mb-4">
             What I Offer
           </h2>
           <p className="text-gray-300  md:text-center text-left leading-6 md:leading-8 text-sm md:text-lg w-full md:max-w-2xl md:mx-auto">
@@ -88,7 +88,7 @@ export default function ServicesSection() {
 
 
               <div className="lg:w-1/2 w-full px-2 md:px-0">
-                <h3 className="lg:text-4xl md:text-3xl text-xl font-semibold text-yellow-300 mb-3 md:mb-4 lg:text-left text-center">
+                <h3 className="lg:text-4xl md:text-3xl text-xl font-semibold text-yellow-500 mb-3 md:mb-4 lg:text-left text-center">
                   {service.title}
                 </h3>
                 <p className="text-gray-300 md:text-lg lg:text-xl text-base leading-relaxed mb-4">

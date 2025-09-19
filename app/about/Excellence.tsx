@@ -2,28 +2,28 @@
 import Image from "next/image";
 
 export default function ExcellenceSection() {
- const features = [
-  {
-    img: "/about/sony m4.jpg",
-    title: "Sony M4",
-    desc: "A powerful full-frame mirrorless camera delivering sharp images,  professional quality for every shoot.",
-  },
-  {
-    img: "/about/sony fx3.jpeg",
-    title: "Sony FX3",
-    desc: "A compact cinema camera designed for offering exceptional low-light  and cinematic video recording.",
-  },
-  {
-    img: "/about/sony-a7r4.webp",
-    title: "SONY A7R IV",
-    desc: "A high-resolution 61MP mirrorless camera, perfect for capturing ultra-detailed portraits, landscapes.",
-  },
-  {
-    img: "/about/drone.jpg",
-    title: "Drone",
-    desc: "Advanced aerial photography and videography equipment for dynamic, high-angle shots.",
-  },
-];
+  const features = [
+    {
+      img: "/about/sony m4.jpg",
+      title: "Sony M4",
+      desc: "A powerful full-frame mirrorless camera delivering sharp images,  professional quality for every shoot.",
+    },
+    {
+      img: "/about/sony fx3.jpeg",
+      title: "Sony FX3",
+      desc: "A compact cinema camera designed for offering exceptional low-light  and cinematic video recording.",
+    },
+    {
+      img: "/about/sony-a7r4.webp",
+      title: "SONY A7R IV",
+      desc: "A high-resolution 61MP mirrorless camera, perfect for capturing ultra-detailed portraits, landscapes.",
+    },
+    {
+      img: "/about/drone.jpg",
+      title: "Drone",
+      desc: "Advanced aerial photography and videography equipment for dynamic, high-angle shots.",
+    },
+  ];
 
 
 
@@ -50,7 +50,7 @@ export default function ExcellenceSection() {
                 height={250}
                 className="w-full h-48 md:h-65  lg:h-75 object-cover"
               />
-              <div className="p-6 border-3 bg-black/40 h-[140px] lg:h-[220px] xl:h-[155px] md:h-[165px]">
+              <div className="p-6  bg-black/40 h-[140px] lg:h-[220px] xl:h-[155px] md:h-[165px]">
                 <h3 className=" text-sm md:text-lg text-white/90 font-semibold mb-2">{item.title}</h3>
                 <p className="text-white/70 text-sm lg:text-base text-center  ">{item.desc}</p>
               </div>

@@ -30,11 +30,11 @@ export default function TravelPage() {
         <div className="py-16 px-6 max-w-7xl mx-auto space-y-6 md:space-y-0">
             <h1 className=" text-3xl md:text-4xl font-bold md:mb-8 text-center text-green-800">Travel Diaries</h1>
             <motion.p
-            initial={{opacity:1}}
-            whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        viewport={{ once: true }}
-            className="text-center w-full md:max-w-3xl md:mx-auto text-gray-300 text-sm md:text-lg md:mb-10 leading-relaxed"
+                initial={{ opacity: 1 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-center w-full md:max-w-3xl md:mx-auto text-gray-300 text-sm md:text-lg md:mb-10 leading-relaxed"
             >
                 Traveling is more than just reaching a destination—it&apos;s about the stories,
                 cultures, and experiences you gather along the way. From majestic
@@ -90,37 +90,37 @@ export default function TravelPage() {
               <X size={24} />
             </button>
 
-            
-           <motion.div
-                   ref={(el) => {
-                     if (el && selectedIndex !== null) {
-                       const width = el.clientWidth;
-                       el.scrollTo({
-                         left: selectedIndex * width,
-                         behavior: "instant", 
-                       });
-                     }
-                   }}
-                   className="flex w-full h-full overflow-x-auto snap-x snap-mandatory"
-                 >
-                    {TravelImages.map((img, idx) => (
-                     <div
-                       key={idx}
-                       className="relative flex-shrink-0 w-full h-full snap-center flex items-center justify-center"
-                     >
-                       <Image
-                         src={img.src}
-                         alt={img.alt}
-                         fill
-                         className="object-contain"
-                         priority
-                       />
-                     </div>
-                   ))}
-                 </motion.div>
-               </motion.div>
-             </AnimatePresence>
-           )}
+
+                        <motion.div
+                            ref={(el) => {
+                                if (el && selectedIndex !== null) {
+                                    const width = el.clientWidth;
+                                    el.scrollTo({
+                                        left: selectedIndex * width,
+                                        behavior: "instant",
+                                    });
+                                }
+                            }}
+                            className="flex w-full h-full overflow-x-auto snap-x snap-mandatory"
+                        >
+                            {TravelImages.map((img, idx) => (
+                                <div
+                                    key={idx}
+                                    className="relative flex-shrink-0 w-full h-full snap-center flex items-center justify-center"
+                                >
+                                    <Image
+                                        src={img.src}
+                                        alt={img.alt}
+                                        fill
+                                        className="object-contain"
+                                        priority
+                                    />
+                                </div>
+                            ))}
+                        </motion.div>
+                    </motion.div>
+                </AnimatePresence>
+            )}
         </div>
     );
 }

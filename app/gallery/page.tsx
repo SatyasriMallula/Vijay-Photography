@@ -21,8 +21,8 @@ const allImages = [
   { src: "/gallery/_DCS0210.jpg", alt: "Outdoor wedding" },
   { src: "/home/DSC05894.jpg", alt: "landscape2" },
   { src: "/gallery/_DCS0129.JPG", alt: "2" },
-  { src: "/gallery/DSC08825.jpg", alt: "Gallery" },
-  { src: "/gallery/_DCS1799.JPG", alt: "3" },
+  // { src: "/gallery/DSC08825.jpg", alt: "Gallery" },
+  // { src: "/gallery/_DCS1799.JPG", alt: "3" },
   { src: "/gallery/DSC06690.jpg", alt: "4" },
   { src: "/gallery/DSC08825.jpg", alt: "5" },
   { src: "/gallery/DSC07857.jpg", alt: "6" },
@@ -32,7 +32,7 @@ const allImages = [
   { src: "/gallery/as.jpg", alt: "10" },
   { src: "/gallery/_DCS7389.jpg", alt: "11" },
   { src: "/gallery/DSC09816.jpg", alt: "12" },
-  { src: "/gallery/DSC09867.jpg", alt: "13" },
+  // { src: "/gallery/DSC09867.jpg", alt: "13" },
   { src: "/home/featured-shot/DSC05890.jpg", alt: "prewedding" },
   { src: "/weddings/DSC00356 2.jpg", alt: "portrait" },
   { src: "/gallery/IMG_7840.JPG", alt: "haldi" },
@@ -48,7 +48,7 @@ export default function GalleryPage() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  
+
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -115,35 +115,35 @@ export default function GalleryPage() {
 
             
             <motion.div
-                    ref={(el) => {
-                      if (el && selectedIndex !== null) {
-                        const width = el.clientWidth;
-                        el.scrollTo({
-                          left: selectedIndex * width,
-                          behavior: "instant", 
-                        });
-                      }
-                    }}
-                    className="flex w-full h-full overflow-x-auto snap-x snap-mandatory"
-                  >
-                    {allImages.map((img, idx) => (
-                      <div
-                        key={idx}
-                        className="relative flex-shrink-0 w-full h-full snap-center flex items-center justify-center"
-                      >
-                        <Image
-                          src={img.src}
-                          alt={img.alt}
-                          fill
-                          className="object-contain"
-                          priority
-                        />
-                      </div>
-                    ))}
-                  </motion.div>
-                </motion.div>
-              </AnimatePresence>
-            )}
+              ref={(el) => {
+                if (el && selectedIndex !== null) {
+                  const width = el.clientWidth;
+                  el.scrollTo({
+                    left: selectedIndex * width,
+                    behavior: "instant",
+                  });
+                }
+              }}
+              className="flex w-full h-full overflow-x-auto snap-x snap-mandatory"
+            >
+              {allImages.map((img, idx) => (
+                <div
+                  key={idx}
+                  className="relative flex-shrink-0 w-full h-full snap-center flex items-center justify-center"
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </AnimatePresence>
+      )}
     </section>
   );
 }
