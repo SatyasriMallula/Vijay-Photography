@@ -27,7 +27,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-[40vw] mt-5 flex justify-center "
+      className="relative h-[35vw] mt-5 flex justify-center "
     >
       <div className="relative max-w-[700px] max-h-[75vh] 2xl:max-h-[75vh] w-full overflow-hidden rounded-2xl shadow-xl">
         {images.map((img, index) => (
