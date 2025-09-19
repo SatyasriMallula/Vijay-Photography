@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Camera, Calendar, Heart } from "lucide-react";
+
 
 type FormDataType = {
     name: string;
@@ -74,6 +76,7 @@ export default function BookNowPage() {
         try {
             const res = await fetch("/api/sendMail", {
                 method: "POST",
+                body: JSON.stringify(data),
                 body: JSON.stringify(data),
                 headers: { "Content-Type": "application/json" },
             });
