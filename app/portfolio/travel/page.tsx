@@ -1,8 +1,9 @@
 "use client"
 import Lightbox from "@/app/components/LightBox";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { X } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const TravelImages = [
     { src: "/travel/IMG_9140.JPG", alt: "Travel photo 1" },
     { src: "/travel/IMG_9145.JPG", alt: "Travel photo 2" },
@@ -14,7 +15,14 @@ const TravelImages = [
 
 export default function TravelPage() {
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+    const [isMobile, setIsMobile] = useState(false);
 
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
     return (
         <div className="py-16 px-6 max-w-7xl mx-auto">
             <h1 className="text-4xl font-bold mb-8 text-center text-green-800">Travel Diaries</h1>
@@ -53,8 +61,56 @@ export default function TravelPage() {
                     </div>
                 ))}
             </div>
-            <Lightbox images={TravelImages} selectedIndex={selectedIndex || null} setSelectedIndex={setSelectedIndex} onClose={() => setSelectedIndex(null)} />
+            {!isMobile && (
+                <Lightbox
+                    images={TravelImages}
+                    selectedIndex={selectedIndex}
+                    setSelectedIndex={setSelectedIndex}
+                    onClose={() => setSelectedIndex(null)}
+                />
+            )}
 
+
+            {isMobile && selectedIndex !== null && (
+                <AnimatePresence>
+                    <motion.div
+                        className="fixed inset-0 bg-black flex items-center justify-center z-50"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                    >
+
+                        <button
+                            onClick={() => setSelectedIndex(null)}
+                            className="absolute top-4 right-4 z-50 text-white bg-black/60 p-2 rounded-full"
+                        >
+                            <X size={24} />
+                        </button>
+
+
+                        <motion.div
+                            className="flex w-full h-full overflow-x-scroll snap-x snap-mandatory"
+                            drag="x"
+                            dragConstraints={{ left: 0, right: 0 }}
+                        >
+                            {TravelImages.map((img, idx) => (
+                                <div
+                                    key={idx}
+                                    className="relative flex-shrink-0 w-full h-full snap-center flex items-center justify-center"
+                                >
+                                    <Image
+                                        src={img.src}
+                                        alt={img.alt}
+                                        fill
+                                        className="object-contain"
+                                        priority
+                                    />
+                                </div>
+                            ))}
+                        </motion.div>
+                    </motion.div>
+                </AnimatePresence>
+            )}
         </div>
     );
 }

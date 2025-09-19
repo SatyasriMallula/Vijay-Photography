@@ -22,7 +22,7 @@ export default function ClientLayout({
 
   const links = [
     {
-      href: "https://instagram.com", title: "Instagram", icon: <Instagram className="w-7 h-7 text-pink-500" />,
+      href: "https://www.instagram.com/blueye_photostudio/?hl=enm", title: "Instagram", icon: <Instagram className="w-7 h-7 text-pink-500" />,
     },
     {
       href: "https://maps.app.goo.gl/iL4T7yBjVTVbXCBE6", title: "Location", icon: <MapPin className="w-7 h-7 text-blue-600" />,

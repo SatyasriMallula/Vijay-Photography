@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.blueyephotostudio.com/sitemap.xml
+Sitemap: https://blueyephotostudio.vercel.app/sitemap.xml
