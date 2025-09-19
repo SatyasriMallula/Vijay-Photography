@@ -23,7 +23,7 @@ const services = [
   {
     title: "Portrait Sessions",
     description:
-      "Portraits are about more than just a picture — they&apos;re about personality, confidence, and soul. Whether outdoors in natural light or indoors with crafted studio setups, I create portraits that feel personal and timeless.",
+      "Portraits are about more than just a picture — they're about personality, confidence, and soul. Whether outdoors in natural light or indoors with crafted studio setups, I create portraits that feel personal and timeless.",
     subservices: [
       "Individual Portraits",
       "Couple Portraits",
