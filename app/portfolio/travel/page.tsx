@@ -9,23 +9,26 @@ import { useEffect, useState } from "react";
 
 const TravelImages = [
     { src: "/travel/IMG_9140.JPG", alt: "Travel photo 1" },
+    { src: "/travel/IMG_8403.JPG", alt: "Travel photo 1" },
+    { src: "/travel/_DCS5752.jpg", alt: "Travel photo 7" },
     { src: "/travel/IMG_9145.JPG", alt: "Travel photo 2" },
     { src: "/travel/IMG_9143.JPG", alt: "Travel photo 3" },
     { src: "/travel/IMG_9148.JPG", alt: "Travel photo 4" },
     { src: "/travel/IMG_9153.JPG", alt: "Travel photo 5" },
-    { src: "/travel/IMG_9151.JPG", alt: "Travel photo 6" }
+    { src: "/travel/IMG_9151.JPG", alt: "Travel photo 6" },
+    { src: "/travel/travelshot.png", alt: "Travel photo 8" }
 ];
 
 export default function TravelPage() {
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
- const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
     return (
         <div className="py-16 px-6 max-w-7xl mx-auto space-y-6 md:space-y-0">
             <h1 className=" text-3xl md:text-4xl font-bold md:mb-8 text-center text-green-800">Travel Diaries</h1>
@@ -64,31 +67,31 @@ export default function TravelPage() {
                     </div>
                 ))}
             </div>
-                        {!isMobile && (
-        <Lightbox
-          images={TravelImages}
-          selectedIndex={selectedIndex}
-          setSelectedIndex={setSelectedIndex}
-          onClose={() => setSelectedIndex(null)}
-        />
-      )}
+            {!isMobile && (
+                <Lightbox
+                    images={TravelImages}
+                    selectedIndex={selectedIndex}
+                    setSelectedIndex={setSelectedIndex}
+                    onClose={() => setSelectedIndex(null)}
+                />
+            )}
 
-      
-      {isMobile && selectedIndex !== null && (
-        <AnimatePresence>
-          <motion.div
-            className="fixed inset-0 bg-black flex items-center justify-center z-50"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-          
-            <button
-              onClick={() => setSelectedIndex(null)}
-              className="absolute top-4 right-4 z-50 text-white bg-black/60 p-2 rounded-full"
-            >
-              <X size={24} />
-            </button>
+
+            {isMobile && selectedIndex !== null && (
+                <AnimatePresence>
+                    <motion.div
+                        className="fixed inset-0 bg-black flex items-center justify-center z-50"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                    >
+
+                        <button
+                            onClick={() => setSelectedIndex(null)}
+                            className="absolute top-4 right-4 z-50 text-white bg-black/60 p-2 rounded-full"
+                        >
+                            <X size={24} />
+                        </button>
 
 
                         <motion.div
