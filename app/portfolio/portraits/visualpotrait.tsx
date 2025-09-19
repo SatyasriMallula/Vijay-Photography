@@ -86,6 +86,10 @@ export default function VisualPortrait() {
               height={700}
               className="w-full object-contain object-center"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+              decoding="async"
+              draggable={false}
+              unoptimized
+              priority={idx < 4}
             />
           </motion.div>
         ))}
