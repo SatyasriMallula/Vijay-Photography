@@ -69,8 +69,6 @@ export default function TravelPage() {
                     onClose={() => setSelectedIndex(null)}
                 />
             )}
-
-
             {isMobile && selectedIndex !== null && (
                 <AnimatePresence>
                     <motion.div
