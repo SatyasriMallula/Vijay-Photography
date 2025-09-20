@@ -2,28 +2,28 @@
 import Image from "next/image";
 
 export default function ExcellenceSection() {
- const features = [
-  {
-    img: "/about/sony m4.jpg",
-    title: "Sony M4",
-    desc: "A powerful full-frame mirrorless camera delivering sharp images,  professional quality for every shoot.",
-  },
-  {
-    img: "/about/sony fx3.jpeg",
-    title: "Sony FX3",
-    desc: "A compact cinema camera designed for offering exceptional low-light  and cinematic video recording.",
-  },
-  {
-    img: "/about/sony-a7r4.webp",
-    title: "SONY A7R IV",
-    desc: "A high-resolution 61MP mirrorless camera, perfect for capturing ultra-detailed portraits, landscapes.",
-  },
-  {
-    img: "/about/drone.jpg",
-    title: "Drone",
-    desc: "Advanced aerial photography and videography equipment for dynamic, high-angle shots.",
-  },
-];
+  const features = [
+    {
+      img: "/about/sony m4.jpg",
+      title: "Sony M4",
+      desc: "A powerful full-frame mirrorless camera delivering sharp images,  professional quality for every shoot.",
+    },
+    {
+      img: "/about/sony fx3.jpeg",
+      title: "Sony FX3",
+      desc: "A compact cinema camera designed for offering exceptional low-light  and cinematic video recording.",
+    },
+    {
+      img: "/about/sony-a7r4.webp",
+      title: "SONY A7R IV",
+      desc: "A high-resolution 61MP mirrorless camera, perfect for capturing ultra-detailed portraits, landscapes.",
+    },
+    {
+      img: "/about/drone.jpg",
+      title: "Drone",
+      desc: "Advanced aerial photography and videography equipment for dynamic, high-angle shots.",
+    },
+  ];
 
 
 

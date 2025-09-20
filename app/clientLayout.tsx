@@ -19,7 +19,8 @@ export default function ClientLayout({
   function handleClick() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
-
+  const phoneNumber = "917729803266";
+  const message = "Hello! I want to contact you.";
   const links = [
     {
       href: "https://www.instagram.com/blueye_photostudio/?hl=enm", title: "Instagram", icon: <Instagram className="w-7 h-7 text-pink-500" />,
@@ -28,7 +29,7 @@ export default function ClientLayout({
       href: "https://maps.app.goo.gl/iL4T7yBjVTVbXCBE6", title: "Location", icon: <MapPin className="w-7 h-7 text-blue-600" />,
     },
     {
-      href: "https://wa.me/7729803266", title: "WhatsApp", icon: <MessageCircle className="w-7 h-7 text-green-500" />,
+      href: `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, title: "WhatsApp", icon: <MessageCircle className="w-7 h-7 text-green-500" />,
     },
   ];
   useEffect(() => {
@@ -72,7 +73,7 @@ export default function ClientLayout({
             </a>
           ))}
         </div>
-        <p className="text-white/70">© {new Date().getFullYear()} Blue eye PhotoStudio. All Rights Reserved.</p>
+        <p className="text-white/70">© {new Date().getFullYear()} Blueye PhotoStudio. All Rights Reserved.</p>
 
       </footer>
       {!isRoot && showButton && (

@@ -5,12 +5,12 @@ import Image from "next/image";
 const features = [
   {
     title: "Worried about dreamy shots?",
-    text: "We ll plan everything together and I’ll ensure your vision turns into timeless photographs.",
+    text: "We'll plan everything together and I’ll ensure your vision turns into timeless photographs.",
     image: "/about/DSC08756.jpg",
   },
   {
     title: "Not confident in posing?",
-    text: "I&apos;ll guide you with simple directions, while bringing out your natural expressions.",
+    text: "I'll guide you with simple directions, while bringing out your natural expressions.",
     image: "/about/_DCS0295.JPG",
   },
   {
@@ -20,7 +20,7 @@ const features = [
   },
   {
     title: "Think a photoshoot is just about pictures?",
-    text: "It&apos;s about creating an experience that leaves you with lasting memories beyond the photos.",
+    text: "It's about creating an experience that leaves you with lasting memories beyond the photos.",
     image: "/about/DSC05840.jpg",
   },
 ];
@@ -30,7 +30,7 @@ export default function Features() {
     <section className="pb-40 xl:pb-30 lg:pb-60 h-full">
       {/* Section Heading */}
       <div className="text-center mb-10 md:mb-12 px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl text-white font-medium">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl text-yellow-500 font-medium">
           Your Concerns-My Care
         </h2>
       </div>
@@ -56,15 +56,15 @@ export default function Features() {
             </div>
 
             {/* Text Overlay Card */}
-           <div className="absolute left-1/2 -bottom-36 sm:-bottom-40 md:-bottom-45 lg:-bottom-65 xl:-bottom-48 -translate-x-1/2 
+            <div className="absolute left-1/2 -bottom-36 sm:-bottom-40 md:-bottom-45 lg:-bottom-65 xl:-bottom-48 -translate-x-1/2 
                bg-blue-300/20 shadow-xl rounded-tr-[30px] sm:rounded-tr-[40px]   rounded-bl-[30px] sm:rounded-bl-[40px] 
                              px-4 sm:px-5 py-4 sm:py-5 lg:w-[95%]  w-[88%] sm:w-[90%] h-[180px] sm:h-[210px] md:h-[230px] lg:h-[300px] xl:h-[250px] ">
-  <p className=" text-lg  font-normal mb-3 text-white/90">
-    {f.title}
-  </p>
-  <hr className="md:w-12 w-10 h-1 mb-3 bg-blue-500 rounded border-0" />
-  <p className=" text-xs lg:text-[15px] md:text-sm text-gray-200 leading-6 md:leading-relaxed">{f.text}</p>
-</div>
+              <p className=" text-lg  font-normal mb-3 text-white/90">
+                {f.title}
+              </p>
+              <hr className="md:w-12 w-10 h-1 mb-3 bg-blue-500 rounded border-0" />
+              <p className=" text-xs lg:text-[15px] md:text-sm text-gray-200 leading-6 md:leading-relaxed">{f.text}</p>
+            </div>
 
 
           </div>
