@@ -20,13 +20,13 @@ const categories = [
         title: "Branding",
         description: "Your brand deserves visuals that speak louder than words",
         img: "/branding/DSC06914.jpg",
-        href: "gallery"
+        href: "/gallery"
     },
     {
         title: "Baby Shoots",
         description: "Capture the innocence, laughter of your little one with our baby photoshoots.",
         img: "/babyshoot/DSC07897.jpg",
-        href: "portfolio/babyshoot"
+        href: "/gallery"
     },
     {
         title: "Travel",
@@ -44,12 +44,12 @@ const categories = [
 
 export default function Categories() {
     return (
-        <section className="w-full px-6 space-y-4 md:space-y-10">
-            <h2 className="text-2xl md:text-4xl font-medium text-center text-yellow-500">
+        <section className="w-full px-6 py-15 space-y-4 md:space-y-8">
+            <h2 className="text-3xl md:text-4xl font-medium text-center text-yellow-500">
                 Explore My Work
             </h2>
   <motion.p
-        className="max-w-2xl mx-auto text-center text-gray-300 text-sm md:text-lg leading-relaxed "
+        className="max-w-2xl mx-auto text-center text-gray-300 text-lg leading-relaxed "
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -76,8 +76,7 @@ export default function Categories() {
                             alt={cat.title}
                             width={600}
                             height={400}
-                            
-                            className="w-full  h-80 md:h-100 object-cover transform group-hover:scale-110 transition duration-700"
+                            className="w-full h-100 object-cover transform group-hover:scale-110 transition duration-700"
                         />
 
                         {/* Text */}

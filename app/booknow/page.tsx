@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useState, useEffect } from "react";
 import { Camera, Calendar, Heart } from "lucide-react";
 
 
@@ -67,16 +66,10 @@ export default function BookNowPage() {
             setIsSubmitting(false);
             return;
         }
-        if (!data.requirements.trim()) {
-            setError("Please tell us about your requirement.");
-            setIsSubmitting(false);
-            return;
-        }
 
         try {
             const res = await fetch("/api/sendMail", {
                 method: "POST",
-                body: JSON.stringify(data),
                 body: JSON.stringify(data),
                 headers: { "Content-Type": "application/json" },
             });
@@ -96,28 +89,28 @@ export default function BookNowPage() {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
             }}
-            className={`relative flex flex-col md:flex-col lg:flex-row items-center justify-center px-4 sm:px-6 md:px-10 lg:px-16 py-8 lg:py-10 min-h-screen ${animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"} transition-all duration-700 ease-out`}
+            className={`relative flex flex-col md:flex-row  bg-opacity-70 px-6 py-10 ${animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+                } transition-all duration-700 ease-out`}
         >
-            {/* Overlay */}
+            {/* Transparent overlay for darker bg */}
             <div className="absolute inset-0 bg-black opacity-70 -z-10" />
 
-            {/* Text Section */}
-            <section className="w-full md:w-full lg:w-1/2 flex flex-col justify-center mb-10 md:mb-10 lg:mb-0 text-white z-10">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
+            {/* Left Text Section */}
+            <section className="md:w-1/2 flex ml-10 flex-col justify-center px-16 text-white relative z-40 drop-shadow-lg">
+                <h1 className="text-5xl font-extrabold leading-tight mb-4">
                     Book Your Special Moments
                 </h1>
-                <h3 className="text-blue-400 font-semibold text-base sm:text-lg md:text-xl lg:text-xl mb-6">
+                <h3 className="text-blue-400 font-semibold mb-6">
                     Capture emotions that last forever
                 </h3>
-                <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-lg max-w-md mb-8">
+                <p className="text-gray-300 text-lg max-w-lg mb-10 drop-shadow-md">
                     At <span className="text-blue-400 font-semibold">Blueye Studio</span>, we capture your memories with passion and creativity.
                 </p>
-
-                <div className="flex flex-wrap justify-center md:justify-start gap-4 sm:gap-6 md:gap-8 mb-6">
+                <div className="flex gap-14 drop-shadow-md mb-14">
                     {[{ Icon: Camera, label: "Professional" }, { Icon: Calendar, label: "Flexible" }, { Icon: Heart, label: "Personalized" }].map(({ Icon, label }) => (
-                        <div key={label} className="flex flex-col items-center space-y-1 sm:space-y-2">
-                            <Icon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-blue-400" />
-                            <span className="font-semibold text-xs sm:text-sm md:text-base text-gray-300">{label}</span>
+                        <div key={label} className="flex flex-col items-center space-y-2">
+                            <Icon className="w-14 h-14 text-blue-400" />
+                            <span className="font-semibold text-lg text-gray-300">{label}</span>
                         </div>
                     ))}
                 </div>
@@ -128,10 +121,10 @@ export default function BookNowPage() {
                 </blockquote>
             </section>
 
-            {/* Form Section */}
-            <section className="w-full md:w-full lg:w-1/2 flex justify-center items-start z-10">
+            {/* Right Form Section */}
+            <section className="md:w-1/2 relative z-30 flex items-center justify-center">
                 <div
-                    className="w-full max-w-md md:max-w-md lg:max-w-2xl p-6 sm:p-8 md:p-10 lg:p-14 rounded-3xl hover:scale-[1.03] transition-transform duration-500"
+                    className="w-full max-w-2xl mr-20 rounded-3xl p-14 transition-transform duration-500 hover:scale-[1.05] relative"
                     style={{
                         background: "rgba(255, 255, 255, 0.1)",
                         backdropFilter: "blur(20px)",
@@ -148,7 +141,7 @@ export default function BookNowPage() {
                             </p>
                             <button
                                 onClick={() => setSubmitted(false)}
-                                className="bg-blue-400 hover:bg-blue-500 text-black font-bold px-6 sm:px-8 md:px-10 py-2 sm:py-3 md:py-3 rounded-xl transition"
+                                className="bg-blue-400 hover:bg-blue-500 text-black font-bold px-10 py-4 rounded-xl transition"
                             >
                                 Book Another
                             </button>
@@ -168,18 +161,35 @@ export default function BookNowPage() {
                                     <option value="fashion">Fashion Shoot</option>
                                     <option value="portfolio">Portfolio</option>
                                 </select>
-                                <input name="date" type="date" className="input focus:bg-white focus:!text-black" />
+                                <input name="date" type="date" className="input" />
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                                <input name="location" type="text" placeholder="Shoot Location" required className="input" />
-                                <input name="budget" type="text" placeholder="Budget Range (Optional)" className="input" />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <input
+                                    name="location"
+                                    type="text"
+                                    placeholder="Shoot Location"
+                                    required
+                                    className="input"
+                                />
+                                <input
+                                    name="budget"
+                                    type="text"
+                                    placeholder="Budget Range (Optional)"
+                                    className="input"
+                                />
                             </div>
-                            <textarea name="requirements" placeholder="Tell us about your requirement..." rows={4} required className="input resize-none"></textarea>
-                            {error && <p className="text-blue-400 text-sm md:text-md font-semibold">{error}</p>}
+                            <textarea
+                                name="requirements"
+                                placeholder="Tell us about your requirement..."
+                                rows={4}
+                                required
+                                className="input resize-none"
+                            ></textarea>
+                            {error && <p className="text-blue-400 text-md font-semibold">{error}</p>}
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="block w-full md:w-auto mx-auto px-3 sm:px-6 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2 sm:py-3 rounded-xl transition disabled:opacity-50"
+                                className="block mx-auto px-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-extrabold py-4 rounded-xl transition disabled:opacity-50"
                             >
                                 {isSubmitting ? "Submitting..." : "Submit Booking"}
                             </button>
@@ -187,10 +197,7 @@ export default function BookNowPage() {
                     )}
                 </div>
             </section>
+
         </div>
-
     );
-}
-
-
-
+} 

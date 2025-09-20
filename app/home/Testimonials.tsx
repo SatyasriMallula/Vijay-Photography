@@ -51,8 +51,8 @@ export default function Testimonials() {
                             transition={{ duration: 0.6, delay: index * 0.2 }}
                             viewport={{ once: true }}
                         >
-                            <p className="text-white text-sm md:text-base italic mb-4">“{t.feedback}”</p>
-                            <h3 className="text-base md:text-lg font-semibold text-white">{t.name}</h3>
+                            <p className="text-white italic mb-4">“{t.feedback}”</p>
+                            <h3 className="text-lg font-semibold text-white">{t.name}</h3>
                             <span className="text-sm text-white">{t.role}</span>
                         </motion.div>
                     ))}

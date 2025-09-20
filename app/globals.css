@@ -193,9 +193,10 @@ h6 {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-160%);
+    transform: translateX(-50%);
   }
 }
+
 .animate-banner {
   animation: bannerScroll 27s linear infinite; /* desktop default */
 }
@@ -215,21 +216,13 @@ h6 {
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
 }
 
 @keyframes marquee2 {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(0%); }
 }
 
 .animate-marquee {
@@ -246,4 +239,11 @@ h6 {
 .scrollbar-hide {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+
+@supports (-webkit-touch-callout: none) {
+  .ios-only {
+    display: block !important;
+  }
 }

@@ -3,8 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
-import { ArrowUp } from "lucide-react";
-import { Instagram, MessageCircle, MapPin } from "lucide-react";
+import { ArrowUp, Instagram, MapPin, MessageCircle } from "lucide-react";
 
 
 export default function ClientLayout({
@@ -15,7 +14,7 @@ export default function ClientLayout({
   const pathname = usePathname();
   const isRoot = pathname === "/";
   const [showButton, setShowButton] = useState(false);
-  console.log(showButton)
+
   function handleClick() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }

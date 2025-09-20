@@ -9,6 +9,7 @@ export default function Hero() {
     "/home/DSC08119.jpg",
     "/home/featured-shot/_DCS0430.JPG",
     "/home/59be7081def4d.jpg",
+    "/home/59be7081def4d.jpg",
     "/home/featured-shot/DSC08778.jpg",
     "/home/_DCS0075.JPG",
     "/home/featured-shot/DSC06939.jpg",
@@ -27,9 +28,9 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-[40vw] mt-5 flex justify-center "
+      className="relative h-[40vw] md:h-[35vw] my-8 md:mb-0 flex justify-center "
     >
-      <div className="relative max-w-[700px] max-h-[75vh] 2xl:max-h-[75vh] w-full overflow-hidden rounded-2xl shadow-xl">
+      <div className="relative max-w-[700px] max-h-[75vh] 2xl:max-h-[70vh] w-full overflow-hidden rounded-2xl shadow-xl">
         {images.map((img, index) => (
           <Image
             key={index}

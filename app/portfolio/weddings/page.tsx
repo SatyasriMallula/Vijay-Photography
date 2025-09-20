@@ -1,46 +1,40 @@
+
 "use client";
 
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion"
-// import type { Metadata } from "next";
-
-// export const metadata: Metadata = {
-//     title: "Wedding Photography | Blueye Portfolio",
-//     description: "Capturing unforgettable wedding moments with creativity and precision.",
-//     openGraph: {
-//         title: "Wedding Portfolio | Blueye Photography",
-//         description: "Timeless wedding photos captured by Blueye Studio.",
-//         images: ["/og-image.jpg"],
-//     },
-// };
 import { useEffect, useState } from "react";
 import Lightbox from "@/app/components/LightBox";
+
 import { X } from "lucide-react";
 
 export default function WeddingsPage() {
     const weddingPhotos = [
-        { src: "/weddings/_KN10857.jpg", alt: "Reception" },
         { src: "/weddings/_DCS1392.jpg", alt: "Wedding Couple" },
-        { src: "/weddings/1L4A1579.jpg", alt: "Reception" },
-        { src: "/weddings/DSC00356 2.jpg", alt: "Ring Ceremony" },
-        // { src: "/weddings/_KN11039.jpg", alt: "Haldi Ceremony" },
-        // { src: "/weddings/DSC05947.jpg", alt: "Haldi Ceremony" },
-        // { src: "/weddings/_KN12844.jpg", alt: "Wedding Dance" },
-
-        { src: "/weddings/DSC03243.jpg", alt: "Wedding Ceremony" },
-        { src: "/weddings/0V8A9877.jpg", alt: "Wedding Couple" },
-        // { src: "/weddings/IMG_7867.jpg", alt: "Haldi Ceremony" },
-        { src: "/weddings/_KN11133.jpg", alt: "Reception" },
-        { src: "/weddings/DSC08797.jpg", alt: "Ring Ceremony" },
         { src: "/weddings/_DCS1646.jpg", alt: "Bride Portrait" },
-        // { src: "/weddings/DSC06116.jpg", alt: "Wedding Dance" },
-        { src: "/weddings/DSC07974.jpg", alt: "Bride Portrait" },
-        // { src: "/weddings/_KN12764.jpg", alt: "Haldi Ceremony" },
-        { src: "/weddings/DSC08989.jpg", alt: "Bride Portrait" },
+        { src: "/weddings/_DCS6422.jpg", alt: "Bride Portrait" },
+        { src: "/weddings/_KN10857.jpg", alt: "Reception" },
+        { src: "/weddings/_KN11039.jpg", alt: "Haldi Ceremony" },
+        { src: "/weddings/_KN11133.jpg", alt: "Reception" },
+        { src: "/weddings/_KN12764.jpg", alt: "Haldi Ceremony" },
+        { src: "/weddings/_KN12783.jpg", alt: "Haldi Ceremony" },
+        { src: "/weddings/_KN12844.jpg", alt: "Wedding Dance" },
         { src: "/weddings/_KN12984.jpg", alt: "Bride Portrait" },
+        { src: "/weddings/_KN13188.jpg", alt: "Haldi Ceremony" },
+        { src: "/weddings/0V8A9877.jpg", alt: "Wedding Couple" },
+        { src: "/weddings/1L4A1579.jpg", alt: "Reception" },
+        { src: "/weddings/cover-image.jpg", alt: "Reception" },
         { src: "/weddings/DSC00195.jpg", alt: "Bridal Portrait" },
-        // { src: "/weddings/_KN13188.jpg", alt: "Haldi Ceremony" },
+        { src: "/weddings/DSC00356 2.jpg", alt: "Ring Ceremony" },
         { src: "/weddings/DSC06713.jpg", alt: "Bride Portrait" },
+        { src: "/weddings/DSC03243.jpg", alt: "Wedding Ceremony" },
+        { src: "/weddings/DSC05947.jpg", alt: "Haldi Ceremony" },
+        { src: "/weddings/DSC07974.jpg", alt: "Bride Portrait" },
+        { src: "/weddings/DSC08797.jpg", alt: "Ring Ceremony" },
+        { src: "/weddings/DSC08617.jpg", alt: "Bride Portrait" },
+        { src: "/weddings/DSC08989.jpg", alt: "Bride Portrait" },
+        { src: "/weddings/IMG_7867.jpg", alt: "Haldi Ceremony" },
+
     ];
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
     const [isMobile, setIsMobile] = useState(false);
@@ -100,9 +94,16 @@ export default function WeddingsPage() {
 
 
                         <motion.div
-                            className="flex w-full h-full overflow-x-scroll snap-x snap-mandatory"
-                            drag="x"
-                            dragConstraints={{ left: 0, right: 0 }}
+                            ref={(el) => {
+                                if (el && selectedIndex !== null) {
+                                    const width = el.clientWidth;
+                                    el.scrollTo({
+                                        left: selectedIndex * width,
+                                        behavior: "instant",
+                                    });
+                                }
+                            }}
+                            className="flex w-full h-full overflow-x-auto snap-x snap-mandatory"
                         >
                             {weddingPhotos.map((img, idx) => (
                                 <div

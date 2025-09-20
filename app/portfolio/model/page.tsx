@@ -75,6 +75,8 @@ export default function ModelsPage() {
                                 height={100}
                                 width={100}
                                 alt={src.alt}
+                                priority
+                                loading="eager"
                                 className="absolute w-full h-full object-contain rounded-xl shadow-xl cursor-pointer"
                                 style={{
                                     transform: `rotateY(${i * angle}deg) translateZ(230px)`,
