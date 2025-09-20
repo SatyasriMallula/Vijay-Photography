@@ -161,7 +161,7 @@ export default function BookNowPage() {
                                     <option value="fashion">Fashion Shoot</option>
                                     <option value="portfolio">Portfolio</option>
                                 </select>
-                                <input name="date" type="date" className="input focus:bg-white focus:!text-black" />
+                                <input name="date" type="date" className="input text-white focus:bg-white focus:!text-black" />
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                                 <input name="location" type="text" placeholder="Shoot Location" required className="input" />
