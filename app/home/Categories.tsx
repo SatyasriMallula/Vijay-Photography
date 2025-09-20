@@ -49,7 +49,7 @@ export default function Categories() {
                 Explore My Work
             </h2>
   <motion.p
-        className="max-w-2xl mx-auto text-center text-gray-300 text-lg leading-relaxed "
+        className="max-w-2xl mx-auto text-center text-gray-300 text-sm md:text-lg leading-relaxed "
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -71,6 +71,7 @@ export default function Categories() {
                         viewport={{ once: true }}
                     >
                         {/* Image */}
+                            <Link href={cat.href}>
                         <Image
                             src={cat.img}
                             alt={cat.title}
@@ -80,7 +81,7 @@ export default function Categories() {
                         />
 
                         {/* Text */}
-                        <Link href={cat.href}>
+                    
                             <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-black/10 px-4 py-3">
                                 <h3 className="text-xl font-medium text-yellow-400">{cat.title}</h3>
                                 <p className="text-sm text-gray-200">{cat.description}</p>

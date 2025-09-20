@@ -16,7 +16,17 @@ const TravelImages = [
     { src: "/travel/IMG_9148.JPG", alt: "Travel photo 4" },
     { src: "/travel/IMG_9153.JPG", alt: "Travel photo 5" },
     { src: "/travel/IMG_9151.JPG", alt: "Travel photo 6" },
-    { src: "/travel/travelshot.png", alt: "Travel photo 8" }
+    { src: "/travel/travelshot.png", alt: "Travel photo 8" },
+    { src: "/travel/IMG_9138.JPG", alt: "Travel photo 9" },
+    { src: "/travel/IMG_9139.JPG", alt: "Travel photo 10" },
+    { src: "/travel/IMG_9141.JPG", alt: "Travel photo 11" },
+    { src: "/travel/IMG_9146.JPG", alt: "Travel photo 12" },
+    { src: "/travel/IMG_9147.JPG", alt: "Travel photo 13" },
+    { src: "/travel/IMG_9149.JPG", alt: "Travel photo 14" },
+    { src: "/travel/IMG_9150.JPG", alt: "Travel photo 15" },
+    { src: "/travel/IMG_9152.JPG", alt: "Travel photo 16" },
+    { src: "/travel/IMG_9155.JPG", alt: "Travel photo 17" },
+    
 ];
 
 export default function TravelPage() {

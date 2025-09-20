@@ -11,9 +11,11 @@ import { X } from "lucide-react";
 
 const allImages = [
   { src: "/gallery/_DCS0129.JPG", alt: "1" },
-  { src: "/gallery/_DCS0210.jpg", alt: "2" },
+  { src: "/gallery/_DCS0210.JPG", alt: "2" },
   { src: "/gallery/_DCS1799.jpg", alt: "3" },
-  { src: "/gallery/_DCS7247.JPG", alt: "4" },
+  { src: "/gallery/_DCS0377.JPG", alt: "32" },
+  { src: "/gallery/_DCS7247.jpg", alt: "4" },
+  { src: "/gallery/_DCS7261.jpg", alt: "33" },
   { src: "/gallery/_DCS7306.jpg", alt: "5" },
   { src: "/gallery/_DCS7389.jpg", alt: "6" },
   { src: "/gallery/_DCS7412.jpg", alt: "7" },
@@ -38,6 +40,7 @@ const allImages = [
   { src: "/gallery/DCS1824.jpg", alt: "29" },
   { src: "/gallery/galler2.jpg", alt: "30" },
   { src: "/gallery/gallery1.jpg", alt: "31" },
+  { src: "/gallery/f.jpg", alt: "34" },
   { src: "/home/59be7081def4d.jpg", alt: "landscape " },
   { src: "/home/featured-shot/_DCS0275.JPG", alt: "fhcjsj" },
   { src: "/gallery/DSC06699.jpg", alt: "Family portrait" },

@@ -3,19 +3,19 @@ import { motion } from "framer-motion";
 
 const testimonials = [
     {
-        name: "Emily Carter",
+        name: "Sujatha M",
         role: "Bride",
         feedback:
             "The wedding photos were beyond magical! Every emotion was beautifully captured. Truly timeless memories.",
     },
     {
-        name: "James Anderson",
-        role: "Traveler",
+        name: "Swetha P",
+        role: "Maternity Client",
         feedback:
-            "Stunning travel shots! Each frame tells a story and brings the journey alive again.",
+            "Stunning maternity shots! Each frame tells a story and brings the joy alive again.",
     },
     {
-        name: "Sophia Martinez",
+        name: "Navya Sai",
         role: "Model",
         feedback:
             "The portrait session was amazing. Felt super comfortable and the final shots were just incredible.",
