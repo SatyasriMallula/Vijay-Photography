@@ -154,21 +154,21 @@ export default function BookNowPage() {
                             </div>
                             <input name="email" type="email" placeholder="Email Address" required className="input" autoComplete="off" />
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                                <select name="service" required className="input focus:bg-black/70">
+                                <select name="service" required className="input bg-black/70">
                                     <option value="">Select Service</option>
                                     <option value="wedding">Wedding Photography</option>
                                     <option value="birthday">Birthday Event</option>
                                     <option value="fashion">Fashion Shoot</option>
                                     <option value="portfolio">Portfolio</option>
                                 </select>
-                                <input name="date" type="date" className="input focus:bg-white focus:!text-black" />
+                                <input name="date" type="date" min={new Date().toISOString().split("T")[0]} required className="input focus:bg-white text-white focus:!text-black" />
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                                 <input name="location" type="text" placeholder="Shoot Location" required className="input" />
                                 <input name="budget" type="text" placeholder="Budget Range (Optional)" className="input" />
                             </div>
                             <textarea name="requirements" placeholder="Tell us about your requirement..." rows={4} required className="input resize-none"></textarea>
-                            {error && <p className="text-blue-400 text-sm md:text-md font-semibold">{error}</p>}
+                            {error && <p className="text-red-500 text-sm md:text-md font-semibold">{error}</p>}
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
