@@ -46,9 +46,9 @@ export default function ModelsPage() {
     return (
         <div>
             {/* Cube Section */}
-            <div className="overflow-y-hidden min-h-[90vh] overflow-x-hidden flex flex-col md:flex-row items-center justify-evenly gap-10 text-white px-4 md:px-16">
-                <aside className="max-w-xl flex flex-col items-start space-y-12">
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-blue-400">
+            <div className="overflow-y-hidden min-h-[90vh] overflow-x-hidden flex flex-col md:flex-row items-center justify-evenly gap-20 md:gap-10 text-white mt-5 md:mt-0 px-4 md:px-16">
+                <aside className="max-w-xl flex flex-col md:items-start space-y-4 md:space-y-12">
+                    <h2 className="text-3xl text-center md:text-4xl  font-bold text-yellow-400">
                         Models Gallery
                     </h2>
                     <p className="italic text-base md:text-lg text-blue-200 max-w-md">
@@ -72,8 +72,7 @@ export default function ModelsPage() {
                             <Image
                                 key={i}
                                 src={src.src}
-                                height={100}
-                                width={100}
+                              fill
                                 alt={src.alt}
                                 priority
                                 loading="eager"

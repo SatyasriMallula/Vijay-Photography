@@ -115,14 +115,14 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
             <Link
               href="/home"
-              className="px-6 py-2 rounded-lg bg-blue-500/20 text-blue-300 hover:bg-blue-500/40 hover:text-white transition duration-300 shadow-md shadow-blue-500/40 text-center"
+              className="px-6 py-2 border-t border-l border-blue-300 rounded-lg  text-blue-300 hover:bg-blue-500/40 hover:text-white transition duration-300 shadow-md shadow-blue-500/40 text-center"
             >
               Explore
             </Link>
 
             <Link
               href="/contact"
-              className="px-6 py-2 rounded-lg text-gray-300 hover:bg-blue-500/40 hover:text-white transition duration-300 shadow-md shadow-blue-500/40 text-center"
+              className="px-6 py-2 rounded-lg text-gray-300 border-b border-r border-blue-300 hover:bg-blue-500/40 hover:text-white transition duration-300 shadow-md shadow-blue-500/40 text-center"
             >
               Contact
             </Link>

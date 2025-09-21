@@ -112,7 +112,12 @@ h6 {
 }
 
 .input {
-  @apply w-full border border-gray-500 text-white rounded-lg p-3 focus:ring-1 focus:ring-yellow-600 outline-none;
+  @apply w-full border border-gray-500  text-white rounded-lg p-3 focus:ring-1 focus:ring-yellow-600 outline-none;
+}
+.label {
+  @apply absolute left-1 -top-4 bg-transparent px-1 text-sm text-gray-500 transition-all
+                   peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base
+                   peer-focus:-top-6.5 peer-focus:text-sm peer-focus:text-blue-400 pointer-events-none;
 }
 @keyframes growShrink {
   0%,
@@ -198,7 +203,9 @@ h6 {
 }
 
 .animate-banner {
-  animation: bannerScroll 27s linear infinite; /* desktop default */
+  width: max-content;
+  display: flex;
+  animation: bannerScroll 15s linear infinite; /* desktop default */
 }
 
 @media (max-width: 767px) {
@@ -207,22 +214,31 @@ h6 {
       transform: translateX(0%);
     }
     100% {
-      transform: translateX(-600%);
+      transform: translateX(-88%);
     } /* maybe scroll entire width */
   }
   .animate-banner {
-    animation: bannerScroll 15s linear infinite; /* desktop default */
+    width: max-content;
+    animation: bannerScroll 35s linear infinite; /* desktop default */
   }
 }
 
 @keyframes marquee {
-  0%   { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes marquee2 {
-  0%   { transform: translateX(100%); }
-  100% { transform: translateX(0%); }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 .animate-marquee {
@@ -240,7 +256,6 @@ h6 {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-
 
 @supports (-webkit-touch-callout: none) {
   .ios-only {

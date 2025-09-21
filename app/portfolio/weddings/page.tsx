@@ -46,12 +46,12 @@ export default function WeddingsPage() {
     }, []);
     return (
         <section className="px-6 py-16">
-            <h2 className="text-3xl font-bold mb-10 text-center text-yellow-500">Wedding Moments</h2>
+            <h2 className="text-3xl font-bold md:mb-10 mb-5 text-center text-yellow-500">Wedding Moments</h2>
             <motion.p initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-center max-w-3xl mx-auto text-gray-300 text-lg mb-8 leading-relaxed">
+                className="text-center max-w-3xl mx-auto text-gray-300 text-sm md:text-lg mb-4 md:mb-8 leading-relaxed">
                 Weddings are a beautiful journey of love, emotions, and timeless
                 memories. From the first smile to the final dance, every moment tells a
                 story that deserves to be captured with care. Here are some of our
