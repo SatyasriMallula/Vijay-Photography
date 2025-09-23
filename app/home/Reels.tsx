@@ -27,7 +27,7 @@ export default function ReelsSection() {
           Stories in Motion
         </h2>
         <motion.p
-          className="max-w-2xl mx-auto text-gray-300 text-lg leading-relaxed px-4"
+          className="max-w-2xl mx-auto text-gray-300 text-smmd:text-lg leading-relaxed px-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}

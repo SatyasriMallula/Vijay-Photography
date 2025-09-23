@@ -5,7 +5,7 @@ import { Menu, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import BackButton from "./BackButton";
+
 
 const navItems = [
     { href: "/home", label: "HOME" },
@@ -78,7 +78,7 @@ export default function Header() {
                         priority
                     />
                     <div className="flex flex-col leading-tight">
-                        <span className="text-2xl font-extrabold text-blue-400 uppercase tracking-tight">
+                        <span className=" text-xl lg:text-2xl font-extrabold text-blue-400 uppercase tracking-tight">
                             Blueye
                         </span>
                     </div>
@@ -89,11 +89,11 @@ export default function Header() {
 
                 {/* Desktop Navigation */}
                 <div className="space-y-2">
-                    <h2 className="hidden md:block text-3xl text-blue-400 text-center">
+                    <h2 className="hidden md:block text-xl lg:text-3xl text-blue-400 text-center">
                         BLUEYE PHOTOSTUDIO
                     </h2>
-<BackButton/>
-                    <nav className="hidden md:flex items-center space-x-8 font-semibold tracking-widest text-sm">
+
+                    <nav className="hidden md:flex items-center space-x-4 lg:space-x-8 font-semibold tracking-widest text-xs lg:text-sm">
                         {navItems.map((item) =>
                             item.dropdown ? (
                                 <div

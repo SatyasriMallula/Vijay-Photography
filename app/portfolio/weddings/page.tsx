@@ -10,28 +10,31 @@ import { X } from "lucide-react";
 
 export default function WeddingsPage() {
     const weddingPhotos = [
-        { src: "/weddings/_KN10857.jpg", alt: "Reception" },
-        { src: "/weddings/_DCS1392.jpg", alt: "Wedding Couple" },
-        { src: "/weddings/1L4A1579.jpg", alt: "Reception" },
-        { src: "/weddings/DSC00356 2.jpg", alt: "Ring Ceremony" },
-        // { src: "/weddings/_KN11039.jpg", alt: "Haldi Ceremony" },
-        // { src: "/weddings/DSC05947.jpg", alt: "Haldi Ceremony" },
-        // { src: "/weddings/_KN12844.jpg", alt: "Wedding Dance" },
+        { src: "/weddings/_DCS1392.jpg", alt: "1" },
+        { src: "/weddings/_DCS1646.jpg", alt: "2" },
+        { src: "/weddings/_DCS6422.jpg", alt: "3" },
+        { src: "/weddings/_KN10857.jpg", alt: "4" },
+        { src: "/weddings/_KN11039.jpg", alt: "5" },
+        { src: "/weddings/_KN11133.jpg", alt: "6" },
+        { src: "/weddings/_KN12764.jpg", alt: "7" },
+        { src: "/weddings/_KN12783.jpg", alt: "8" },
+        { src: "/weddings/_KN12844.jpg", alt: "9" },
+        { src: "/weddings/_KN12984.jpg", alt: "10" },
+        { src: "/weddings/_KN13188.jpg", alt: "11" },
+        { src: "/weddings/0V8A9877.jpg", alt: "12" },
+        { src: "/weddings/1L4A1579.jpg", alt: "13" },
+        { src: "/weddings/cover-image.jpg", alt: "14" },
+        { src: "/weddings/DSC00195.jpg", alt: "15" },
+        { src: "/weddings/DSC00356 2.jpg", alt: "16" },
+        { src: "/weddings/DSC06713.jpg", alt: "17" },
+        { src: "/weddings/DSC03243.jpg", alt: "18" },
+        { src: "/weddings/DSC05947.jpg", alt: "19" },
+        { src: "/weddings/DSC07974.jpg", alt: "20" },
+        { src: "/weddings/DSC08797.jpg", alt: "21" },
+        { src: "/weddings/DSC08617.jpg", alt: "22" },
+        { src: "/weddings/DSC08989.jpg", alt: "23" },
+        { src: "/weddings/IMG_7867.JPG", alt: "24" },
 
-        { src: "/weddings/DSC03243.jpg", alt: "Wedding Ceremony" },
-        { src: "/weddings/0V8A9877.jpg", alt: "Wedding Couple" },
-        // { src: "/weddings/IMG_7867.jpg", alt: "Haldi Ceremony" },
-        { src: "/weddings/_KN11133.jpg", alt: "Reception" },
-        { src: "/weddings/DSC08797.jpg", alt: "Ring Ceremony" },
-        { src: "/weddings/_DCS1646.jpg", alt: "Bride Portrait" },
-        // { src: "/weddings/DSC06116.jpg", alt: "Wedding Dance" },
-        { src: "/weddings/DSC07974.jpg", alt: "Bride Portrait" },
-        // { src: "/weddings/_KN12764.jpg", alt: "Haldi Ceremony" },
-        { src: "/weddings/DSC08989.jpg", alt: "Bride Portrait" },
-        { src: "/weddings/_KN12984.jpg", alt: "Bride Portrait" },
-        { src: "/weddings/DSC00195.jpg", alt: "Bridal Portrait" },
-        // { src: "/weddings/_KN13188.jpg", alt: "Haldi Ceremony" },
-        { src: "/weddings/DSC06713.jpg", alt: "Bride Portrait" },
     ];
  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -43,18 +46,18 @@ export default function WeddingsPage() {
     }, []);
     return (
         <section className="px-6 py-16">
-            <h2 className="text-3xl font-bold mb-10 text-center text-yellow-500">Wedding Moments</h2>
- <motion.p  initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        viewport={{ once: true }}
-        className="text-center max-w-3xl mx-auto text-gray-300 text-lg mb-8 leading-relaxed">
-        Weddings are a beautiful journey of love, emotions, and timeless
-        memories. From the first smile to the final dance, every moment tells a
-        story that deserves to be captured with care. Here are some of our
-        favorite wedding highlights, where every frame reflects the joy and
-        celebration of togetherness.
-      </motion.p>
+            <h2 className="text-3xl font-bold md:mb-10 mb-5 text-center text-yellow-500">Wedding Moments</h2>
+            <motion.p initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-center max-w-3xl mx-auto text-gray-300 text-sm md:text-lg mb-4 md:mb-8 leading-relaxed">
+                Weddings are a beautiful journey of love, emotions, and timeless
+                memories. From the first smile to the final dance, every moment tells a
+                story that deserves to be captured with care. Here are some of our
+                favorite wedding highlights, where every frame reflects the joy and
+                celebration of togetherness.
+            </motion.p>
             <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 px-6 py-10">
                 {weddingPhotos.map((p, idx) => (
                      

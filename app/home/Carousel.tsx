@@ -4,6 +4,7 @@ import Image from "next/image";
 
 const images = [
   "/home/featured-shot/_DCS0275.JPG",
+  "/portraits/_DCS7340.jpg",
   "/home/featured-shot/_DCS0430.JPG",
   "/home/featured-shot/DSC05890.jpg",
   "/home/featured-shot/DSC08778.jpg",
@@ -14,7 +15,7 @@ export default function Carousel() {
   const doubledImages = [...images, ...images];
 
   return (
-    <section className="w-full overflow-hidden  space-y-4 md:space-y-8">
+    <section className="w-full overflow-hidden md:mt-8 xl:mt-4 space-y-4 md:space-y-8">
       <h2 className="text-3xl md:text-4xl font-medium text-center text-yellow-500 ">
         Featured Shots
       </h2>
@@ -35,7 +36,7 @@ export default function Carousel() {
           {doubledImages.map((src, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-[400px] h-[300px] overflow-hidden shadow-lg"
+              className="flex-shrink-0  w-[250px] h-[250px] md:w-[400px] md:h-[300px] overflow-hidden shadow-lg"
             >
               <Image
                 src={src}
