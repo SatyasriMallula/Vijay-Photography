@@ -37,13 +37,13 @@ export default function VisualPortrait() {
   ];
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
+ const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+     const handleResize = () => setIsMobile(window.innerWidth < 768);
+     handleResize();
+     window.addEventListener("resize", handleResize);
+     return () => window.removeEventListener("resize", handleResize);
+   }, []);
   return (
     <main className="min-h-screen bg-black py-16 px-6 max-w-7xl mx-auto flex flex-col items-center space-y-6 md:space-y-8">
       <h1 className="text-3xl md:text-5xl font-extrabold text-amber-400 text-center">
@@ -76,11 +76,14 @@ export default function VisualPortrait() {
             <Image
               src={src}
               alt={alt}
-              width={500}
-              height={700}
+             width={500}
+  height={700}
               className="w-full object-contain object-center"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-
+             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+              decoding="async"
+                    draggable={false}
+                    unoptimized
+                   priority={idx < 4}
             />
           </motion.div>
         ))}
@@ -99,7 +102,7 @@ export default function VisualPortrait() {
         />
       )}
 
-
+      
       {isMobile && selectedIndex !== null && (
         <AnimatePresence>
           <motion.div
